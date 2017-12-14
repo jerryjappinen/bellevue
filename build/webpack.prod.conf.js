@@ -11,11 +11,18 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
+// https://www.npmjs.com/package/webapp-manifest-plugin
+const WebappManifest = require('webapp-manifest-plugin')
+const WebappManifestPlugin = WebappManifest.default
+const compileAppIcons = false
+const FAVICON_PLUGIN = WebappManifest.FAVICON_PLUGIN
+
 const env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
   : require('../config/prod.env')
 
-const templateConfig = require('../src/config/config.meta.js')
+const manifestConfig = require('../src/config/config.manifest.js')
+const metaConfig = require('../src/config/config.meta.js')
 
 const webpackConfig = merge(baseWebpackConfig, {
   module: {
@@ -70,7 +77,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         : config.build.index,
       template: 'src/index.html',
       favicon: 'src/app-icon/favicon.png',
-      config: templateConfig,
+      config: metaConfig,
       inject: true,
       minify: {
         removeComments: true,
@@ -126,6 +133,15 @@ const webpackConfig = merge(baseWebpackConfig, {
     ])
   ]
 })
+
+// Generate manifest.json if set in config
+if (manifestConfig) {
+  var webAppManifestOptions = manifestConfig;
+  if (compileAppIcons) {
+    webAppManifestOptions.icons = FAVICON_PLUGIN;
+  }
+  webpackConfig.plugins.push(new WebappManifestPlugin(manifestConfig))
+}
 
 if (config.build.productionGzip) {
   const CompressionWebpackPlugin = require('compression-webpack-plugin')

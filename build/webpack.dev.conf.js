@@ -11,7 +11,7 @@ const portfinder = require('portfinder')
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
-const templateConfig = require('../src/config/config.meta.js')
+const metaConfig = require('../src/config/config.meta.js')
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
@@ -51,7 +51,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       filename: 'index.html',
       template: 'src/index.html',
       favicon: 'src/app-icon/favicon.png',
-      config: templateConfig,
+      config: metaConfig,
       inject: true
     }),
   ]
