@@ -1,19 +1,6 @@
-
 @import '../shared.scss';
 
-
-
-// This file is for opinionated defaults. For normalization and resets, use o-normalize.css
-
-html {
-	cursor: default;
-
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
-	font-family: sans-serif;
-
-	tab-size: 4;
-}
+// This file is for opinionated defaults
 
 body {
 	font-family: $default-font;
@@ -21,7 +8,7 @@ body {
 	background-color: $default-color-background;
 }
 
-// NOTE: if this works, we can simply provide transition-property to add default transitions to element
+// NOTE: we can simply provide transition-property to add default transitions to element
 * {
 	transition-property: none;
 	transition-duration: $default-transition-duration;
@@ -102,9 +89,7 @@ video,
 button,
 input,
 textarea {
-	// clear: both;
 	border-color: $default-color-border;
-	// max-width: 100%;
 
 	&:before,
 	&:after {
@@ -112,11 +97,6 @@ textarea {
 		border-color: $default-color-border;
 	}
 
-}
-
-canvas,
-iframe {
-	max-width: 100%;
 }
 
 strong,
@@ -128,32 +108,15 @@ th {
 
 blockquote,
 q {
-	font-family: serif;
+	@include type-serif;
 }
 
 pre,
 code,
 kbd,
 samp {
-	font-family: monospace;
+	@include type-mono;
 }
-
-fieldset {
-	margin-left: 0;
-	margin-right: 0;
-	padding: 0;
-}
-
-h1,
-h2,
-h3 {
-	text-rendering: optimizeLegibility;
-}
-
-// sub,
-// sup,
-// small {}
-// big {}
 
 a {
 	display: inline-block;
@@ -164,41 +127,16 @@ a {
 		outline-width: 0;
 	}
 
-	// &:hover {
-	// 	text-decoration: underline;
-	// }
-
 	@include transition-properties-common;
 	@include transition-hover-active;
 }
 
-svg,
-img {
-	display: inline-block;
-	max-height: 100%;
-	vertical-align: middle;
-}
-
 abbr[title],
 dfn[title] {
-	cursor: help;
+	@include cursor-help;
 	text-decoration: underline;
 }
 
 a {
 	@include cursor-pointer;
 }
-
-// a,
-// label,
-// button,
-// input,
-// select,
-// option {
-// 	cursor: pointer;
-
-// 	&[disabled] {
-// 		cursor: default;
-// 	}
-
-// }

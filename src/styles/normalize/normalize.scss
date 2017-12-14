@@ -1,13 +1,18 @@
-
 @import '../shared.scss';
-
-
 
 * {
 	-webkit-overflow-scrolling: touch;
 }
 
 // Document
+html {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-family: sans-serif;
+	cursor: default;
+	tab-size: 4;
+}
+
 html,
 body {
 	width: 100%;
@@ -112,6 +117,12 @@ video {
 	}
 }
 
+fieldset {
+	margin-left: 0;
+	margin-right: 0;
+	padding: 0;
+}
+
 html,
 body,
 blockquote,
@@ -130,9 +141,10 @@ textarea {
 	margin: 0;
 }
 
+iframe,
+canvas,
 svg,
 img,
-iframe,
 button,
 input,
 select,
@@ -178,6 +190,13 @@ img {
 	// stylelint-disable property-no-vendor-prefix
 	-ms-interpolation-mode: bicubic;
 	// stylelint-enable property-no-vendor-prefix
+}
+
+svg,
+img {
+	display: inline-block;
+	max-height: 100%;
+	vertical-align: middle;
 }
 
 // Correct overflows in IE9
@@ -295,6 +314,12 @@ samp {
 button,
 select {
 	text-transform: inherit;
+}
+
+h1,
+h2,
+h3 {
+	text-rendering: optimizeLegibility;
 }
 
 // Inline markup
