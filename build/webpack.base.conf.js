@@ -4,6 +4,17 @@ const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 
+// Centralized config
+const svgoConfig = require('../src/config/config.svgo.js')
+
+// Modify the SVGO config to match the format the plugin expects
+let svgoPlugins = []
+for (let pluginName in svgoConfig) {
+  svgoPlugins.push({
+    [pluginName]: svgoConfig[pluginName]
+  })
+}
+
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -32,7 +43,7 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.scss', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
@@ -52,7 +63,16 @@ module.exports = {
         include: [resolve('src'), resolve('test')]
       },
       {
-        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        test: /\.svg$/,
+        loader: 'vue-svg-loader',
+        options: {
+          svgo: {
+            plugins: svgoPlugins
+          }
+        }
+      },
+      {
+        test: /\.(png|jpe?g|gif)(\?.*)?$/,
         loader: 'url-loader',
         options: {
           limit: 10000,
