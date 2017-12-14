@@ -1,4 +1,23 @@
 
-// Basics
+// Keyframe animations
+@import './keyframes/keyframes-fade-in.scss';
+@import './keyframes/keyframes-pulse.scss';
+@import './keyframes/keyframes-spin.scss';
+
+// Web fonts
+// @import './webfonts/webfont-source-sans';
+
+
+
+// Global base code
+
+// Normalisation
 @import './normalize/normalize.scss';
 @import './normalize/defaults.scss';
+
+
+
+// Classname-based code
+
+// Transitions
+@import './transitions/transition-fade';
