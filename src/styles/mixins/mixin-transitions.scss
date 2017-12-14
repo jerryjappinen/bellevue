@@ -1,0 +1,150 @@
+
+// Basics
+
+// NOTE: should be auto generated based on transition variables
+
+@mixin transition ($duration, $properties: null, $delay: null) {
+	transition-duration: $duration;
+
+	@if $properties {
+		transition-property: $properties;
+	}
+
+	@if $delay {
+		transition-delay: $delay;
+	}
+
+}
+
+@mixin no-transition {
+	transition-duration: 0ms;
+}
+
+
+
+// Transition durations
+
+@mixin transition-veryveryfast ($properties: null, $delay: null) {
+	@include transition($transition-veryveryfast, $properties, $delay);
+}
+
+@mixin transition-veryfast ($properties: null, $delay: null) {
+	@include transition($transition-veryfast, $properties, $delay);
+}
+
+@mixin transition-fast ($properties: null, $delay: null) {
+	@include transition($transition-fast, $properties, $delay);
+}
+
+@mixin transition-medium ($properties: null, $delay: null) {
+	@include transition($transition-medium, $properties, $delay);
+}
+
+@mixin transition-slow ($properties: null, $delay: null) {
+	@include transition($transition-slow, $properties, $delay);
+}
+
+@mixin transition-veryslow ($properties: null, $delay: null) {
+	@include transition($transition-veryslow, $properties, $delay);
+}
+
+@mixin transition-veryveryslow ($properties: null, $delay: null) {
+	@include transition($transition-veryveryslow, $properties, $delay);
+}
+
+
+
+// Transition delays
+
+@mixin transition-delay ($delay) {
+	transition-delay: $delay;
+}
+
+@mixin transition-delay-veryveryfast {
+	@include transition-delay($transition-veryveryfast);
+}
+
+@mixin transition-delay-veryfast {
+	@include transition-delay($transition-veryfast);
+}
+
+@mixin transition-delay-fast {
+	@include transition-delay($transition-fast);
+}
+
+@mixin transition-delay-medium {
+	@include transition-delay($transition-medium);
+}
+
+@mixin transition-delay-slow {
+	@include transition-delay($transition-slow);
+}
+
+@mixin transition-delay-veryslow {
+	@include transition-delay($transition-veryslow);
+}
+
+@mixin transition-delay-veryveryslow {
+	@include transition-delay($transition-veryveryslow);
+}
+
+@mixin no-transition-delay {
+	@include transition-delay(0ms);
+}
+
+
+
+// Standard property sets
+// FIXME: accept parameters that are appended to the end of list
+
+@mixin transition-properties ($properties) {
+	transition-property: $properties;
+}
+
+@mixin transition-properties-common {
+	@include transition-properties($transition-properties-common);
+}
+
+@mixin transition-properties-style {
+	@include transition-properties($transition-properties-style);
+}
+
+@mixin transition-properties-transform {
+	@include transition-properties($transition-properties-transform);
+}
+
+@mixin transition-properties-position {
+	@include transition-properties($transition-properties-position);
+}
+
+@mixin no-transition-properties {
+	transition-property: none;
+}
+
+
+
+// Per pseudo class
+
+@mixin transition-hover {
+	transition-duration: $transition-slow;
+	&:focus,
+	&:hover {
+		transition-duration: $transition-fast;
+	}
+}
+
+@mixin transition-active {
+	transition-duration: $transition-slow;
+	&:active {
+		transition-duration: $transition-fast;
+	}
+}
+
+@mixin transition-hover-active {
+	transition-duration: $transition-slow;
+	&:focus,
+	&:hover,
+	&:active {
+		transition-duration: $transition-fast;
+	}
+}

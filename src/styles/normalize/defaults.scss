@@ -1,0 +1,204 @@
+
+@import '../shared.scss';
+
+
+
+// This file is for opinionated defaults. For normalization and resets, use o-normalize.css
+
+html {
+	cursor: default;
+
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-family: sans-serif;
+
+	tab-size: 4;
+}
+
+body {
+	font-family: $default-font;
+	color: $default-color-text;
+	background-color: $default-color-background;
+}
+
+// NOTE: if this works, we can simply provide transition-property to add default transitions to element
+* {
+	transition-property: none;
+	transition-duration: $default-transition-duration;
+	transition-timing-function: $default-transition-easing;
+}
+
+// Element defaults
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+a,
+small,
+strong,
+sub,
+sup,
+var,
+i,
+b,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+button,
+input,
+textarea {
+	// clear: both;
+	border-color: $default-color-border;
+	// max-width: 100%;
+
+	&:before,
+	&:after {
+		vertical-align: middle;
+		border-color: $default-color-border;
+	}
+
+}
+
+canvas,
+iframe {
+	max-width: 100%;
+}
+
+strong,
+dt,
+mark,
+th {
+	@include type-strong;
+}
+
+blockquote,
+q {
+	font-family: serif;
+}
+
+pre,
+code,
+kbd,
+samp {
+	font-family: monospace;
+}
+
+fieldset {
+	margin-left: 0;
+	margin-right: 0;
+	padding: 0;
+}
+
+h1,
+h2,
+h3 {
+	text-rendering: optimizeLegibility;
+}
+
+// sub,
+// sup,
+// small {}
+// big {}
+
+a {
+	display: inline-block;
+
+	&:focus,
+	&:active,
+	&:hover {
+		outline-width: 0;
+	}
+
+	// &:hover {
+	// 	text-decoration: underline;
+	// }
+
+	@include transition-properties-common;
+	@include transition-hover-active;
+}
+
+svg,
+img {
+	display: inline-block;
+	max-height: 100%;
+	vertical-align: middle;
+}
+
+abbr[title],
+dfn[title] {
+	cursor: help;
+	text-decoration: underline;
+}
+
+a {
+	@include cursor-pointer;
+}
+
+// a,
+// label,
+// button,
+// input,
+// select,
+// option {
+// 	cursor: pointer;
+
+// 	&[disabled] {
+// 		cursor: default;
+// 	}
+
+// }

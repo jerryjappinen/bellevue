@@ -1,6 +1,11 @@
 
 // Variables etc.
-// @import './constants.scss';
+@import './functions.scss';
+@import './constants.scss';
 
 // // Mixins
-// @import './mixins/mixin-viewport.scss';
+@import './mixins/mixin-buffer.scss';
+@import './mixins/mixin-cursor.scss';
+@import './mixins/mixin-transitions.scss';
+@import './mixins/mixin-type.scss';
+@import './mixins/mixin-viewport.scss';
