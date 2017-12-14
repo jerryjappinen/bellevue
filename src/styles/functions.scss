@@ -1,0 +1,52 @@
+
+// Custom functions for SCSS
+// NOTE
+// - See built-in functions: http://sass-lang.com/documentation/Sass/Script/Functions.html
+// - If you find yourself using built-in functions with the same values often, considering creating a wrapper function in this file
+
+
+
+// Remove the unit of a length
+@function number ($number) {
+	@if type-of($number) == 'number' and not unitless($number) {
+		@return $number / ($number * 0 + 1);
+	}
+	@return $number;
+}
+
+
+
+// Color handling
+
+// Make translucent
+@function color-transparent ($color) {
+	@return color-translucent($color, 0);
+}
+
+// Make color translucent
+// FIXME: should return 0.1 for black, 0.25 for light values
+@function color-translucent ($color, $strength: 0.15) {
+	@return rgba($color, $strength);
+}
+
+// FIXME: should adjust based on hue
+@function color-translucent-light ($color) {
+	@return color-translucent($color, 0.4);
+}
+
+// FIXME: should adjust based on hue
+@function color-translucent-verylight ($color) {
+	@return color-translucent($color, 0.9);
+}
+
+
+
+// Make color darker
+@function color-darker ($color, $strength: 10%) {
+	@return darken($color, $strength);
+}
+
+// Make color more saturated
+@function color-saturate ($color, $strength: 10%) {
+	@return saturate(darken($color, 1.5 * $strength), $strength);
+}

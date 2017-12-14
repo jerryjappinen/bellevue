@@ -1,0 +1,198 @@
+
+// Media
+
+@mixin viewport-print {
+	@media print {
+		@content;
+	}
+}
+
+@mixin viewport-screen {
+	@media screen {
+		@content;
+	}
+}
+
+@mixin viewport-not-print {
+	@media not print {
+		@content;
+	}
+}
+
+
+
+// Orientation
+
+@mixin viewport-portrait {
+	@media (max-aspect-ratio: 1/1) {
+		@content;
+	}
+}
+
+@mixin viewport-landscape {
+	@media (min-aspect-ratio: 1/1) {
+		@content;
+	}
+}
+
+
+
+// DPI
+
+@mixin viewport-retina () {
+	@media (min-resolution: 144dpi) {
+		@content;
+	}
+}
+
+
+
+// Generic responsive
+
+@mixin viewport-under ($breakpoint) {
+
+	@if (unit($breakpoint) == 'px') {
+		$breakpoint: $breakpoint - 1px;
+	}
+
+	@media (max-width: ($breakpoint)) {
+		@content;
+	}
+
+}
+
+@mixin viewport-over ($breakpoint) {
+	@media (min-width: ($breakpoint)) {
+		@content;
+	}
+}
+
+@mixin viewport-height-under ($breakpoint) {
+
+	@if (unit($breakpoint) == 'px') {
+		$breakpoint: $breakpoint - 1px;
+	}
+
+	@media (max-height: ($breakpoint)) {
+		@content;
+	}
+
+}
+
+@mixin viewport-height-over ($breakpoint) {
+	@media (min-height: ($breakpoint)) {
+		@content;
+	}
+}
+
+
+
+// Predefined responsive
+
+@mixin viewport-under-tiny {
+	@media #{$viewport-under-tiny} {
+		@content;
+	}
+}
+
+@mixin viewport-over-tiny {
+	@media #{$viewport-over-tiny} {
+		@content;
+	}
+}
+
+
+
+@mixin viewport-under-small {
+	@media #{$viewport-under-small} {
+		@content;
+	}
+}
+
+@mixin viewport-over-small {
+	@media #{$viewport-over-small} {
+		@content;
+	}
+}
+
+
+
+@mixin viewport-under-smallish {
+	@media #{$viewport-under-smallish} {
+		@content;
+	}
+}
+
+@mixin viewport-over-smallish {
+	@media #{$viewport-over-smallish} {
+		@content;
+	}
+}
+
+@mixin viewport-under-medium {
+	@media #{$viewport-under-medium} {
+		@content;
+	}
+}
+
+@mixin viewport-over-medium {
+	@media #{$viewport-over-medium} {
+		@content;
+	}
+}
+
+
+
+@mixin viewport-under-large {
+	@media #{$viewport-under-large} {
+		@content;
+	}
+}
+
+@mixin viewport-over-large {
+	@media #{$viewport-over-large} {
+		@content;
+	}
+}
+
+
+
+@mixin viewport-under-verylarge {
+	@media #{$viewport-under-verylarge} {
+		@content;
+	}
+}
+
+@mixin viewport-over-verylarge {
+	@media #{$viewport-over-verylarge} {
+		@content;
+	}
+}
+
+
+
+@mixin viewport-under-ridiculous {
+	@media #{$viewport-under-ridiculous} {
+		@content;
+	}
+}
+
+@mixin viewport-over-ridiculous {
+	@media #{$viewport-over-ridiculous} {
+		@content;
+	}
+}
+
+
+
+@mixin viewport-under-totallyridiculous {
+	@media #{$viewport-under-totallyridiculous} {
+		@content;
+	}
+}
+
+@mixin viewport-over-totallyridiculous {
+	@media #{$viewport-over-totallyridiculous} {
+		@content;
+	}
+}
