@@ -5,14 +5,14 @@
 </script>
 
 <template>
-	<div id="app">
-		<img src="./assets/logo.png">
-		<router-view/>
+	<div class="c-app">
+		<img src="~@/assets/logo.png">
+		<router-view></router-view>
 	</div>
 </template>
 
 <style lang="scss">
-	#app {
+	.c-app {
 		@include buffer-relative;
 	}
 </style>
