@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<% /* Title */ %>
+		<title><%= htmlWebpackPlugin.options.title %></title>
+		<meta name="application-name" content="<%= htmlWebpackPlugin.options.title %>">
+
+		<% /* Description */ %>
+		<% if (htmlWebpackPlugin.options.config.meta.description && htmlWebpackPlugin.options.config.meta.description.length) { %>
+			<meta name="description" content="<%= htmlWebpackPlugin.options.config.meta.description %>">
+		<% } %>
+
+		<% /* Mobile tags */ %>
+		<% if (htmlWebpackPlugin.options.config.mobile) { %>
+			<meta name="apple-mobile-web-app-capable" content="yes">
+			<style type="text/css">
+				body {
+					-webkit-text-size-adjust: none;
+					-moz-text-size-adjust: none;
+					-ms-text-size-adjust: none;
+				}
+			</style>
+		<% } %>
+
+		<% /* iOS Safari ison */ %>
+		<% /* NOTE: `favicon.png` is a magical filename */ %>
+		<link rel="apple-touch-icon" href="<%= htmlWebpackPlugin.options.config.staticAssetsPath %>favicon.png">
+
+		<% /* Mobile tags */ %>
+		<%
+			var robotsMeta = [];
+			if (htmlWebpackPlugin.options.config.robotsMeta && htmlWebpackPlugin.options.config.robotsMeta.length) {
+				for (var i = 0; i < htmlWebpackPlugin.options.config.robotsMeta.length; i++) {
+					robotsMeta.push(('' + htmlWebpackPlugin.options.config.robotsMeta[i]).toUpperCase());
+				}
+			}
+		%>
+		<% if (robotsMeta.length) { %>
+			<meta name="robots" content="<%= htmlWebpackPlugin.options.config.meta.robotsMeta.join(', ') %>">
+		<% } %>
+
+		<%
+			var appStoreDefinitions = [];
+			if (
+				htmlWebpackPlugin.options.config.appStore &&
+				htmlWebpackPlugin.options.config.appStore.appId &&
+				('' + htmlWebpackPlugin.options.config.appStore.appId).length
+			) {
+				appStoreDefinitions.push('app-id=' + htmlWebpackPlugin.options.config.appStore.appId);
+				if (htmlWebpackPlugin.options.config.appStore.affiliate && htmlWebpackPlugin.options.config.appStore.affiliate.length) {
+					appStoreDefinitions.push('affiliate-data=' + htmlWebpackPlugin.options.config.appStore.affiliate);
+				}
+				if (htmlWebpackPlugin.options.config.appStore.affiliate && htmlWebpackPlugin.options.config.appStore.affiliate.length) {
+					appStoreDefinitions.push('app-argument=' + htmlWebpackPlugin.options.config.appStore.appArgument);
+				}
+			}
+		%>
+		<% if (appStoreDefinitions.length) { %>
+			<meta name="apple-itunes-app" content="<%= appStoreDefinitions.join(', ') %>">
+		<% } %>
+
+		<% /* Touch highlight settings */ %>
+		<% if (!htmlWebpackPlugin.options.config.defaultTouchHighlight) { %>
+			<meta name="msapplication-tap-highlight" content="no">
+			<style>body { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-tap-highlight-color: transparent; }</style>
+		<% } %>
+
+		<% /* Format detection meta tags */ %>
+		<% if (htmlWebpackPlugin.options.config.formatDetection) { %>
+			<%
+				var formatDetectionRuleStrings = [];
+				for (var key in htmlWebpackPlugin.options.config.formatDetection) {
+					if (
+						htmlWebpackPlugin.options.config.formatDetection[key] !== null &&
+						htmlWebpackPlugin.options.config.formatDetection[key] !== undefined
+					) {
+						formatDetectionRuleStrings.push(key + '=' + htmlWebpackPlugin.options.config.formatDetection[key]);
+					}
+				}
+			%>
+			<meta name="format-detection" content="<%= formatDetectionRuleStrings.join(', ') %>">
+		<% } %>
+
+		<% /* Viewport definitions as meta tags */ %>
+		<% if (htmlWebpackPlugin.options.config.viewport) { %>
+			<%
+				var viewportRuleStrings = [];
+				for (var key in htmlWebpackPlugin.options.config.viewport) {
+					if (
+						htmlWebpackPlugin.options.config.viewport[key] !== null &&
+						htmlWebpackPlugin.options.config.viewport[key] !== undefined
+					) {
+						viewportRuleStrings.push(key + '=' + htmlWebpackPlugin.options.config.viewport[key]);
+					}
+				}
+			%>
+			<meta name="viewport" content="<%= viewportRuleStrings.join(', ') %>">
+		<% } %>
+
+		<% /* Viewport definitions as CSS */ %>
+		<%
+			var viewportCssRuleStrings = [];
+
+			if (htmlWebpackPlugin.options.config.viewport.width) {
+				var viewportWidth = htmlWebpackPlugin.options.config.viewport.width;
+				if (viewportWidth && viewportWidth !== 'device-width') {
+					viewportWidth += 'px';
+				}
+				viewportCssRuleStrings.push('width: ' + viewportWidth + ';');
+			}
+
+			if (htmlWebpackPlugin.options.config.viewport.height) {
+				var viewportHeight = htmlWebpackPlugin.options.config.viewport.height;
+				if (viewportHeight && viewportHeight !== 'device-height') {
+					viewportHeight += 'px';
+				}
+				viewportCssRuleStrings.push('height: ' + viewportHeight + ';');
+			}
+
+			viewportCssRuleStrings = viewportCssRuleStrings.join('');
+		%>
+		<style type="text/css">
+			@-ms-viewport { <%= viewportCssRuleStrings %> }
+			@-o-viewport { <%= viewportCssRuleStrings %> }
+			@viewport { <%= viewportCssRuleStrings %> }
+		</style>
+
+
+		<% /* Windows: pinned site meta info (https://msdn.microsoft.com/en-us/library/dn255024(v=vs.85).aspx) */ %>
+		<meta name="msapplication-tooltip" content="<%= htmlWebpackPlugin.options.config.meta.description %>">
+		<meta name="msapplication-TileColor" content="<%= htmlWebpackPlugin.options.config.meta.themeColor %>" />
+		<meta name="msapplication-navbutton-color" content="<%= htmlWebpackPlugin.options.config.meta.themeColor %>">
+
+		<% /* Theme color */ %>
+		<% if (htmlWebpackPlugin.options.config.meta.themeColor && htmlWebpackPlugin.options.config.meta.themeColor.length) { %>
+			<meta name="theme-color" content="<%= htmlWebpackPlugin.options.config.meta.themeColor %>">
+		<% } %>
+
+		<% /* iOS: Status bar style */ %>
+		<% if (htmlWebpackPlugin.options.config.meta.iosStatusBarStyle && htmlWebpackPlugin.options.config.meta.iosStatusBarStyle.length) { %>
+			<meta name="apple-mobile-web-app-status-bar-style" content="<%= htmlWebpackPlugin.options.config.meta.iosStatusBarStyle %>">
+		<% } %>
+
+		<% /* Prefetch meta tags */ %>
+		<% for (var i = 0; i < htmlWebpackPlugin.options.config.prefetch.length; i++) { %>
+			<link rel="prefetch" href="<%= htmlWebpackPlugin.options.config.prefetch[i] %>">
+		<% } %>
+
+		<% /* Links to static CSS files */ %>
+		<% for (var i = 0; i < htmlWebpackPlugin.options.config.styleLinks.length; i++) { %>
+			<link rel="stylesheet" type="text/css" href="<%= htmlWebpackPlugin.options.config.styleLinks[i] %>">
+		<% } %>
+
+	</head>
+	<body>
+		<div id="app"></div>
+
+		<% /* Built files will be auto injected */ %>
+
+		<% /* Links to static JS files */ %>
+		<% for (var i = 0; i < htmlWebpackPlugin.options.config.scriptLinks.length; i++) { %>
+			<script type="text/javascript" src="<%= htmlWebpackPlugin.options.config.scriptLinks[i] %>"></script>
+		<% } %>
+
+	</body>
+</html>
