@@ -1,0 +1,22 @@
+@import '../shared.scss';
+
+// Transition code
+// https://vuejs.org/v2/guide/transitions.html
+// https://vuejs.org/images/transition.png
+
+// While either transition is playing
+// FIXME: would be better to not specify the opacity value 1, but let the default or component's defined value stand
+.transition-fade-enter-active,
+.transition-fade-leave-active {
+	opacity: 1;
+	@include transition-fast;
+	@include transition-properties(opacity);
+}
+
+// Start state for enter
+.transition-fade-enter,
+
+// End state for exit
+.transition-fade-leave-to {
+	opacity: 0;
+}
