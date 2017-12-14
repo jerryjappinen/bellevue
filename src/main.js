@@ -22,7 +22,6 @@ Vue.config.productionTip = false
 for (const componentName in components) {
 	Vue.component(kebabCase(componentName), components[componentName])
 }
-console.log('svgs', svgs)
 for (const svgName in svgs) {
 	Vue.component(kebabCase('svg-' + svgName), svgs[svgName])
 }
