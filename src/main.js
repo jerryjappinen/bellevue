@@ -4,13 +4,10 @@ import { camelCase, kebabCase } from 'lodash'
 import Vue from 'vue'
 
 // Components and plugins
-import * as components from './components'
-import * as svgComponents from './svg'
-import * as directives from './vue-directives'
-import { router } from './vue-plugins'
-
-// Global styles
-import './styles/global.scss'
+import * as components from '@components'
+import * as svgComponents from '@svg'
+import * as directives from '@directives'
+import { router } from '@plugins'
 
 
 
