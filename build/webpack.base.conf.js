@@ -1,10 +1,12 @@
 'use strict'
+const _ = require('lodash')
 const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 
 // Centralized config
+const aliasConfig = require('../src/config/config.aliases.js')
 const svgoConfig = require('../src/config/config.svgo.js')
 
 // Modify the SVGO config to match the format the plugin expects
@@ -30,6 +32,13 @@ const createLintingRule = () => ({
   }
 })
 
+// Fetch aliases from config, and add one magical alias for Vue
+let aliases = _.merge({}, _.mapValues(aliasConfig, (value) => {
+  return resolve(value)
+}), {
+  'vue$': 'vue/dist/vue.esm.js'
+})
+
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
@@ -44,10 +53,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.vue', '.scss', '.json'],
-    alias: {
-      'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src'),
-    }
+    alias: aliases
   },
   module: {
     rules: [

@@ -1,4 +1,8 @@
 <script>
+	import '@global-styles'
+
+	import { composeClassnames } from '@util'
+
 	export default {
 		name: 'app',
 
@@ -9,6 +13,12 @@
 		},
 
 		computed: {
+
+			classes () {
+				return composeClassnames({
+					foo: !!this.foo
+				}, 'c-app')
+			},
 
 			routerKey () {
 				return this.$route.name
@@ -28,7 +38,7 @@
 </script>
 
 <template>
-	<div class="c-app">
+	<div class="c-app" :class="classes">
 		<img src="~@/assets/logo.png" @click="setFoo">
 
 		<fade>
