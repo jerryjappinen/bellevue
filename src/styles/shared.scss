@@ -3,7 +3,8 @@
 @import './functions.scss';
 @import './constants.scss';
 
-// // Mixins
+// Mixins
+@import './mixins/mixin-animations.scss';
 @import './mixins/mixin-buffer.scss';
 @import './mixins/mixin-cursor.scss';
 @import './mixins/mixin-transitions.scss';

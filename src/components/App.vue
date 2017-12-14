@@ -1,14 +1,42 @@
 <script>
 	export default {
-		name: 'app'
+		name: 'app',
+
+		data () {
+			return {
+				foo: true
+			}
+		},
+
+		computed: {
+
+			routerKey () {
+				return this.$route.name
+			}
+
+		},
+
+		methods: {
+
+			setFoo () {
+				this.foo = !this.foo
+			}
+
+		}
+
 	}
 </script>
 
 <template>
 	<div class="c-app">
-		<svg-chip />
-		<img src="~@/assets/logo.png">
-		<router-view></router-view>
+		<img src="~@/assets/logo.png" @click="setFoo">
+
+		<fade>
+			<svg-chip v-if="foo" />
+		</fade>
+
+		<router-view :key="routerKey"></router-view>
+
 	</div>
 </template>
 
