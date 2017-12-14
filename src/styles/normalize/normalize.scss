@@ -1,0 +1,381 @@
+
+@import '../shared.scss';
+
+
+
+* {
+	-webkit-overflow-scrolling: touch;
+}
+
+// Document
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+
+
+
+// Element defaults
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+a,
+small,
+strong,
+sub,
+sup,
+var,
+i,
+b,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	border-width: 0;
+	border-style: solid;
+
+	outline-width: 0;
+	outline-style: solid;
+
+	vertical-align: baseline;
+
+	border-color: transparent;
+	background: transparent;
+
+	&:before,
+	&:after {
+		border-width: 0;
+		border-style: solid;
+
+		outline-width: 0;
+		outline-style: solid;
+
+		vertical-align: baseline;
+		border-color: transparent;
+		background: transparent;
+	}
+}
+
+html,
+body,
+blockquote,
+pre,
+table,
+form {
+	margin: 0;
+	padding: 0;
+}
+
+figure,
+button,
+input,
+select,
+textarea {
+	margin: 0;
+}
+
+svg,
+img,
+iframe,
+button,
+input,
+select,
+textarea {
+	max-width: 100%;
+}
+
+iframe {
+	display: block;
+	width: 100%;
+}
+
+
+
+// HTML5 elements
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+audio,
+canvas,
+video {
+	display: block;
+}
+
+audio:not([controls]) {
+	display: none;
+}
+
+[hidden] {
+	display: none;
+}
+
+img {
+	// stylelint-disable property-no-vendor-prefix
+	-ms-interpolation-mode: bicubic;
+	// stylelint-enable property-no-vendor-prefix
+}
+
+// Correct overflows in IE9
+svg:not(:root) {
+	overflow: hidden;
+}
+
+pre {
+	word-wrap: break-word;
+	white-space: pre-wrap;
+}
+
+// Lists
+ul {
+	padding-left: 2em;
+	list-style: disc;
+}
+ol {
+	padding-left: 2em;
+	list-style: decimal;
+}
+
+// NOTE: disabled because unnested ul, ol is actually defaulted to no list-style none elsewhere
+// nav {
+// 	ul,
+// 	ol {
+// 		list-style: none;
+// 		list-style-image: none;
+// 		padding-left: 0;
+// 	}
+// }
+
+// Inline
+sub,
+sup {
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	top: -0.5em;
+}
+sub {
+	bottom: -0.25em;
+}
+
+// Tables
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+caption,
+th,
+td {
+	text-align: left;
+	vertical-align: top;
+}
+
+// Fonts
+html {
+	font-family: sans-serif;
+	font-size: 100%;
+	text-size-adjust: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+dt,
+mark,
+th {
+	font-weight: bold;
+}
+
+// Interactive
+a {
+	text-decoration: none;
+}
+
+input,
+select,
+textarea,
+button {
+	-webkit-font-smoothing: inherit;
+	font-family: inherit;
+}
+input,
+select,
+textarea,
+pre,
+code,
+kbd,
+samp {
+	font-size: inherit;
+	line-height: inherit;
+}
+
+button,
+input,
+select,
+textarea,
+pre,
+code,
+kbd,
+samp {
+	font-weight: inherit;
+}
+
+button,
+select {
+	text-transform: inherit;
+}
+
+// Inline markup
+em,
+dfn,
+q,
+blockquote {
+	font-style: italic;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+// Quotes
+blockquote,
+q {
+	quotes: none;
+	&:before,
+	&:after {
+		content: '';
+	}
+}
+
+// Use the same box-model and sizing in all browsers
+button,
+input,
+textarea {
+	box-sizing: content-box;
+	display: inline-block;
+}
+
+// Make search fields consistent with text fields on Webkit
+input[type="search"] {
+	appearance: textfield;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+	appearance: none;
+}
+
+// Get IE on the line with checkboxes
+input[type="checkbox"],
+input[type="radio"] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+// Make button rendering consistent on Firefox 4+
+button,
+input {
+	&::-moz-focus-inner {
+		padding: 0;
+		border: 0;
+	}
+}
+
+// Style clickable inputs consistently on all webkits
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	appearance: button;
+}
+
+// Buttons have center-aligned text
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	text-align: center;
+}
+
+// Use sensible alignments
+button,
+input,
+select {
+	vertical-align: middle;
+}
+
+textarea {
+	overflow: auto;
+	vertical-align: top;
+}
