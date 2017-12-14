@@ -1,0 +1,59 @@
+@import '../shared.scss';
+
+@keyframes pulse {
+
+	0%,
+	100% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+	}
+
+}
+
+@keyframes pulse-delayed {
+
+	0%,
+	40%,
+	100% {
+		opacity: 1;
+	}
+
+	20% {
+		opacity: 0;
+	}
+
+}
+
+@keyframes pulse-scale {
+
+	0%,
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	50% {
+		opacity: 0;
+		transform: scale(0);
+	}
+
+}
+
+@keyframes pulse-scale-delayed {
+
+	0%,
+	40%,
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	20% {
+		opacity: 0;
+		transform: scale(0);
+	}
+
+}
