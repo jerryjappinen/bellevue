@@ -5,6 +5,7 @@ import Vue from 'vue'
 
 // Components and plugins
 import * as components from './components'
+import * as svgs from './svg'
 import router from './router'
 
 // Global styles
@@ -18,13 +19,17 @@ import './styles/global.scss'
 Vue.config.productionTip = false
 
 // Register all components on the top level
-console.log('components', components)
 for (const componentName in components) {
 	Vue.component(kebabCase(componentName), components[componentName])
 }
+console.log('svgs', svgs)
+for (const svgName in svgs) {
+	Vue.component(kebabCase('svg-' + svgName), svgs[svgName])
+}
 
 
-/* eslint-disable no-new */
+
+// Initialize the app
 new Vue({
 	el: '#app',
 	router,
