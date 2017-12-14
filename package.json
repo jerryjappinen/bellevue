@@ -16,6 +16,7 @@
   "dependencies": {
     "lodash": "^4.17.4",
     "vue": "^2.5.2",
+    "vue-images-loaded": "^1.1.2",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
