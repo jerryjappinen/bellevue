@@ -11,8 +11,8 @@ export default {
 			const prefix = 'c-' + this.$options.name
 			let classes = [prefix]
 
-			if (this.classnames) {
-				merge(classes, composeClassnames(this.classnames, prefix))
+			if (this._classes) {
+				merge(classes, composeClassnames(this._classes, prefix))
 			}
 
 			return classes

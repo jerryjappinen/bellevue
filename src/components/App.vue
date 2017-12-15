@@ -12,7 +12,7 @@
 
 		computed: {
 
-			classnames () {
+			_classes () {
 				return {
 					foo: !!this.foo
 				}
