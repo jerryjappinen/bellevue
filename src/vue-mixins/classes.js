@@ -1,4 +1,3 @@
-import { merge } from 'lodash'
 import { composeClassnames } from '@util'
 
 // Set a computed property with prefixed classnames
@@ -12,7 +11,7 @@ export default {
 			let classes = [prefix]
 
 			if (this._classes) {
-				merge(classes, composeClassnames(this._classes, prefix))
+				classes = classes.concat(composeClassnames(this._classes, prefix))
 			}
 
 			return classes
