@@ -34,7 +34,9 @@ module.exports = {
 	'@shared-styles': 'src/styles/shared.scss'
 
 	// Test cases
-	// '@test': 'test'
+	// '@unit': 'unit'
+	// '@e2e': 'e2e'
+	// '@test-tooling': 'test'
 
 	// src root
 	// NOTE: prefer the other aliases over this (so we keep this last)
