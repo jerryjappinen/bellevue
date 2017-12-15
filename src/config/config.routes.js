@@ -1,9 +1,17 @@
-import * as components from '../components'
+import * as components from '@components'
 
 export default [
+
 	{
 		path: '/',
-		name: 'HelloWorld',
-		component: components.HelloWorld
+		name: 'home',
+		component: components.PageHome
+	},
+
+	{
+		path: '/settings',
+		name: 'settings',
+		component: components.PageSettings
 	}
+
 ]
