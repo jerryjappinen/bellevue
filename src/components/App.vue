@@ -1,10 +1,12 @@
 <script>
 	import '@global-styles'
 
-	import { composeClassnames } from '@util'
+	import { classes } from '@mixins'
 
 	export default {
 		name: 'app',
+
+		mixins: [classes],
 
 		data () {
 			return {
@@ -14,10 +16,10 @@
 
 		computed: {
 
-			classes () {
-				return composeClassnames({
+			classnames () {
+				return {
 					foo: !!this.foo
-				}, 'c-app')
+				}
 			},
 
 			routerKey () {
