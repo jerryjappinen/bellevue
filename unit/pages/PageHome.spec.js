@@ -1,18 +1,18 @@
 import { mount } from 'vue-test-utils'
-import { HelloWorld } from '@components'
+import { PageHome } from '@components'
 // import { Vue } from '@vue-setup'
 
-describe('HelloWorld.vue', () => {
-	// const Constructor = Vue.extend(HelloWorld)
+describe('PageHome.vue', () => {
+	// const Constructor = Vue.extend(PageHome)
 	// const vm = new Constructor().$mount()
-	const wrapper = mount(HelloWorld, {})
+	const wrapper = mount(PageHome, {})
 
 	it('should render title element', () => {
 		expect(wrapper.contains('h1'))
 	})
 
 	it('should render correct contents', () => {
-		expect(wrapper.vm.$el.querySelector('.c-hello-world h1').textContent)
+		expect(wrapper.vm.$el.querySelector('h1').textContent)
 			.toEqual('Welcome to Your Vue.js App')
 	})
 
