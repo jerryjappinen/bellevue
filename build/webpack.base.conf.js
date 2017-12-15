@@ -9,6 +9,13 @@ const vueLoaderConfig = require('./vue-loader.conf')
 const aliasConfig = require('../src/config/config.aliases.js')
 const svgoConfig = require('../src/config/config.svgo.js')
 
+const includeDirs = [
+  resolve('src'),
+  resolve('e2e'),
+  resolve('unit'),
+  resolve('test')
+]
+
 // Modify the SVGO config to match the format the plugin expects
 let svgoPlugins = []
 for (let pluginName in svgoConfig) {
@@ -25,7 +32,7 @@ const createLintingRule = () => ({
   test: /\.(js|vue)$/,
   loader: 'eslint-loader',
   enforce: 'pre',
-  include: [resolve('src'), resolve('test')],
+  include: includeDirs,
   options: {
     formatter: require('eslint-friendly-formatter'),
     emitWarning: !config.dev.showEslintErrorsInOverlay
@@ -66,7 +73,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test')]
+        include: includeDirs
       },
       {
         test: /\.svg$/,
