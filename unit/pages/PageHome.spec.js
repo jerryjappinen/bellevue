@@ -1,6 +1,6 @@
 import { mount } from 'vue-test-utils'
 import { PageHome } from '@components'
-// import { Vue } from '@vue-setup'
+// import { Vue } from '@vendor/Vue'
 
 describe('PageHome.vue', () => {
 	// const Constructor = Vue.extend(PageHome)
