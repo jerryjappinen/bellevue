@@ -8,30 +8,28 @@ const path = require('path')
 
 const aliasConfig = require('../../src/config/config.aliases.js')
 
-function escapeRegexp (str) {
+function escapeJestRegexp (str) {
   return str
 }
 
 function treatAliasKey (aliasValue, aliasKey) {
-  return '^' + escapeRegexp(aliasKey) + '/(.*)$'
+  return '^' + escapeJestRegexp(aliasKey) + '/(.*)$'
 }
 
 function treatAliasValue (aliasValue) {
-  return '<rootDir>/' + escapeRegexp(aliasValue) + '/$1'
+  return '<rootDir>/' + escapeJestRegexp(aliasValue) + '/$1'
 }
 
 function treatAliasKeySingle (aliasValue, aliasKey) {
-  return '^' + escapeRegexp(aliasKey)
+  return '^' + escapeJestRegexp(aliasKey)
 }
 
 function treatAliasValueSingle (aliasValue) {
-  return '<rootDir>/' + escapeRegexp(aliasValue)
+  return '<rootDir>/' + escapeJestRegexp(aliasValue)
 }
 
 let jestAliases = _.mapKeys(_.mapValues(aliasConfig, treatAliasValue), treatAliasKey)
 _.merge(jestAliases, _.mapKeys(_.mapValues(aliasConfig, treatAliasValueSingle), treatAliasKeySingle))
-
-console.log('jestAliases', jestAliases)
 
 module.exports = {
   rootDir: path.resolve(__dirname, '../../'),
@@ -40,7 +38,10 @@ module.exports = {
     'json',
     'vue'
   ],
-  moduleNameMapper: jestAliases,
+  moduleNameMapper: _.merge({}, jestAliases, {
+    '^.+\\.(jpg|jpeg|gif|png|mp4|mkv|avi|webm|swf|wav|mid)$': 'jest-static-stubs/$1',
+    '^.+\\.(svg)$': '<rootDir>/test/unit/stubs/svg.stub.js'
+  }),
   transform: {
     '^.+\\.js$': '<rootDir>/node_modules/babel-jest',
     '.*\\.(scss)$': '<rootDir>/node_modules/jest-css-modules',
