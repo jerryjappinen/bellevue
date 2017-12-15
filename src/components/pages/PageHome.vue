@@ -24,5 +24,15 @@
 </template>
 
 <style lang="scss">
-	// .c-page-home {}
+
+	.c-page-home {
+
+		img,
+		svg {
+			width: 6em;
+			height: 6em;
+		}
+
+	}
+
 </style>

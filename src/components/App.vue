@@ -1,6 +1,8 @@
 <script>
 	import '@global-styles'
 
+	import { env } from '@config'
+
 	export default {
 		name: 'app',
 
@@ -8,7 +10,7 @@
 
 			_classes () {
 				return {
-					foo: !!this.foo
+					debug: env.isDebug ? true : false
 				}
 			},
 
@@ -22,7 +24,7 @@
 </script>
 
 <template>
-	<div class="c-app" :class="classes">
+	<div :class="classes">
 
 		<ul>
 			<li><router-link :to="{ name: 'home' }">Home</router-link></li>
@@ -32,18 +34,14 @@
 		<fade>
 			<router-view :key="routerKey"></router-view>
 		</fade>
+
 	</div>
 </template>
 
 <style lang="scss">
+
 	.c-app {
 		@include buffer-relative;
-
-		img,
-		svg {
-			width: 6em;
-			height: 6em;
-		}
-
 	}
+
 </style>
