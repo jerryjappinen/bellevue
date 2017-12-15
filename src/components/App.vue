@@ -4,12 +4,6 @@
 	export default {
 		name: 'app',
 
-		data () {
-			return {
-				foo: true
-			}
-		},
-
 		computed: {
 
 			_classes () {
@@ -22,14 +16,6 @@
 				return this.$route.name
 			}
 
-		},
-
-		methods: {
-
-			setFoo () {
-				this.foo = !this.foo
-			}
-
 		}
 
 	}
@@ -37,18 +23,15 @@
 
 <template>
 	<div class="c-app" :class="classes">
-		<img src="~@assets/logo.png">
-		<svg-chip />
+
+		<ul>
+			<li><router-link :to="{ name: 'home' }">Home</router-link></li>
+			<li><router-link :to="{ name: 'settings' }">Settings</router-link></li>
+		</ul>
 
 		<fade>
-			<p key="foo" v-if="foo">Foo</p>
-			<p key="bar" v-else>Bar</p>
+			<router-view :key="routerKey"></router-view>
 		</fade>
-
-		<p @click="setFoo">Toggle</p>
-
-		<router-view :key="routerKey"></router-view>
-
 	</div>
 </template>
 

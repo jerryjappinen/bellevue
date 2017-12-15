@@ -1,6 +1,6 @@
 <script>
 	export default {
-		name: 'hello-world',
+		name: 'page-home',
 
 		data () {
 			return {
@@ -12,10 +12,17 @@
 
 <template>
 	<div :class="classes">
+
 		<h1>{{ msg }}</h1>
+
+		<p>
+			<img src="~@assets/logo.png">
+			<svg-chip />
+		</p>
+
 	</div>
 </template>
 
 <style lang="scss">
-	// .c-hello-world {}
+	// .c-page-home {}
 </style>
