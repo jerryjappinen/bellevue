@@ -39,11 +39,15 @@
 
 <template>
 	<div class="c-app" :class="classes">
-		<img src="~@/assets/logo.png" @click="setFoo">
+		<img src="~@assets/logo.png">
+		<svg-chip />
 
 		<fade>
-			<svg-chip v-if="foo" />
+			<p key="foo" v-if="foo">Foo</p>
+			<p key="bar" v-else>Bar</p>
 		</fade>
+
+		<p @click="setFoo">Toggle</p>
 
 		<router-view :key="routerKey"></router-view>
 

@@ -1,4 +1,35 @@
+const _ = require('lodash')
 const path = require('path')
+
+// We need to turn aliases to something like this for Jest:
+// moduleNameMapper: {
+//   '^@/(.*)$': '<rootDir>/src/$1'
+// },
+
+const aliasConfig = require('../../src/config/config.aliases.js')
+
+function escapeJestRegexp (str) {
+  return str
+}
+
+function treatAliasKey (aliasValue, aliasKey) {
+  return '^' + escapeJestRegexp(aliasKey) + '/(.*)$'
+}
+
+function treatAliasValue (aliasValue) {
+  return '<rootDir>/' + escapeJestRegexp(aliasValue) + '/$1'
+}
+
+function treatAliasKeySingle (aliasValue, aliasKey) {
+  return '^' + escapeJestRegexp(aliasKey)
+}
+
+function treatAliasValueSingle (aliasValue) {
+  return '<rootDir>/' + escapeJestRegexp(aliasValue)
+}
+
+let jestAliases = _.mapKeys(_.mapValues(aliasConfig, treatAliasValue), treatAliasKey)
+_.merge(jestAliases, _.mapKeys(_.mapValues(aliasConfig, treatAliasValueSingle), treatAliasKeySingle))
 
 module.exports = {
   rootDir: path.resolve(__dirname, '../../'),
@@ -7,11 +38,13 @@ module.exports = {
     'json',
     'vue'
   ],
-  moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1'
-  },
+  moduleNameMapper: _.merge({}, jestAliases, {
+    '^.+\\.(jpg|jpeg|gif|png|mp4|mkv|avi|webm|swf|wav|mid)$': 'jest-static-stubs/$1',
+    '^.+\\.(svg)$': '<rootDir>/test/unit/stubs/svg.stub.js'
+  }),
   transform: {
     '^.+\\.js$': '<rootDir>/node_modules/babel-jest',
+    '.*\\.(scss)$': '<rootDir>/node_modules/jest-css-modules',
     '.*\\.(vue)$': '<rootDir>/node_modules/vue-jest'
   },
   testPathIgnorePatterns: [
@@ -23,8 +56,8 @@ module.exports = {
   coverageDirectory: '<rootDir>/test/unit/coverage',
   collectCoverageFrom: [
     'src/**/*.{js,vue}',
+    '!src/svg/index.js',
     '!src/main.js',
-    '!src/router/index.js',
     '!**/node_modules/**'
   ]
 }
