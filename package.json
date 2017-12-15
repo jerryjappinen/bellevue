@@ -78,6 +78,7 @@
     "vue-style-loader": "^3.0.1",
     "vue-svg-loader": "^0.4.0",
     "vue-template-compiler": "^2.5.10",
+    "vue-test-utils": "^1.0.0-beta.8",
     "webapp-manifest-plugin": "0.0.4",
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
