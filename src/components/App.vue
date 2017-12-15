@@ -1,12 +1,8 @@
 <script>
 	import '@global-styles'
 
-	import { classes } from '@mixins'
-
 	export default {
 		name: 'app',
-
-		mixins: [classes],
 
 		data () {
 			return {

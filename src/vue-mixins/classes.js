@@ -1,3 +1,4 @@
+import { merge } from 'lodash'
 import { composeClassnames } from '@util'
 
 // Set a computed property with prefixed classnames
@@ -7,11 +8,14 @@ export default {
 	computed: {
 
 		classes () {
-			console.log('this.$options.name', this.$options.name)
+			const prefix = 'c-' + this.$options.name
+			let classes = [prefix]
+
 			if (this.classnames) {
-				return composeClassnames(this.classnames, 'c-' + this.$options.name)
+				merge(classes, composeClassnames(this.classnames, prefix))
 			}
-			return null
+
+			return classes
 		}
 
 	}

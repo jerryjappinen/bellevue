@@ -7,6 +7,7 @@ import Vue from 'vue'
 import * as components from '@components'
 import * as svgComponents from '@svg'
 import * as directives from '@directives'
+import { global as mixins } from '@mixins'
 import { router } from '@plugins'
 
 
@@ -27,6 +28,11 @@ for (const svgName in svgComponents) {
 // Register all directives on the top level
 for (const directiveName in directives) {
 	Vue.directive(camelCase(directiveName), directives[directiveName])
+}
+
+// Register some mixins on the top level
+for (const mixinName in mixins) {
+	Vue.mixin(mixins[mixinName])
 }
 
 
