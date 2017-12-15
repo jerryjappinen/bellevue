@@ -1,4 +1,4 @@
-@import '../shared.scss';
+@import '~@shared-styles';
 
 * {
 	-webkit-overflow-scrolling: touch;
@@ -277,9 +277,14 @@ th {
 	font-weight: bold;
 }
 
-// Interactive
 a {
 	text-decoration: none;
+
+	&:focus,
+	&:active,
+	&:hover {
+		outline-width: 0;
+	}
 }
 
 input,

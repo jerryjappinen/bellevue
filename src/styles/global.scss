@@ -11,9 +11,12 @@
 
 // Global base code
 
-// Normalisation
-@import './normalize/normalize.scss';
-@import './normalize/defaults.scss';
+// Resets
+@import './normalize.scss';
+
+// Defaults
+@import './defaults/body.scss';
+@import './defaults/links.scss';
 
 
 

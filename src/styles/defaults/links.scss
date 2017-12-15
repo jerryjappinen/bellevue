@@ -1,0 +1,10 @@
+@import '~@shared-styles';
+
+a {
+	color: inherit;
+	display: inline-block;
+	@include cursor-pointer;
+
+	@include transition-properties-common;
+	@include transition-hover-active;
+}

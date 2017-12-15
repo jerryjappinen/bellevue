@@ -1,6 +1,4 @@
-@import '../shared.scss';
-
-// This file is for opinionated defaults
+@import '~@shared-styles';
 
 body {
 	font-family: $default-font;
@@ -118,25 +116,8 @@ samp {
 	@include type-mono;
 }
 
-a {
-	display: inline-block;
-
-	&:focus,
-	&:active,
-	&:hover {
-		outline-width: 0;
-	}
-
-	@include transition-properties-common;
-	@include transition-hover-active;
-}
-
 abbr[title],
 dfn[title] {
 	@include cursor-help;
 	text-decoration: underline;
-}
-
-a {
-	@include cursor-pointer;
 }
