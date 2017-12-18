@@ -2,6 +2,12 @@
 
 > Oh so nice planning poker
 
+## Requirements
+
+1. The Node version defined in [.nvmrc](./nvmrc)
+
+**Protip:** manage node versions easily with [nvm](https://github.com/creationix/nvm).
+
 ## Build Setup
 
 ``` bash
