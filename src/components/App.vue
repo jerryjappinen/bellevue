@@ -1,8 +1,9 @@
 <script>
-	import '@global-styles'
+	import '@styles-global'
 
 	import { env } from '@config'
-	import { network } from '@services'
+
+	import network from '@services/network'
 
 	export default {
 		name: 'app',

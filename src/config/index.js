@@ -1,6 +1,7 @@
 import { merge } from 'lodash'
 
 // Base configs
+// NOTE: anything under `./tooling` is not available here
 import defaultEnv from './config.env'
 import defaultManifest from './config.manifest'
 import defaultMeta from './config.meta'
@@ -10,12 +11,11 @@ import defaultRouter from './config.router'
 import defaultSvgo from './config.svgo'
 
 // Dev overrides
-import devEnv from './config.dev.env'
-// import devEnv from './config.dev.env'
-// import devManifest from './config.dev.manifest'
-// import devMeta from './config.dev.meta'
-// import devRouter from './config.dev.router'
-// import devSvgo from './config.dev.svgo'
+import devEnv from './dev/config.dev.env'
+// import devManifest from './dev/config.dev.manifest'
+// import devMeta from './dev/config.dev.meta'
+// import devRouter from './dev/config.dev.router'
+// import devSvgo from './dev/config.dev.svgo'
 
 // These will be exported
 let env = merge({}, defaultEnv)
