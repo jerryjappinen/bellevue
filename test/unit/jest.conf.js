@@ -6,7 +6,7 @@ const path = require('path')
 //   '^@/(.*)$': '<rootDir>/src/$1'
 // },
 
-const aliasConfig = require('../../src/config/config.aliases.js')
+const aliasConfig = require('../../src/config/tooling/config.aliases.js')
 
 function escapeJestRegexp (str) {
   return str

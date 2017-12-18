@@ -6,7 +6,7 @@ const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 
 // Centralized config
-const aliasConfig = require('../src/config/config.aliases.js')
+const aliasConfig = require('../src/config/tooling/config.aliases.js')
 const svgoConfig = require('../src/config/config.svgo.js')
 
 const includeDirs = [
