@@ -2,6 +2,7 @@
 	import '@global-styles'
 
 	import { env } from '@config'
+	import { network } from '@services'
 
 	export default {
 		name: 'app',
@@ -12,6 +13,10 @@
 				return {
 					debug: env.isDebug ? true : false
 				}
+			},
+
+			isOffline () {
+				return !network.isOnline
 			},
 
 			routerKey () {
@@ -25,6 +30,9 @@
 
 <template>
 	<div :class="classes">
+
+		<p v-if="isOffline">Offline</p>
+		<p v-else>Online</p>
 
 		<ul>
 			<li><router-link :to="{ name: 'home' }">Home</router-link></li>
