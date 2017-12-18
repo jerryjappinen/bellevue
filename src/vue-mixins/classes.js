@@ -1,4 +1,4 @@
-import { composeClassnames } from '@util'
+import composeClassnames from '@util/composeClassnames'
 
 // Set a computed property with prefixed classnames
 // https://vuejs.org/v2/guide/mixins.html
