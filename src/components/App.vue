@@ -2,7 +2,8 @@
 	import '@global-styles'
 
 	import { env } from '@config'
-	import { network } from '@services'
+
+	import network from '@services/network'
 
 	export default {
 		name: 'app',
