@@ -1,5 +1,5 @@
 <script>
-	import '@global-styles'
+	import '@styles-global'
 
 	import { env } from '@config'
 

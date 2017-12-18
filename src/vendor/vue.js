@@ -7,7 +7,7 @@ import Vue from 'vue'
 import * as components from '@components'
 import * as svgComponents from '@svg'
 import * as directives from '@directives'
-import mixins from '@mixins/global'
+import * as mixins from '@mixins-global'
 
 // Each Vue plugin that needs setup
 import router from '@plugins/router'
