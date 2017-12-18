@@ -1,2 +1,2 @@
-import { Vue, options } from '@vendor/Vue'
+import { Vue, options } from '@vendor/vue'
 new Vue(options)
