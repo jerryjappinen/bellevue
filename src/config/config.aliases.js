@@ -4,7 +4,7 @@
 module.exports = {
 
 	// This guy prepares Vue for initialisation
-	'@vue-setup': 'src/setup',
+	// '@vue-setup': 'src/setup',
 
 	// The base configuration (alias is mostly for the client)
 	// NOTE: for client-side code it would be better to use a JS utility that reads configuration (merging values from multiple sources) instead of using these raw values in application code
@@ -16,7 +16,7 @@ module.exports = {
 	// '@models': 'src/models',
 	// '@services': 'src/services',
 	'@util': 'src/util',
-	// '@vendor': 'src/vendor',
+	'@vendor': 'src/vendor',
 
 	// Assets
 	'@assets': 'src/assets',
