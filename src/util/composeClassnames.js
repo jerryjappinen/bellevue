@@ -1,56 +1,50 @@
 import { isNumber, isString, kebabCase } from 'lodash'
 
-// Generate HTML/CSS class names based on a set of state, with prefixes and negatives added
-export default function (stateHash, prefixPositive, prefixNegative) {
-	var classes = []
-
-	// Custom prefixes
-	if (prefixPositive) {
-
-		// Only positive prefix was passed, using it as the base for negative as well
-		if (!prefixNegative) {
-			prefixNegative = prefixPositive + '-not'
-		}
-
-	// Default prefixes
-	} else {
-		prefixPositive = 'is'
-		prefixPositive = 'not'
+const normalizePrefix = (prefix) => {
+	if (!prefix && prefix !== '') {
+		return 'is'
 	}
+	return prefix
+}
 
-	// State classes
-	for (var key in stateHash) {
-		var className
+const composeClassname = (key, value, prefix) => {
+
+	if (value) {
+		prefix = normalizePrefix(prefix)
+		let classname = '' + key
 
 		// String/number value goes into the class name
-		if (isString(stateHash[key]) || isNumber(stateHash[key])) {
-			className = key + '-' + stateHash[key]
+		if (isString(value) || isNumber(value)) {
+			classname = classname + '-' + value
 
 		// Otherwise we use boolean classnames
 		} else {
 
 			// Prevent duplicating prefixes if they're passed in the keys
-			if (key.substr(0, prefixPositive.length) === prefixPositive) {
-				className = key.substr(prefixPositive.length)
-
-			} else if (key.substr(0, prefixPositive.length) === prefixPositive) {
-				className = key.substr(prefixPositive.length)
-
-			// Nothing to sanitize
-			} else {
-				className = key
+			if (classname.substr(0, prefix.length) === prefix) {
+				classname = classname.substr(prefix.length)
 			}
 
 		}
 
-		// Compose prefix + value
-		// Turn into kebab-case
-		// Push into results array
-		// classes.push(kebabCase((stateHash[key] ? prefixPositive : prefixNegative) + '-' + className))
+		// Add formatted classname to result list
+		return kebabCase(prefix + '-' + classname)
+	}
 
-		// Popsitive only
-		if (stateHash[key]) {
-			classes.push(kebabCase(prefixPositive + '-' + className))
+	return null
+}
+
+// Generate HTML/CSS class names based on a set of state, with prefixes and negatives added
+export default function (stateHash, prefix) {
+	const classes = []
+
+	// Treat each class
+	for (const key in stateHash) {
+		const classname = composeClassname(key, stateHash[key], prefix)
+
+		// We only add the classname if the value is truthy
+		if (classname) {
+			classes.push(classname)
 		}
 
 	}
