@@ -4,17 +4,15 @@ export default new Vue({
 
 	data () {
 		return {
-			isOnline: false,
-			isConnecting: true
+			// isConnecting: true,
+			isOnline: false
 		}
 	},
 
 	computed: {
-
 		isOffline () {
 			return !this.isOnline
 		}
-
 	},
 
 	methods: {
@@ -41,7 +39,7 @@ export default new Vue({
 
 	created () {
 		this.updateOnlineStatus()
-		this.isConnecting = false
+		// this.isConnecting = false
 		this.setListeners()
 	},
 
