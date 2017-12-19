@@ -19,6 +19,7 @@
 			<img src="~@assets/logo.png">
 			<bitmap src="logo.png" />
 			<svg-chip />
+			<ellipsis />
 		</p>
 
 	</div>
