@@ -98,6 +98,7 @@
 
 	<img
 		v-images-loaded="onLoaded"
+		:class="classes"
 		:src="normalizedSrc"
 		:alt="renderedTitle"
 		:title="renderedTitle">
@@ -108,7 +109,7 @@
 
 	.c-bitmap-hidden,
 	.c-bitmap-was-hidden {
-		@include transition-medium(opacity);
+		@include transition-fast(opacity);
 	}
 
 	.c-bitmap-hidden {
