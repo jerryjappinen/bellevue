@@ -26,13 +26,13 @@ module.exports = {
 		'telephone': 'yes'
 	},
 
-	// Links to static or externally hosted JS that need a script tag in index.html
+	// Links to static or externally hosted JS that need a script tag in `index.html.ejs`
 	scriptLinks: [
 		// '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js',
 		// '/static/vendor.js'
 	],
 
-	// Links to static or externally hosted CSS that need a style tag in index.html
+	// Links to static or externally hosted CSS that need a style tag in `index.html.ejs`
 	styleLinks: [
 		// '//fonts.googleapis.com/css?family=Muli:400,400i,600,600i,700,700i'
 		// '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',

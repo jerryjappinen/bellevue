@@ -49,7 +49,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: 'src/index.html',
+      template: 'src/index.html.ejs',
       favicon: 'src/app-icon/favicon.png',
       config: metaConfig,
       inject: true
