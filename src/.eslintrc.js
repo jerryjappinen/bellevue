@@ -64,6 +64,10 @@ module.exports = {
 
 		// Guard against duplicate variable names in one scope
 		'no-shadow': ['error'],
+		'no-param-reassign': ['warn', {
+			'props': true,
+			'ignorePropertyModificationsFor': []
+		}],
 
 
 

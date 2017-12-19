@@ -10,7 +10,7 @@ const normalizePrefix = (prefix) => {
 const composeClassname = (key, value, prefix) => {
 
 	if (value) {
-		prefix = normalizePrefix(prefix)
+		const normalizedPrefix = normalizePrefix(prefix)
 		let classname = '' + key
 
 		// String/number value goes into the class name
@@ -21,14 +21,14 @@ const composeClassname = (key, value, prefix) => {
 		} else {
 
 			// Prevent duplicating prefixes if they're passed in the keys
-			if (classname.substr(0, prefix.length) === prefix) {
-				classname = classname.substr(prefix.length)
+			if (classname.substr(0, normalizedPrefix.length) === normalizedPrefix) {
+				classname = classname.substr(normalizedPrefix.length)
 			}
 
 		}
 
 		// Add formatted classname to result list
-		return kebabCase(prefix + '-' + classname)
+		return kebabCase(normalizedPrefix + '-' + classname)
 	}
 
 	return null
