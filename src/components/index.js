@@ -4,7 +4,10 @@ import App from './App'
 import PageHome from './pages/PageHome'
 import PageSettings from './pages/PageSettings'
 
-// Transition
+// Snippets
+import Bitmap from './snippets/Bitmap'
+
+// Transitions
 import CustomTransition from './transitions/CustomTransition'
 import Fade from './transitions/Fade'
 
@@ -13,6 +16,8 @@ export {
 
 	PageHome,
 	PageSettings,
+
+	Bitmap,
 
 	CustomTransition,
 	Fade
