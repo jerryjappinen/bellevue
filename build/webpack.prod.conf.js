@@ -14,7 +14,6 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 // https://www.npmjs.com/package/webapp-manifest-plugin
 const WebappManifest = require('webapp-manifest-plugin')
 const WebappManifestPlugin = WebappManifest.default
-const compileAppIcons = false
 const FAVICON_PLUGIN = WebappManifest.FAVICON_PLUGIN
 
 const env = process.env.NODE_ENV === 'testing'
@@ -136,10 +135,6 @@ const webpackConfig = merge(baseWebpackConfig, {
 
 // Generate manifest.json if set in config
 if (manifestConfig) {
-  var webAppManifestOptions = manifestConfig;
-  if (compileAppIcons) {
-    webAppManifestOptions.icons = FAVICON_PLUGIN;
-  }
   webpackConfig.plugins.push(new WebappManifestPlugin(manifestConfig))
 }
 
