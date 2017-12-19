@@ -1,10 +1,12 @@
+const meta = require('./config.meta')
+
 // NOTE: this file will be imported during tooling before ES6 is supported
 // https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
 // https://www.npmjs.com/package/webapp-manifest-plugin
 module.exports = {
-	name: 'Pokeree',
-	title: 'Pokeree',
-	description: 'Planning poker for the masses.',
+	name: meta.meta.title,
+	title: meta.meta.title,
+	description: meta.meta.description,
 	// dir: 'auto',
 	lang: 'en-US',
 	display: 'standalone',
@@ -12,7 +14,7 @@ module.exports = {
 	// startUrl: '/',
 	preferRelatedApplications: false,
 	backgroundColor: '#fff',
-	themeColor: '#000000',
+	themeColor: meta.meta.themeColor,
 	icons: [
 		{
 			type: 'image/png',
