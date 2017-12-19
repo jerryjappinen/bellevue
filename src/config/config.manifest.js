@@ -4,9 +4,9 @@ const meta = require('./config.meta')
 // https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
 // https://www.npmjs.com/package/webapp-manifest-plugin
 module.exports = {
-	name: meta.meta.title,
-	title: meta.meta.title,
-	description: meta.meta.description,
+	name: meta.title,
+	title: meta.title,
+	description: meta.description,
 	// dir: 'auto',
 	lang: 'en-US',
 	display: 'standalone',
@@ -14,7 +14,7 @@ module.exports = {
 	// startUrl: '/',
 	preferRelatedApplications: false,
 	backgroundColor: '#fff',
-	themeColor: meta.meta.themeColor,
+	themeColor: meta.themeColor,
 	icons: [
 		{
 			type: 'image/png',

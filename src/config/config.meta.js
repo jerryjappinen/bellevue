@@ -2,12 +2,9 @@
 module.exports = {
 
 	// Will be used in base HTML templating
-	meta: {
-		title: 'Pokeree',
-		description: 'Planning poker for the masses.',
-		themeColor: '#000000',
-		iosStatusBarStyle: 'black-translucent'
-	},
+	title: 'Pokeree',
+	description: 'Planning poker for the masses.',
+	themeColor: '#000000',
 
 	// Files under static (during runtime)
 	staticAssetsPath: '/',
@@ -51,6 +48,7 @@ module.exports = {
 	// Enable some meta tags that optimize the mobile experience
 	mobile: true,
 	defaultTouchHighlight: false,
+	iosStatusBarStyle: 'black-translucent',
 
 	// Viewport control for mobile devices
 	// https://developer.mozilla.org/en/docs/Mozilla/Mobile/Viewport_meta_tag

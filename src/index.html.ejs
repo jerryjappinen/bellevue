@@ -9,8 +9,8 @@
 		<meta name="application-name" content="<%= htmlWebpackPlugin.options.title %>">
 
 		<% /* Description */ %>
-		<% if (htmlWebpackPlugin.options.config.meta.description && htmlWebpackPlugin.options.config.meta.description.length) { %>
-			<meta name="description" content="<%= htmlWebpackPlugin.options.config.meta.description %>">
+		<% if (htmlWebpackPlugin.options.config.description && htmlWebpackPlugin.options.config.description.length) { %>
+			<meta name="description" content="<%= htmlWebpackPlugin.options.config.description %>">
 		<% } %>
 
 		<% /* Mobile tags */ %>
@@ -40,7 +40,7 @@
 			}
 		%>
 		<% if (robotsMeta.length) { %>
-			<meta name="robots" content="<%= htmlWebpackPlugin.options.config.meta.robotsMeta.join(', ') %>">
+			<meta name="robots" content="<%= robotsMeta.join(', ') %>">
 		<% } %>
 
 		<%
@@ -131,18 +131,18 @@
 
 
 		<% /* Windows: pinned site meta info (https://msdn.microsoft.com/en-us/library/dn255024(v=vs.85).aspx) */ %>
-		<meta name="msapplication-tooltip" content="<%= htmlWebpackPlugin.options.config.meta.description %>">
-		<meta name="msapplication-TileColor" content="<%= htmlWebpackPlugin.options.config.meta.themeColor %>" />
-		<meta name="msapplication-navbutton-color" content="<%= htmlWebpackPlugin.options.config.meta.themeColor %>">
+		<meta name="msapplication-tooltip" content="<%= htmlWebpackPlugin.options.config.description %>">
+		<meta name="msapplication-TileColor" content="<%= htmlWebpackPlugin.options.config.themeColor %>" />
+		<meta name="msapplication-navbutton-color" content="<%= htmlWebpackPlugin.options.config.themeColor %>">
 
 		<% /* Theme color */ %>
-		<% if (htmlWebpackPlugin.options.config.meta.themeColor && htmlWebpackPlugin.options.config.meta.themeColor.length) { %>
-			<meta name="theme-color" content="<%= htmlWebpackPlugin.options.config.meta.themeColor %>">
+		<% if (htmlWebpackPlugin.options.config.themeColor && htmlWebpackPlugin.options.config.themeColor.length) { %>
+			<meta name="theme-color" content="<%= htmlWebpackPlugin.options.config.themeColor %>">
 		<% } %>
 
 		<% /* iOS: Status bar style */ %>
-		<% if (htmlWebpackPlugin.options.config.meta.iosStatusBarStyle && htmlWebpackPlugin.options.config.meta.iosStatusBarStyle.length) { %>
-			<meta name="apple-mobile-web-app-status-bar-style" content="<%= htmlWebpackPlugin.options.config.meta.iosStatusBarStyle %>">
+		<% if (htmlWebpackPlugin.options.config.iosStatusBarStyle && htmlWebpackPlugin.options.config.iosStatusBarStyle.length) { %>
+			<meta name="apple-mobile-web-app-status-bar-style" content="<%= htmlWebpackPlugin.options.config.iosStatusBarStyle %>">
 		<% } %>
 
 		<% /* Prefetch meta tags */ %>
