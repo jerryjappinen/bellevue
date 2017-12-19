@@ -10,7 +10,7 @@
 </script>
 
 <template>
-	<a class="c-external-link" :href="href" target="_blank" rel="nofollow"><slot></slot></a>
+	<a :class="classes" :href="href" target="_blank" rel="nofollow"><slot></slot></a>
 </template>
 
 <style lang="scss">

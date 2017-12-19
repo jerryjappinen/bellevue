@@ -22,7 +22,7 @@
 <template>
 
 	<!-- NOTE: Need to keep this on one line to not add whitespace -->
-	<span class="c-ellipsis" :class="classes"><span class="c-ellipsis-bullet">.</span><span class="c-ellipsis-bullet">.</span><span class="c-ellipsis-bullet">.</span></span>
+	<span :class="classes"><span class="c-ellipsis-bullet">.</span><span class="c-ellipsis-bullet">.</span><span class="c-ellipsis-bullet">.</span></span>
 
 </template>
 
