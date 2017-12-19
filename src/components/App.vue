@@ -1,7 +1,7 @@
 <script>
 	import '@styles-global'
 
-	import { env } from '@config'
+	import { build } from '@config'
 
 	import network from '@services/network'
 
@@ -12,7 +12,7 @@
 
 			_classes () {
 				return {
-					debug: env.isDebug ? true : false
+					debug: build.isDebug ? true : false
 				}
 			},
 
