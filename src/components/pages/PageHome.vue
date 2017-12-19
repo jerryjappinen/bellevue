@@ -20,6 +20,7 @@
 			<bitmap src="logo.png" />
 			<svg-chip />
 			<ellipsis />
+			<spinner />
 			<external-link href="https://eiskis.gitbooks.io/bellevue/">See docs</external-link>
 		</p>
 
@@ -31,9 +32,10 @@
 	.c-page-home {
 
 		img,
-		svg {
-			width: 6em;
-			height: 6em;
+		svg,
+		.c-spinner {
+			width: 1em;
+			height: 1em;
 		}
 
 	}

@@ -8,6 +8,7 @@ export { default as PageSettings } from './pages/PageSettings'
 export { default as Bitmap } from './snippets/Bitmap'
 export { default as Ellipsis } from './snippets/Ellipsis'
 export { default as ExternalLink } from './snippets/ExternalLink'
+export { default as Spinner } from './snippets/Spinner'
 
 // Transitions
 export { default as CustomTransition } from './transitions/CustomTransition'
