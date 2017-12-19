@@ -20,6 +20,7 @@
 			<bitmap src="logo.png" />
 			<svg-chip />
 			<ellipsis />
+			<external-link href="https://eiskis.gitbooks.io/bellevue/">See docs</external-link>
 		</p>
 
 	</div>
