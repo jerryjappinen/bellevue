@@ -9,6 +9,11 @@ module.exports = {
 		iosStatusBarStyle: 'black-translucent'
 	},
 
+	// Files under static (during runtime)
+	staticAssetsPath: '/',
+	faviconFilename: 'favicon.png',
+	appleIconFilename: 'favicon.png',
+
 	// Localisation
 	defaultLocale: 'en',
 	fallbackLocale: 'en',

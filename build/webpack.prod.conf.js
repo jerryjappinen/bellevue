@@ -14,7 +14,6 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 // https://www.npmjs.com/package/webapp-manifest-plugin
 const WebappManifest = require('webapp-manifest-plugin')
 const WebappManifestPlugin = WebappManifest.default
-const FAVICON_PLUGIN = WebappManifest.FAVICON_PLUGIN
 
 const env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
@@ -75,8 +74,8 @@ const webpackConfig = merge(baseWebpackConfig, {
         ? 'index.html'
         : config.build.index,
       template: 'src/index.html.ejs',
-      favicon: 'src/app-icon/favicon.png',
-      config: metaConfig,
+      favicon: null, // Favicon comes from static (like other app icons)
+      config: metaConfig, // Passed to `index.html.ejs`
       inject: true,
       minify: {
         removeComments: true,

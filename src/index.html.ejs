@@ -27,7 +27,8 @@
 
 		<% /* iOS Safari ison */ %>
 		<% /* NOTE: `favicon.png` is a magical filename */ %>
-		<link rel="apple-touch-icon" href="<%= htmlWebpackPlugin.options.config.staticAssetsPath %>favicon.png">
+		<link rel="shortcut icon" href="<%= htmlWebpackPlugin.options.config.staticAssetsPath + htmlWebpackPlugin.options.config.faviconFilename %>">
+		<link rel="apple-touch-icon" href="<%= htmlWebpackPlugin.options.config.staticAssetsPath + htmlWebpackPlugin.options.config.appleIconFilename %>">
 
 		<% /* Mobile tags */ %>
 		<%

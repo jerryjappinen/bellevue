@@ -50,8 +50,8 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'src/index.html.ejs',
-      favicon: 'src/app-icon/favicon.png',
-      config: metaConfig,
+      favicon: null, // Favicon comes from static (like other app icons)
+      config: metaConfig, // Passed to `index.html.ejs`
       inject: true
     }),
   ]
