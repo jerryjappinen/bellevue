@@ -41,7 +41,7 @@ export default {
 		</ul>
 
 		<fade>
-			<router-view :key="routerKey"></router-view>
+			<router-view :key="routerKey" />
 		</fade>
 
 	</div>

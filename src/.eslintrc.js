@@ -22,7 +22,7 @@ module.exports = {
 		'vue'
 	],
 	extends: [
-		'plugin:vue/essential'
+		'plugin:vue/recommended'
 	],
 	rules: {
 
@@ -166,7 +166,7 @@ module.exports = {
 		],
 
 		// We turn this off, as sometimes we want default to be an object containing all the named exports
-		'import/no-named-as-default-member': ['off']
+		'import/no-named-as-default-member': ['off'],
 
 
 
@@ -174,6 +174,28 @@ module.exports = {
 		// https://github.com/vuejs/eslint-plugin-vue#bulb-rules
 		// 'vue/require-v-for-key': 'warn',
 		// 'vue/no-unused-vars': 'error'
+		'vue/html-indent': [
+			'error',
+			'tab',
+			{
+				'attribute': 1,
+				'closeBracket': 0,
+				'ignores': []
+			}
+		],
+		'vue/max-attributes-per-line': [
+			'warn',
+			{
+				'singleline': 3,
+				'multiline': {
+					'max': 1,
+					'allowFirstLine': false
+				}
+			}
+		],
+		'vue/name-property-casing': ['error', 'kebab-case'],
+		'vue/require-default-prop': ['off'],
+		'vue/require-prop-types': ['off']
 
 	}
 }

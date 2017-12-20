@@ -70,7 +70,7 @@ export default {
 		:appear-class="getClassName('appear')"
 		:appear-to-class="getClassName('appear-to')"
 		:appear-active-class="getClassName('appear-active')">
-		<slot></slot>
+		<slot />
 	</transition>
 
 </template>

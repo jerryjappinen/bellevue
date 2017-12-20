@@ -12,5 +12,8 @@ export default {
 </script>
 
 <template>
-	<custom-transition name="fade" :mode="mode" :appear="appear"><slot></slot></custom-transition>
+	<custom-transition
+		name="fade"
+		:mode="mode"
+		:appear="appear"><slot /></custom-transition>
 </template>

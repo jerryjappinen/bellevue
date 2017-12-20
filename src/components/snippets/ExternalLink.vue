@@ -10,5 +10,9 @@ export default {
 </script>
 
 <template>
-	<a :class="classes" :href="href" target="_blank" rel="nofollow"><slot></slot></a>
+	<a
+		:class="classes"
+		:href="href"
+		target="_blank"
+		rel="nofollow"><slot /></a>
 </template>

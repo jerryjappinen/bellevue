@@ -11,7 +11,7 @@ export default {
 		// NOTE: can be absolute, or within assets
 		src: {
 			type: String,
-			required: false
+			required: true
 		},
 
 		// Set to truthy to not use use the ImagesLoaded directive and fade in
@@ -79,15 +79,15 @@ export default {
 
 	},
 
-	methods: {
-		onLoaded (event) {
-			this.isHidden = false
-		}
-	},
-
 	created () {
 		if (this.hideUntilLoaded) {
 			this.isHidden = true
+		}
+	},
+
+	methods: {
+		onLoaded (event) {
+			this.isHidden = false
 		}
 	}
 

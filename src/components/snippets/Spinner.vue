@@ -47,14 +47,14 @@ export default {
 		role="img"
 		title="Loading..."
 		:viewBox="viewBox"
-		:width="this.width + 'px'"
-		:height="this.width + 'px'">
-		<circle class="c-spinner-circle"
+		:width="width + 'px'"
+		:height="width + 'px'">
+		<circle
+			class="c-spinner-circle"
 			:cx="circlePosition"
 			:cy="circlePosition"
 			:r="radius"
-			:stroke-width="strokeWidthValue">
-		</circle>
+			:stroke-width="strokeWidthValue" />
 	</svg>
 </template>
 
