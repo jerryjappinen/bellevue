@@ -1,5 +1,1 @@
-import ImagesLoaded from './imagesLoaded'
-
-export {
-	ImagesLoaded
-}
+export { default as ImagesLoaded } from './imagesLoaded'
