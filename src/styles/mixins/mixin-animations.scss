@@ -1,9 +1,10 @@
-
-@import '../constants.scss';
-
-
-
-@mixin animation ($name, $duration: $transition-veryveryslow, $easing: null, $count: infinite, $direction: normal) {
+@mixin animation (
+	$name,
+	$duration: $transition-veryveryslow,
+	$easing: null,
+	$count: infinite,
+	$direction: normal
+) {
 	animation-name: $name;
 	animation-duration: $duration;
 	animation-iteration-count: $count;
@@ -29,11 +30,20 @@
 	@include animation-delay(0ms);
 }
 
-@mixin animation-alternate ($name, $duration: $transition-veryveryslow, $easing: null, $count: infinite) {
+@mixin animation-alternate (
+	$name,
+	$duration: $transition-veryveryslow,
+	$easing: null,
+	$count: infinite
+) {
 	@include animation($name, $duration, $easing, $count, alternate);
 }
 
-@mixin animation-once ($name, $duration: $transition-veryveryslow, $easing: null) {
+@mixin animation-once (
+	$name,
+	$duration: $transition-veryveryslow,
+	$easing: null
+) {
 	@include animation($name, $duration, $easing, 1);
 }
 

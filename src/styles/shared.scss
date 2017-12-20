@@ -1,12 +1,15 @@
+// Custom functions for SCSS
+// NOTE: Built-in functions: http://sass-lang.com/documentation/Sass/Script/Functions.html
+@import './functions/function-color';
+@import './functions/function-units';
 
 // Variables etc.
-@import './functions.scss';
-@import './constants.scss';
+@import './constants';
 
 // Mixins
-@import './mixins/mixin-animations.scss';
-@import './mixins/mixin-buffer.scss';
-@import './mixins/mixin-cursor.scss';
-@import './mixins/mixin-transitions.scss';
-@import './mixins/mixin-type.scss';
-@import './mixins/mixin-viewport.scss';
+@import './mixins/mixin-animations';
+@import './mixins/mixin-buffer';
+@import './mixins/mixin-cursor';
+@import './mixins/mixin-transitions';
+@import './mixins/mixin-type';
+@import './mixins/mixin-viewport';
