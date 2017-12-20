@@ -12,6 +12,15 @@ export default new Vue({
 		}
 	},
 
+	created() {
+		this.$_onTimerUpdate()
+		this.$_startTimer()
+	},
+
+	beforeDestroy() {
+		this.$_stopTimer()
+	},
+
 	methods: {
 
 		$_setCurrentTime () {
@@ -36,15 +45,6 @@ export default new Vue({
 			}
 		}
 
-	},
-
-	created () {
-		this.$_onTimerUpdate()
-		this.$_startTimer()
-	},
-
-	beforeDestroy () {
-		this.$_stopTimer()
 	}
 
 })

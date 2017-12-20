@@ -1,8 +1,3 @@
-
-@import '../constants.scss';
-
-
-
 // Basics
 
 // NOTE: should be auto generated based on transition variables
@@ -27,6 +22,10 @@
 
 
 // Transition durations
+
+@mixin transition-duration ($duration) {
+	@include transition($duration);
+}
 
 @mixin transition-veryveryfast ($properties: null, $delay: null) {
 	@include transition($transition-veryveryfast, $properties, $delay);

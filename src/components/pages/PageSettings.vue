@@ -1,7 +1,7 @@
 <script>
-	export default {
-		name: 'page-settings'
-	}
+export default {
+	name: 'page-settings'
+}
 </script>
 
 <template>
@@ -9,7 +9,3 @@
 		<h1>Settings</h1>
 	</div>
 </template>
-
-<style lang="scss">
-	// .c-page-settings {}
-</style>

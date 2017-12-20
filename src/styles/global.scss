@@ -1,26 +1,23 @@
+@import '~@styles-shared';
 
 // Keyframe animations
-@import './keyframes/keyframes-fade-in.scss';
-@import './keyframes/keyframes-pulse.scss';
-@import './keyframes/keyframes-spin.scss';
+@import './keyframes/keyframes-fade-in';
+@import './keyframes/keyframes-pulse';
+@import './keyframes/keyframes-spin';
 
 // Web fonts
 // @import './webfonts/webfont-source-sans';
 
-
-
-// Global base code
-
 // Resets
-@import './normalize.scss';
+@import './normalize';
 
 // Defaults
-@import './defaults/body.scss';
-@import './defaults/links.scss';
+@import './defaults/body';
+@import './defaults/links';
 
-
-
-// Classname-based code
+// Utilities
+// @import './utilities/bodytext';
+// @import './utilities/inverse';
 
 // Transitions
 @import './transitions/transition-fade';

@@ -1,19 +1,15 @@
-import App from './App'
+export { default as App } from './App'
 
 // Pages
-import PageHome from './pages/PageHome'
-import PageSettings from './pages/PageSettings'
+export { default as PageHome } from './pages/PageHome'
+export { default as PageSettings } from './pages/PageSettings'
 
-// Transition
-import CustomTransition from './transitions/CustomTransition'
-import Fade from './transitions/Fade'
+// Snippets
+export { default as Bitmap } from './snippets/Bitmap'
+export { default as Ellipsis } from './snippets/Ellipsis'
+export { default as ExternalLink } from './snippets/ExternalLink'
+export { default as Spinner } from './snippets/Spinner'
 
-export {
-	App,
-
-	PageHome,
-	PageSettings,
-
-	CustomTransition,
-	Fade
-}
+// Transitions
+export { default as CustomTransition } from './transitions/CustomTransition'
+export { default as Fade } from './transitions/Fade'

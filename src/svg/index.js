@@ -1,5 +1,1 @@
-import Chip from './Chip.svg'
-
-export {
-	Chip
-}
+export { default as Chip } from './Chip.svg'

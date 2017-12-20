@@ -4,7 +4,6 @@ export default new Vue({
 
 	data () {
 		return {
-			// isConnecting: true,
 			isOnline: false
 		}
 	},
@@ -13,6 +12,15 @@ export default new Vue({
 		isOffline () {
 			return !this.isOnline
 		}
+	},
+
+	created() {
+		this.updateOnlineStatus()
+		this.setListeners()
+	},
+
+	beforeDestroy() {
+		this.removeListeners()
 	},
 
 	methods: {
@@ -35,16 +43,6 @@ export default new Vue({
 			window.removeEventListener('offline', this.updateOnlineStatus)
 		}
 
-	},
-
-	created () {
-		this.updateOnlineStatus()
-		// this.isConnecting = false
-		this.setListeners()
-	},
-
-	beforeDestroy () {
-		this.removeListeners()
 	}
 
 })
