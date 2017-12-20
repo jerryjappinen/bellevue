@@ -1,5 +1,1 @@
-import classes from './classes'
-
-export {
-	classes
-}
+export { default as classes } from './classes'
