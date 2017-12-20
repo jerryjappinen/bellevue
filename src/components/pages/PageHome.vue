@@ -1,13 +1,13 @@
 <script>
-	export default {
-		name: 'page-home',
+export default {
+	name: 'page-home',
 
-		data () {
-			return {
-				msg: 'Welcome to Your Vue.js App'
-			}
+	data () {
+		return {
+			msg: 'Welcome to Your Vue.js App'
 		}
 	}
+}
 </script>
 
 <template>
@@ -29,15 +29,13 @@
 
 <style lang="scss">
 
-	.c-page-home {
-
-		img,
-		svg,
-		.c-spinner {
-			width: 1em;
-			height: 1em;
-		}
-
+.c-page-home {
+	img,
+	svg,
+	.c-spinner {
+		width: 1em;
+		height: 1em;
 	}
+}
 
 </style>

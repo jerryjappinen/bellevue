@@ -18,7 +18,11 @@
 
 module.exports = {
 	plugins: [
-		'import'
+		'import',
+		'vue'
+	],
+	extends: [
+		'plugin:vue/essential'
 	],
 	rules: {
 
@@ -162,8 +166,14 @@ module.exports = {
 		],
 
 		// We turn this off, as sometimes we want default to be an object containing all the named exports
-		'import/no-named-as-default-member': ['off'],
+		'import/no-named-as-default-member': ['off']
 
+
+
+		// Vue-specific
+		// https://github.com/vuejs/eslint-plugin-vue#bulb-rules
+		// 'vue/require-v-for-key': 'warn',
+		// 'vue/no-unused-vars': 'error'
 
 	}
 }

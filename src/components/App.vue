@@ -1,32 +1,32 @@
 <script>
-	import '@styles-global'
+import '@styles-global'
 
-	import { build } from '@config'
+import { build } from '@config'
 
-	import network from '@services/network'
+import network from '@services/network'
 
-	export default {
-		name: 'app',
+export default {
+	name: 'app',
 
-		computed: {
+	computed: {
 
-			_classes () {
-				return {
-					debug: build.isDebug ? true : false
-				}
-			},
-
-			isOffline () {
-				return !network.isOnline
-			},
-
-			routerKey () {
-				return this.$route.name
+		_classes () {
+			return {
+				debug: build.isDebug ? true : false
 			}
+		},
 
+		isOffline () {
+			return !network.isOnline
+		},
+
+		routerKey () {
+			return this.$route.name
 		}
 
 	}
+
+}
 </script>
 
 <template>
@@ -48,9 +48,7 @@
 </template>
 
 <style lang="scss">
-
-	.c-app {
-		@include buffer-relative;
-	}
-
+.c-app {
+	@include buffer-relative;
+}
 </style>

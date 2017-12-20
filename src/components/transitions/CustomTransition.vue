@@ -1,56 +1,56 @@
 <script>
-	// Wrapper component for reducing boilerplate with transition
-	import { includes } from 'lodash'
+// Wrapper component for reducing boilerplate with transition
+import { includes } from 'lodash'
 
-	const modes = ['out-in', 'simultaneous', 'in-out']
-	const defaultMode = modes[0]
+const modes = ['out-in', 'simultaneous', 'in-out']
+const defaultMode = modes[0]
 
-	export default {
-		name: 'custom-transition',
+export default {
+	name: 'custom-transition',
 
-		props: {
+	props: {
 
-			name: {
-				type: String,
-				default: null
-			},
-
-			mode: {
-				type: String,
-				required: false,
-				default: defaultMode,
-
-				// Accept empty string or any of the modes as input, in addition to empty values
-				validator (value) {
-					return includes(modes, value)
-				}
-
-			},
-
-			appear: {}
-
+		name: {
+			type: String,
+			default: null
 		},
 
-		computed: {
+		mode: {
+			type: String,
+			required: false,
+			default: defaultMode,
 
-			// NOTE
-			// - Vue's default transition has no name, but it behaves like a simultaneous transition
-			// - Here we have to convert the named mode we support in this custom component to null so that Vue defaults to is
-			modeForVue () {
-				return this.mode === 'simultaneous' ? null : this.mode
+			// Accept empty string or any of the modes as input, in addition to empty values
+			validator (value) {
+				return includes(modes, value)
 			}
 
 		},
 
-		methods: {
+		appear: {}
 
-			getClassName (step) {
-				return this.name ? 'transition-' + this.name + '-' + step : 'on-' + step
-			}
+	},
 
+	computed: {
+
+		// NOTE
+		// - Vue's default transition has no name, but it behaves like a simultaneous transition
+		// - Here we have to convert the named mode we support in this custom component to null so that Vue defaults to is
+		modeForVue () {
+			return this.mode === 'simultaneous' ? null : this.mode
+		}
+
+	},
+
+	methods: {
+
+		getClassName (step) {
+			return this.name ? 'transition-' + this.name + '-' + step : 'on-' + step
 		}
 
 	}
+
+}
 </script>
 
 <template>
@@ -74,5 +74,3 @@
 	</transition>
 
 </template>
-
-<style lang="scss"></style>
