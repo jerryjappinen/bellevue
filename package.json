@@ -82,6 +82,7 @@
     "stylelint-config-standard": "^18.0.0",
     "stylelint-processor-html": "^1.0.0",
     "stylelint-scss": "^2.2.0",
+    "stylelint-webpack-plugin": "^0.9.0",
     "uglifyjs-webpack-plugin": "^1.1.4",
     "url-loader": "^0.6.2",
     "vue-jest": "^1.4.0",
