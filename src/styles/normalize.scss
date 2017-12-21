@@ -6,9 +6,12 @@
 html {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
-	font-family: sans-serif;
 	cursor: default;
 	tab-size: 4;
+
+	font-family: sans-serif;
+	font-size: 100%;
+	text-size-adjust: 100%;
 }
 
 html,
@@ -255,13 +258,6 @@ td {
 	vertical-align: top;
 }
 
-// Fonts
-html {
-	font-family: sans-serif;
-	font-size: 100%;
-	text-size-adjust: 100%;
-}
-
 h1,
 h2,
 h3,
@@ -355,6 +351,11 @@ textarea {
 	display: inline-block;
 }
 
+textarea {
+	overflow: auto;
+	vertical-align: top;
+}
+
 // Make search fields consistent with text fields on Webkit
 input[type="search"] {
 	appearance: textfield;
@@ -371,28 +372,15 @@ input[type="radio"] {
 	padding: 0;
 }
 
-// Make button rendering consistent on Firefox 4+
-button,
-input {
-	&::-moz-focus-inner {
-		padding: 0;
-		border: 0;
-	}
-}
-
-// Style clickable inputs consistently on all webkits
 button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
+
+	// Style clickable inputs consistently on all webkits
 	appearance: button;
-}
 
-// Buttons have center-aligned text
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+	// Buttons have center-aligned text
 	text-align: center;
 }
 
@@ -403,7 +391,11 @@ select {
 	vertical-align: middle;
 }
 
-textarea {
-	overflow: auto;
-	vertical-align: top;
+// Make button rendering consistent on Firefox 4+
+button,
+input {
+	&::-moz-focus-inner {
+		padding: 0;
+		border: 0;
+	}
 }
