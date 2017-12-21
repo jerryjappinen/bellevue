@@ -32,7 +32,10 @@ npm run unit
 # run unit tests and show coverage report
 npm run unit:coverage
 
-# run unit tests and with hot reload
+# run unit tests and with hot reload (`jest --watch`)
+# NOTE: You have more options in the terminal after you run this command
+# NOTE: You can change this to `--watchAll` in `package.json` in case of issues
+# NOTE: See https://github.com/facebook/jest/issues/4883
 npm run unit:watch
 
 # run e2e tests
