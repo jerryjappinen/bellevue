@@ -29,6 +29,13 @@ exports.cssLoaders = function (options) {
     }
   }
 
+  const scssResourcesLoaderOptions = {
+    loader: 'sass-resources-loader',
+    options: {
+      resources: path.resolve(__dirname, '../src/styles/shared.scss')
+    }
+  }
+
   // generate loader string to be used with extract text plugin
   function generateLoaders (loader, loaderOptions) {
     const loaders = options.usePostCSS ? [cssLoader, postcssLoader] : [cssLoader]
@@ -59,15 +66,8 @@ exports.cssLoaders = function (options) {
     css: generateLoaders(),
     postcss: generateLoaders(),
     less: generateLoaders('less'),
-    sass: generateLoaders('sass', { indentedSyntax: true }),
-    scss: generateLoaders('sass').concat(
-      {
-        loader: 'sass-resources-loader',
-        options: {
-          resources: path.resolve(__dirname, '../src/styles/shared.scss')
-        }
-      }
-    ),
+    sass: generateLoaders('sass', { indentedSyntax: true }).concat(scssResourcesLoaderOptions),
+    scss: generateLoaders('sass').concat(scssResourcesLoaderOptions),
     stylus: generateLoaders('stylus'),
     styl: generateLoaders('stylus')
   }
