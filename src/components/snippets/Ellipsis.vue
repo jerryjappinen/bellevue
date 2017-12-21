@@ -27,10 +27,13 @@ export default {
 </template>
 
 <style lang="scss">
+
 .c-ellipsis-loading {
+
 	.c-ellipsis-bullet {
 		$duration: 5 * $transition-veryslow;
 		$delay: ($duration / 5) / 3;
+
 		@include animation(pulse-delayed, $duration);
 
 		&:nth-child(1) {
@@ -42,5 +45,6 @@ export default {
 		}
 
 	}
+
 }
 </style>
