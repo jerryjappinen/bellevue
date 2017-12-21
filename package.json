@@ -14,9 +14,8 @@
     "test": "npm run unit && npm run e2e",
     "lint": "npm run lint:js && npm run lint:styles",
     "lint:js": "eslint --ext .js,.vue src e2e unit",
-    "lint:styles": "npm run lint:styles:global && npm run lint:styles:shared && npm run lint:styles:vue",
-    "lint:styles:global": "stylelint 'src/styles/global.scss' --config 'src/.stylelintrc.js'",
-    "lint:styles:shared": "stylelint 'src/styles/shared.scss' --config 'src/.stylelintrc.js'",
+    "lint:styles": "npm run lint:styles:global && npm run lint:styles:vue",
+    "lint:styles:global": "stylelint src/**/*.css src/**/*.scss --config 'src/.stylelintrc.js'",
     "lint:styles:vue": "stylelint 'src/**/*.vue' --config 'src/.stylelintrc.js'",
     "build": "node build/build.js"
   },
