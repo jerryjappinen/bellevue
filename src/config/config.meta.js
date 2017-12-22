@@ -68,19 +68,19 @@ module.exports = {
 	// robots.txt
 	// https://github.com/itgalaxy/generate-robotstxt
 	// http://www.robotstxt.org
-	robotsTxt: {
-		// sitemap: 'sitemap.xml',
-		// host: 'http://example.com',
-		policy: [
-			// {
-			// 	userAgent: '*',
-			// 	allow: '/',
-			// 	disallow: '/foo',
-			// 	crawlDelay: 10,
-			// 	cleanParam: 'ref /foo/'
-			// }
-		]
-	},
+	// robotsTxt: {
+	// 	// sitemap: 'sitemap.xml',
+	// 	host: 'http://example.com',
+	// 	policy: [
+	// 		{
+	// 			userAgent: '*',
+	// 			allow: '/',
+	// 			disallow: '/foo',
+	// 			crawlDelay: 10,
+	// 			cleanParam: 'ref /foo/'
+	// 		}
+	// 	]
+	// },
 
 	// http://www.robotstxt.org/meta.html
 	robotsMeta: [
