@@ -77,8 +77,8 @@ export default {
 			<h2>Loading indicators</h2>
 
 			<p>
-				<ellipsis />
 				<spinner />
+				<ellipsis />
 			</p>
 
 		</card>
@@ -87,7 +87,9 @@ export default {
 </template>
 
 <style lang="scss">
+
 .c-page-demo {
+
 	img,
 	svg,
 	.c-spinner {
@@ -95,10 +97,7 @@ export default {
 		height: 2em;
 	}
 
-	.c-card {
-		@include push-vertical;
-	}
-
 }
+
 </style>
 

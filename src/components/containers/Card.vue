@@ -12,6 +12,7 @@ export default {
 
 <style lang="scss">
 .c-card {
+	@include push-vertical;
 	@include buffer;
 	@include radius;
 	@include shadow;

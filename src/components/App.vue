@@ -14,12 +14,10 @@ export default {
 <template>
 	<div :class="classes">
 
-		<h1>Bellevue</h1>
-
-		<ul>
-			<li><router-link :to="{ name: 'home' }">Home</router-link></li>
-			<li><router-link :to="{ name: 'demo' }">Demo</router-link></li>
-		</ul>
+		<div class="c-app-menu">
+			<router-link :to="{ name: 'home' }">Home</router-link>
+			<router-link :to="{ name: 'demo' }">Demo</router-link>
+		</div>
 
 		<fade>
 			<router-view :key="routerKey" />
@@ -29,9 +27,29 @@ export default {
 </template>
 
 <style lang="scss">
+
 .c-app {
 	@include buffer-relative;
 	@include limit-medium;
 	@include keep-center;
 }
+
+.c-app-menu {
+	@include flex;
+
+	a {
+		@include flex-item-fluid;
+		@include pad-loose;
+		text-align: center;
+		border-bottom-width: $separate-thick;
+
+		&.is-exact-active {
+			color: $default-color-link;
+			border-color: $default-color-link;
+		}
+
+	}
+
+}
+
 </style>

@@ -5,7 +5,14 @@ export default {
 </script>
 
 <template>
-	<div :class="classes">
+	<card :class="classes">
 		<h2>Hello world!</h2>
-	</div>
+	</card>
 </template>
+
+<style lang="scss">
+.c-page-home {
+	text-align: center;
+}
+</style>
+
