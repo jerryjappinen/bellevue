@@ -8,7 +8,7 @@ module.exports = {
 	backgroundColor: '#fafafa',
 
 	// Files under static (during runtime)
-	staticAssetsPath: '/static/',
+	staticAssetsPath: '/',
 	faviconFilename: 'favicon.png',
 	appleIconFilename: 'favicon.png',
 
