@@ -31,7 +31,7 @@ export default {
 .c-ellipsis-loading {
 
 	.c-ellipsis-bullet {
-		$duration: 5 * $transition-veryslow;
+		$duration: 5 * $transition-very-slow;
 		$delay: ($duration / 5) / 3;
 
 		@include animation(pulse-delayed, $duration);

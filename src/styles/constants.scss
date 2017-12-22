@@ -3,9 +3,9 @@ $color-transparent: transparent;
 $color-black: #000;
 $color-white: #fff;
 
-$color-veryverylightgrey: #fafafa;
-$color-verylightgrey: #f6f6f6;
-$color-lightgrey: #eaeaea;
+$color-very-very-light-grey: #fafafa;
+$color-very-light-grey: #f6f6f6;
+$color-light-grey: #eaeaea;
 $color-grey: #7f8c8d;
 $color-dark: #2c3e50;
 
@@ -15,13 +15,13 @@ $color-yellow: #fabc00;
 $color-green: #42b983;
 $color-purple: #b67de8;
 $color-blue: #00baf8;
-$color-darkblue: #0039ac;
-$color-lightblue: #a4dff3;
+$color-dark-blue: #0039ac;
+$color-light-blue: #a4dff3;
 
 
 
 // Functional colors
-$color-primary: $color-blue;
+$color-primary: $color-green;
 $color-discreet: $color-grey;
 
 
@@ -74,8 +74,8 @@ $pad-horizontal: 8px;
 $pad-loose-vertical: 10px;
 $pad-loose-horizontal: 12px;
 
-$buffer-verytight: 0.4rem; // em
-$buffer-tight: $buffer-verytight * 2; 	// 0.8em
+$buffer-very-tight: 0.4rem; // em
+$buffer-tight: $buffer-very-tight * 2; 	// 0.8em
 $buffer: $buffer-tight * 2; 			// 1.6em
 $buffer-loose: $buffer * 2; 			// 3.2em
 
@@ -85,14 +85,14 @@ $buffer-relative: 6%;
 
 
 // Transition durations
-$transition-veryveryfast: 25ms;
-$transition-veryfast: 75ms;
+$transition-very-very-fast: 25ms;
+$transition-very-fast: 75ms;
 $transition-fast: 125ms;
 $transition-medium: 300ms;
 $transition-slow: 450ms;
 $transition-slowish: 600ms;
-$transition-veryslow: 900ms;
-$transition-veryveryslow: 1200ms;
+$transition-very-slow: 900ms;
+$transition-very-very-slow: 1200ms;
 
 // Transition property sets
 $transition-properties-style: opacity, color, background-color, border-color, box-shadow, text-shadow;
@@ -115,38 +115,38 @@ $hdpi: 140dpi; // What to regard as limit for high pixel density (retina)
 
 
 // Content-oriented defined paragraph widths
-$width-content-verytight: 16rem;
+$width-content-very-tight: 16rem;
 $width-content-tight: 24rem;
 $width-content: 28rem;
 $width-content-loose: 36rem;
-$width-content-veryloose: 48rem;
+$width-content-very-loose: 48rem;
 
 // Defined screen widths in portrait
-$width-iphone4: 320px;
-$width-iphone5: $width-iphone4;
-$width-iphone6: 375px;
-$width-iphone6plus: 414px;
+$width-iphone-4: 320px;
+$width-iphone-5: $width-iphone-4;
+$width-iphone-6: 375px;
+$width-iphone-6-plus: 414px;
 $width-ipad: 768px;
-$width-ipadpro: 1024px;
+$width-ipad-pro: 1024px;
 
 // Defined screen widths in portrait
-$height-iphone4: 480px;
-$height-iphone5: 568px;
-$height-iphone6: 667px;
-$height-iphone6plus: 736px;
+$height-iphone-4: 480px;
+$height-iphone-5: 568px;
+$height-iphone-6: 667px;
+$height-iphone-6-plus: 736px;
 $height-ipad: 1024px;
-$height-ipadpro: 1366px;
+$height-ipad-pro: 1366px;
 
 
 
 // Breakpoints
 // See `mixin-viewport.scss`
 // NOTE: defining breakpoints in px gives more predictable control on devices, and avoids any issues when em is scaled
-$breakpoint-tiny: $width-iphone5 + 1px; // This means that iPhone 5 will NOT match `viewport-over-tiny`
-$breakpoint-small: $width-iphone6plus;
+$breakpoint-tiny: $width-iphone-5 + 1px; // This means that iPhone 5 will NOT match `viewport-over-tiny`
+$breakpoint-small: $width-iphone-6-plus;
 $breakpoint-medium: $width-ipad;
-$breakpoint-large: min($height-ipad, $width-ipadpro);
-$breakpoint-verylarge: 1540px;
+$breakpoint-large: min($height-ipad, $width-ipad-pro);
+$breakpoint-very-large: 1540px;
 $breakpoint-ridiculous: 2048px;
 
 
@@ -158,9 +158,9 @@ $default-font: $font-sans;
 $default-font-size: 16px;
 $default-line-height: $line-height;
 
-$default-color-background: $color-veryverylightgrey;
+$default-color-background: $color-very-very-light-grey;
 $default-color-text: $color-dark;
-$default-color-link: $color-green;
+$default-color-link: $color-primary;
 $default-color-link-active: color-saturate($default-color-link);
 
 $default-color-border: $color-transparent;

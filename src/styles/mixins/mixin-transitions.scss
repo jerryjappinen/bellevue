@@ -27,12 +27,12 @@
 	@include transition($duration);
 }
 
-@mixin transition-veryveryfast ($properties: null, $delay: null) {
-	@include transition($transition-veryveryfast, $properties, $delay);
+@mixin transition-very-very-fast ($properties: null, $delay: null) {
+	@include transition($transition-very-very-fast, $properties, $delay);
 }
 
-@mixin transition-veryfast ($properties: null, $delay: null) {
-	@include transition($transition-veryfast, $properties, $delay);
+@mixin transition-very-fast ($properties: null, $delay: null) {
+	@include transition($transition-very-fast, $properties, $delay);
 }
 
 @mixin transition-fast ($properties: null, $delay: null) {
@@ -47,12 +47,12 @@
 	@include transition($transition-slow, $properties, $delay);
 }
 
-@mixin transition-veryslow ($properties: null, $delay: null) {
-	@include transition($transition-veryslow, $properties, $delay);
+@mixin transition-very-slow ($properties: null, $delay: null) {
+	@include transition($transition-very-slow, $properties, $delay);
 }
 
-@mixin transition-veryveryslow ($properties: null, $delay: null) {
-	@include transition($transition-veryveryslow, $properties, $delay);
+@mixin transition-very-very-slow ($properties: null, $delay: null) {
+	@include transition($transition-very-very-slow, $properties, $delay);
 }
 
 
@@ -63,12 +63,12 @@
 	transition-delay: $delay;
 }
 
-@mixin transition-delay-veryveryfast {
-	@include transition-delay($transition-veryveryfast);
+@mixin transition-delay-very-very-fast {
+	@include transition-delay($transition-very-very-fast);
 }
 
-@mixin transition-delay-veryfast {
-	@include transition-delay($transition-veryfast);
+@mixin transition-delay-very-fast {
+	@include transition-delay($transition-very-fast);
 }
 
 @mixin transition-delay-fast {
@@ -83,12 +83,12 @@
 	@include transition-delay($transition-slow);
 }
 
-@mixin transition-delay-veryslow {
-	@include transition-delay($transition-veryslow);
+@mixin transition-delay-very-slow {
+	@include transition-delay($transition-very-slow);
 }
 
-@mixin transition-delay-veryveryslow {
-	@include transition-delay($transition-veryveryslow);
+@mixin transition-delay-very-very-slow {
+	@include transition-delay($transition-very-very-slow);
 }
 
 @mixin no-transition-delay {

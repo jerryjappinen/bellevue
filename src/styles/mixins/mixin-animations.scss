@@ -1,6 +1,6 @@
 @mixin animation (
 	$name,
-	$duration: $transition-veryveryslow,
+	$duration: $transition-very-very-slow,
 	$easing: null,
 	$count: infinite,
 	$direction: normal
@@ -22,7 +22,7 @@
 
 }
 
-@mixin animation-delay ($delay: $transition-veryslow) {
+@mixin animation-delay ($delay: $transition-very-slow) {
 	animation-delay: $delay;
 }
 
@@ -32,7 +32,7 @@
 
 @mixin animation-alternate (
 	$name,
-	$duration: $transition-veryveryslow,
+	$duration: $transition-very-very-slow,
 	$easing: null,
 	$count: infinite
 ) {
@@ -41,7 +41,7 @@
 
 @mixin animation-once (
 	$name,
-	$duration: $transition-veryveryslow,
+	$duration: $transition-very-very-slow,
 	$easing: null
 ) {
 	@include animation($name, $duration, $easing, 1);

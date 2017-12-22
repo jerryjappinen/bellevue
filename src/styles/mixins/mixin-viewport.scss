@@ -162,14 +162,14 @@
 
 
 
-@mixin viewport-under-verylarge {
-	@include viewport-under($breakpoint-verylarge) {
+@mixin viewport-under-very-large {
+	@include viewport-under($breakpoint-very-large) {
 		@content;
 	}
 }
 
-@mixin viewport-over-verylarge {
-	@include viewport-over($breakpoint-verylarge) {
+@mixin viewport-over-very-large {
+	@include viewport-over($breakpoint-very-large) {
 		@content;
 	}
 }

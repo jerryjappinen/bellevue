@@ -25,15 +25,15 @@
 	code {
 		padding: 0 0.2em;
 		@include radius-tight;
-		background-color: $color-veryverylightgrey;
-		box-shadow: 0 0 0 1px $color-verylightgrey;
+		background-color: $color-very-very-light-grey;
+		box-shadow: 0 0 0 1px $color-very-light-grey;
 	}
 
 	pre {
 		@include radius-loose;
 		@include pad-loose;
-		background-color: $color-veryverylightgrey;
-		box-shadow: 0 0 0 1px $color-verylightgrey;
+		background-color: $color-very-very-light-grey;
+		box-shadow: 0 0 0 1px $color-very-light-grey;
 	}
 
 	dt,
