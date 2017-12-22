@@ -65,11 +65,11 @@ module.exports = {
 		'viewport-fit': 'cover'
 	},
 
-	// robots.txt
+	// robots.txt (only in production)
 	// https://github.com/itgalaxy/generate-robotstxt
 	// http://www.robotstxt.org
 	// robotsTxt: {
-	// 	// sitemap: 'sitemap.xml',
+	// 	sitemap: 'sitemap.xml',
 	// 	host: 'http://example.com',
 	// 	policy: [
 	// 		{
@@ -81,6 +81,21 @@ module.exports = {
 	// 		}
 	// 	]
 	// },
+
+	// sitemap.xml (only in production)
+	// https://www.npmjs.com/package/sitemap-webpack-plugin
+	sitemap: {
+		base: 'http://example.com',
+		paths: [
+			'/',
+			'/demo'
+		],
+		options: {
+			// lastMod: false,
+			// priority: 0.5,
+			// changeFreq: ''
+		}
+	},
 
 	// http://www.robotstxt.org/meta.html
 	robotsMeta: [
