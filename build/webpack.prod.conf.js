@@ -16,7 +16,10 @@ const WebappManifest = require('webapp-manifest-plugin')
 const WebappManifestPlugin = WebappManifest.default
 
 // https://www.npmjs.com/package/robotstxt-webpack-plugin
-const RobotstxtPlugin = require("robotstxt-webpack-plugin").default
+const RobotstxtPlugin = require('robotstxt-webpack-plugin').default
+
+// https://www.npmjs.com/package/sitemap-webpack-plugin
+const SitemapPlugin = require('sitemap-webpack-plugin').default
 
 const env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
@@ -24,7 +27,8 @@ const env = process.env.NODE_ENV === 'testing'
 
 const manifestConfig = require('../src/config/config.manifest.js')
 const metaConfig = require('../src/config/config.meta.js')
-const robotsTxtConfig = metaConfig.robotsTxt
+const robotsTxtConfig = require('../src/config/tooling/config.robotsTxt.js')
+const sitemapConfig = require('../src/config/tooling/config.sitemap.js')
 
 const webpackConfig = merge(baseWebpackConfig, {
   module: {
@@ -142,8 +146,19 @@ if (manifestConfig) {
 }
 
 // Generate robots.txt
-if (robotsTxtConfig) {
+if (robotsTxtConfig && robotsTxtConfig.host && robotsTxtConfig.policy) {
   webpackConfig.plugins.push(new RobotstxtPlugin(robotsTxtConfig))
+}
+
+// Generate sitemap.xml
+if (sitemapConfig && sitemapConfig.base) {
+  webpackConfig.plugins.push(
+    new SitemapPlugin(
+      sitemapConfig.base,
+      sitemapConfig.paths,
+      sitemapConfig.options
+    )
+  )
 }
 
 if (config.build.productionGzip) {

@@ -7,6 +7,10 @@ module.exports = {
 	themeColor: '#42b983',
 	backgroundColor: '#fafafa',
 
+	// Canonical production URL
+	// Needed for robots.txt and sitemap.xml generation in production builds
+	host: 'https://example.com/',
+
 	// Files under static (during runtime)
 	staticAssetsPath: '/',
 	faviconFilename: 'favicon.png',
@@ -64,23 +68,6 @@ module.exports = {
 		'user-scalable': 'no',
 		'viewport-fit': 'cover'
 	},
-
-	// robots.txt
-	// https://github.com/itgalaxy/generate-robotstxt
-	// http://www.robotstxt.org
-	// robotsTxt: {
-	// 	// sitemap: 'sitemap.xml',
-	// 	host: 'http://example.com',
-	// 	policy: [
-	// 		{
-	// 			userAgent: '*',
-	// 			allow: '/',
-	// 			disallow: '/foo',
-	// 			crawlDelay: 10,
-	// 			cleanParam: 'ref /foo/'
-	// 		}
-	// 	]
-	// },
 
 	// http://www.robotstxt.org/meta.html
 	robotsMeta: [
