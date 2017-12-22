@@ -15,12 +15,16 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const WebappManifest = require('webapp-manifest-plugin')
 const WebappManifestPlugin = WebappManifest.default
 
+// https://www.npmjs.com/package/robotstxt-webpack-plugin
+const RobotstxtPlugin = require("robotstxt-webpack-plugin").default
+
 const env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
   : require('../config/prod.env')
 
 const manifestConfig = require('../src/config/config.manifest.js')
 const metaConfig = require('../src/config/config.meta.js')
+const robotsTxtConfig = metaConfig.robotsTxt
 
 const webpackConfig = merge(baseWebpackConfig, {
   module: {
@@ -135,6 +139,11 @@ const webpackConfig = merge(baseWebpackConfig, {
 // Generate manifest.json if set in config
 if (manifestConfig) {
   webpackConfig.plugins.push(new WebappManifestPlugin(manifestConfig))
+}
+
+// Generate robots.txt
+if (robotsTxtConfig) {
+  webpackConfig.plugins.push(new RobotstxtPlugin(robotsTxtConfig))
 }
 
 if (config.build.productionGzip) {
