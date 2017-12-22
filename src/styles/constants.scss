@@ -3,17 +3,16 @@ $color-transparent: transparent;
 $color-black: #000;
 $color-white: #fff;
 
-$color-veryverylightgrey: #f4f6f9;
-$color-verylightgrey: #edf0f4;
-$color-lightgrey: #dbe5e8;
-$color-grey: #a7b0b3;
-$color-darkgrey: #262f32;
-$color-dark: #0d1526;
+$color-veryverylightgrey: #fafafa;
+$color-verylightgrey: #f6f6f6;
+$color-lightgrey: #eaeaea;
+$color-grey: #7f8c8d;
+$color-dark: #2c3e50;
 
 $color-red: #f8453c;
 $color-orange: #fa8400;
 $color-yellow: #fabc00;
-$color-green: #70ca63;
+$color-green: #42b983;
 $color-purple: #b67de8;
 $color-blue: #00baf8;
 $color-darkblue: #0039ac;
@@ -30,7 +29,8 @@ $color-discreet: $color-grey;
 // Font families
 $font-sans: 'Source Sans Pro', 'Source Sans', 'system-ui', 'San Francisco', 'Helvetica Neue', 'Helvetica', 'Segoe UI', 'Segoe WP', 'Arial', sans-serif;
 $font-serif: 'Droid Serif', 'Georgia', serif;
-$font-mono: 'Monaco', 'Menlo', 'Segoe UI Mono', 'Droid Sans Mono', 'Consolas', monospace;
+$font-mono: "Roboto Mono", 'Monaco', 'Menlo', 'Segoe UI Mono', 'Consolas', courier, monospace;
+$font-display: 'Dosis', 'Avenir', $font-sans;
 
 $font-size-small: 0.875em; // 14px
 $font-size-large: 1.25em; // 20px
@@ -109,22 +109,12 @@ $easing-smooth: cubic-bezier(0.19, 1, 0.22, 1);
 
 
 
-// Defaults
-$default-perspective: 600px;
-
-$default-font: $font-sans;
-$default-font-size: 18px;
-
-$default-color-background: $color-dark;
-$default-color-text: $color-white;
-$default-color-border: $color-transparent;
-
-$default-transition-duration: $transition-fast;
-$default-transition-easing: $easing-none;
+// Pixel ratios
+$hdpi: 140dpi; // What to regard as limit for high pixel density (retina)
 
 
 
-// Content-oriented defined widths
+// Content-oriented defined paragraph widths
 $width-content-verytight: 16rem;
 $width-content-tight: 24rem;
 $width-content: 28rem;
@@ -150,30 +140,26 @@ $height-ipadpro: 1366px;
 
 
 // Breakpoints
+// See `mixin-viewport.scss`
 // NOTE: defining breakpoints in px gives more predictable control on devices, and avoids any issues when em is scaled
-$breakpoint-tiny: $width-iphone5 + 1px;
-$breakpoint-small: 580px;
-$breakpoint-smallish: $width-ipad;
-$breakpoint-medium: 960px;
-$breakpoint-large: 1240px;
+$breakpoint-tiny: $width-iphone5 + 1px; // This means that iPhone 5 will NOT match `viewport-over-tiny`
+$breakpoint-small: $width-iphone6plus;
+$breakpoint-medium: $width-ipad;
+$breakpoint-large: min($height-ipad, $width-ipadpro);
 $breakpoint-verylarge: 1540px;
 $breakpoint-ridiculous: 2048px;
-$breakpoint-totallyridiculous: 2480px;
-
-// Controls titlebar, sidebar and popover behavior
-$breakpoint-mobile: $breakpoint-smallish;
 
 
 
-// Paragraph widths
-// NOTE
-// - These match the breakpoints at 1rem
-// - By defining these separately, we will get em-based column widths that scale with the root font size
-$limit-tiny: (number($breakpoint-tiny) / number($default-font-size)) * 1em;
-$limit-small: (number($breakpoint-small) / number($default-font-size)) * 1em;
-$limit-smallish: (number($breakpoint-smallish) / number($default-font-size)) * 1em;
-$limit-medium: (number($breakpoint-medium) / number($default-font-size)) * 1em;
-$limit-large: (number($breakpoint-large) / number($default-font-size)) * 1em;
-$limit-verylarge: (number($breakpoint-verylarge) / number($default-font-size)) * 1em;
-$limit-ridiculous: (number($breakpoint-ridiculous) / number($default-font-size)) * 1em;
-$limit-totallyridiculous: (number($breakpoint-totallyridiculous) / number($default-font-size)) * 1em;
+// Defaults
+$default-perspective: 600px;
+
+$default-font: $font-sans;
+$default-font-size: 16px;
+
+$default-color-background: $color-white;
+$default-color-text: $color-dark;
+$default-color-border: $color-transparent;
+
+$default-transition-duration: $transition-fast;
+$default-transition-easing: $easing-none;

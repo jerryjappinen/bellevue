@@ -1,4 +1,4 @@
-// Media
+// Print
 
 @mixin viewport-print {
 	@media print {
@@ -38,8 +38,14 @@
 
 // DPI
 
-@mixin viewport-retina () {
-	@media (min-resolution: 144dpi) {
+@mixin viewport-hdpi () {
+	@media (min-resolution: $hdpi) {
+		@content;
+	}
+}
+
+@mixin viewport-not-hdpi () {
+	@media (max-resolution: $hdpi - 1dpi) {
 		@content;
 	}
 }
@@ -86,16 +92,16 @@
 
 
 
-// Predefined responsive
+// From `constants.scss`
 
 @mixin viewport-under-tiny {
-	@media #{$viewport-under-tiny} {
+	@include viewport-under($breakpoint-tiny) {
 		@content;
 	}
 }
 
 @mixin viewport-over-tiny {
-	@media #{$viewport-over-tiny} {
+	@include viewport-over($breakpoint-tiny) {
 		@content;
 	}
 }
@@ -103,13 +109,13 @@
 
 
 @mixin viewport-under-small {
-	@media #{$viewport-under-small} {
+	@include viewport-under($breakpoint-small) {
 		@content;
 	}
 }
 
 @mixin viewport-over-small {
-	@media #{$viewport-over-small} {
+	@include viewport-over($breakpoint-small) {
 		@content;
 	}
 }
@@ -117,25 +123,25 @@
 
 
 @mixin viewport-under-smallish {
-	@media #{$viewport-under-smallish} {
+	@include viewport-under($breakpoint-smallish) {
 		@content;
 	}
 }
 
 @mixin viewport-over-smallish {
-	@media #{$viewport-over-smallish} {
+	@include viewport-over($breakpoint-smallish) {
 		@content;
 	}
 }
 
 @mixin viewport-under-medium {
-	@media #{$viewport-under-medium} {
+	@include viewport-under($breakpoint-medium) {
 		@content;
 	}
 }
 
 @mixin viewport-over-medium {
-	@media #{$viewport-over-medium} {
+	@include viewport-over($breakpoint-medium) {
 		@content;
 	}
 }
@@ -143,13 +149,13 @@
 
 
 @mixin viewport-under-large {
-	@media #{$viewport-under-large} {
+	@include viewport-under($breakpoint-large) {
 		@content;
 	}
 }
 
 @mixin viewport-over-large {
-	@media #{$viewport-over-large} {
+	@include viewport-over($breakpoint-large) {
 		@content;
 	}
 }
@@ -157,13 +163,13 @@
 
 
 @mixin viewport-under-verylarge {
-	@media #{$viewport-under-verylarge} {
+	@include viewport-under($breakpoint-verylarge) {
 		@content;
 	}
 }
 
 @mixin viewport-over-verylarge {
-	@media #{$viewport-over-verylarge} {
+	@include viewport-over($breakpoint-verylarge) {
 		@content;
 	}
 }
@@ -171,13 +177,13 @@
 
 
 @mixin viewport-under-ridiculous {
-	@media #{$viewport-under-ridiculous} {
+	@include viewport-under($breakpoint-ridiculous) {
 		@content;
 	}
 }
 
 @mixin viewport-over-ridiculous {
-	@media #{$viewport-over-ridiculous} {
+	@include viewport-over($breakpoint-ridiculous) {
 		@content;
 	}
 }
@@ -185,13 +191,13 @@
 
 
 @mixin viewport-under-totallyridiculous {
-	@media #{$viewport-under-totallyridiculous} {
+	@include viewport-under($breakpoint-totallyridiculous) {
 		@content;
 	}
 }
 
 @mixin viewport-over-totallyridiculous {
-	@media #{$viewport-over-totallyridiculous} {
+	@include viewport-over($breakpoint-totallyridiculous) {
 		@content;
 	}
 }

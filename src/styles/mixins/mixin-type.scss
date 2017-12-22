@@ -67,19 +67,22 @@
 // Headings
 
 @mixin type-h1 {
-	font-family: $font-display;
-	font-size: 1.2em;
-	font-weight: $font-weight-bold;
-	line-height: 1.2;
+	@include type-display;
+	font-weight: bold;
+	font-size: 1.6em;
+
+	@include viewport-over-tiny {
+		font-size: 1.8em;
+	}
 
 	@include viewport-over-small {
-		font-size: 1.5em;
+		font-size: 2.2em;
 	}
 
 }
 
 @mixin type-h2 {
-	@include type-display;
+	font-size: 1.4em;
 }
 
 @mixin type-h3 {
@@ -98,6 +101,10 @@
 
 @mixin type-h5 {
 	@include type-discreet-small;
+}
+
+@mixin type-h6 {
+	@include type-h5;
 }
 
 
