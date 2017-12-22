@@ -1,31 +1,13 @@
 <script>
 import '@styles-global'
 
-import { build } from '@config'
-
-import network from '@services/network'
-
 export default {
 	name: 'app',
-
 	computed: {
-
-		_classes () {
-			return {
-				debug: build.isDebug ? true : false
-			}
-		},
-
-		isOffline () {
-			return !network.isOnline
-		},
-
 		routerKey () {
 			return this.$route.name
 		}
-
 	}
-
 }
 </script>
 
@@ -34,12 +16,9 @@ export default {
 
 		<h1>Bellevue</h1>
 
-		<p v-if="isOffline">Offline</p>
-		<p v-else>Online</p>
-
 		<ul>
 			<li><router-link :to="{ name: 'home' }">Home</router-link></li>
-			<li><router-link :to="{ name: 'settings' }">Settings</router-link></li>
+			<li><router-link :to="{ name: 'demo' }">Demo</router-link></li>
 		</ul>
 
 		<fade>
@@ -52,5 +31,7 @@ export default {
 <style lang="scss">
 .c-app {
 	@include buffer-relative;
+	@include limit-medium;
+	@include keep-center;
 }
 </style>

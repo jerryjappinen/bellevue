@@ -2,6 +2,7 @@ body {
 	font-family: $default-font;
 	color: $default-color-text;
 	background-color: $default-color-background;
+	line-height: $default-line-height;
 }
 
 // NOTE: we can simply provide transition-property to add default transitions to element

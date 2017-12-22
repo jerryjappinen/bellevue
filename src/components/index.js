@@ -1,8 +1,11 @@
 export { default as App } from './App'
 
+// Containers
+export { default as card } from './containers/Card'
+
 // Pages
+export { default as PageDemo } from './pages/PageDemo'
 export { default as PageHome } from './pages/PageHome'
-export { default as PageSettings } from './pages/PageSettings'
 
 // Snippets
 export { default as Bitmap } from './snippets/Bitmap'

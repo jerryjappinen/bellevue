@@ -13,7 +13,7 @@ describe('PageHome.vue', () => {
 
 	it('should render correct contents', () => {
 		expect(wrapper.vm.$el.querySelector('h2').textContent)
-			.toEqual('Welcome to Your Vue.js App')
+			.toEqual('Hello world!')
 	})
 
 })

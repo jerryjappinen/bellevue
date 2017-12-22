@@ -1,0 +1,74 @@
+// Text context
+
+// This is used for rich body text. Elements commonly used in building components, like links, are robbed of their sensible defaults. Attach this utility class on a body text container to style the rich text elements in a way that makes sense for natural article content.
+
+.bodytext {
+
+	// Links
+	a {
+		@include type-link;
+
+		&:hover,
+		&:active {
+			color: $default-color-link-active;
+		}
+
+	}
+
+	strong {
+		font-weight: $font-weight-bold;
+	}
+
+	// Code
+	dt,
+	h3,
+	h4 {
+		code {
+			text-transform: none;
+		}
+	}
+
+	code {
+		padding: 0 0.2em;
+		@include radius-tight;
+		background-color: $color-veryverylightgrey;
+		box-shadow: 0 0 0 1px $color-verylightgrey;
+	}
+
+	// FIXME: duplicated from base/o-code.scss
+	// NOTE: need to basically treat all <pre> as <code> due to Quill
+	pre {
+		@include radius-loose;
+		@include buffer-tight-even;
+		// box-shadow: none;
+		background-color: $color-veryverylightgrey;
+		box-shadow: 0 0 0 1px $color-verylightgrey;
+	}
+
+
+	// Lists
+	ul,
+	ol {
+		// margin-left: 2em;
+
+		// li {
+		// 	margin-bottom: 0.4em;
+		// }
+
+		ul,
+		ol {
+			margin-left: 2em;
+			margin-bottom: 0.8em;
+		}
+
+	}
+
+	ul {
+		list-style-type: disc;
+	}
+
+	ol {
+		list-style-type: decimal;
+	}
+
+}
