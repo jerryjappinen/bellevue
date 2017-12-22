@@ -32,6 +32,8 @@ export default {
 <template>
 	<div :class="classes">
 
+		<h1>Bellevue</h1>
+
 		<p v-if="isOffline">Offline</p>
 		<p v-else>Online</p>
 

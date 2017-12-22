@@ -8,11 +8,11 @@ describe('PageHome.vue', () => {
 	const wrapper = mount(PageHome, {})
 
 	it('should render title element', () => {
-		expect(wrapper.contains('h1'))
+		expect(wrapper.contains('h2'))
 	})
 
 	it('should render correct contents', () => {
-		expect(wrapper.vm.$el.querySelector('h1').textContent)
+		expect(wrapper.vm.$el.querySelector('h2').textContent)
 			.toEqual('Welcome to Your Vue.js App')
 	})
 

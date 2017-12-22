@@ -36,7 +36,7 @@ module.exports = {
 
 	// Links to static or externally hosted CSS that need a style tag in `index.html.ejs`
 	styleLinks: [
-		// '//fonts.googleapis.com/css?family=Muli:400,400i,600,600i,700,700i'
+		'//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono|Dosis'
 		// '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
 		// '/static/vendor.css'
 	],

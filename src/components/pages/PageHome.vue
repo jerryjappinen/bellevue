@@ -13,7 +13,7 @@ export default {
 <template>
 	<div :class="classes">
 
-		<h1>{{ msg }}</h1>
+		<h2>{{ msg }}</h2>
 
 		<p>
 			<img src="~@assets/logo.png">

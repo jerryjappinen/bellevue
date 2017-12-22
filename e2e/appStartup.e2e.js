@@ -14,7 +14,7 @@ module.exports = {
 			.url(devServer)
 			.waitForElementVisible('.c-app', 5000)
 			.assert.elementPresent('.c-page-home')
-			.assert.containsText('h1', 'Welcome to Your Vue.js App')
+			.assert.containsText('h1', 'Bellevue')
 			.assert.elementCount('img', 2)
 			.end()
 
