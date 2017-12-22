@@ -27,8 +27,8 @@ const env = process.env.NODE_ENV === 'testing'
 
 const manifestConfig = require('../src/config/config.manifest.js')
 const metaConfig = require('../src/config/config.meta.js')
-const robotsTxtConfig = metaConfig.robotsTxt
-const sitemapConfig = metaConfig.sitemap
+const robotsTxtConfig = require('../src/config/tooling/config.robotsTxt.js')
+const sitemapConfig = require('../src/config/tooling/config.sitemap.js')
 
 const webpackConfig = merge(baseWebpackConfig, {
   module: {
@@ -146,12 +146,12 @@ if (manifestConfig) {
 }
 
 // Generate robots.txt
-if (robotsTxtConfig) {
+if (robotsTxtConfig && robotsTxtConfig.host && robotsTxtConfig.policy) {
   webpackConfig.plugins.push(new RobotstxtPlugin(robotsTxtConfig))
 }
 
 // Generate sitemap.xml
-if (sitemapConfig) {
+if (sitemapConfig && sitemapConfig.base) {
   webpackConfig.plugins.push(
     new SitemapPlugin(
       sitemapConfig.base,
