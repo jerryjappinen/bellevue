@@ -13,7 +13,7 @@ module.exports = {
 	orientation: 'portrait',
 	// startUrl: '/',
 	preferRelatedApplications: false,
-	backgroundColor: '#fff',
+	backgroundColor: meta.backgroundColor,
 	themeColor: meta.themeColor,
 	icons: [
 		{

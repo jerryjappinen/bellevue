@@ -2,9 +2,10 @@
 module.exports = {
 
 	// Will be used in base HTML templating
-	title: 'Pokeree',
+	title: 'Bellevue',
 	description: 'Planning poker for the masses.',
-	themeColor: '#000000',
+	themeColor: '#42b983',
+	backgroundColor: '#fafafa',
 
 	// Files under static (during runtime)
 	staticAssetsPath: '/',
