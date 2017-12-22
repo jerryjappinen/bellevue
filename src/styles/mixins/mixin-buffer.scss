@@ -52,7 +52,7 @@
 // Small buffers
 
 @mixin buffer-tight {
-	padding: $buffer-verytight $buffer-tight $buffer-tight $buffer-tight;
+	padding: $buffer-very-tight $buffer-tight $buffer-tight $buffer-tight;
 }
 
 @mixin buffer-tight-even {
@@ -67,7 +67,7 @@
 }
 
 @mixin buffer-tight-vertical {
-	padding-top: $buffer-verytight;
+	padding-top: $buffer-very-tight;
 	padding-bottom: $buffer-tight;
 }
 
@@ -79,7 +79,7 @@
 // Single
 
 @mixin buffer-tight-top {
-	padding-top: $buffer-verytight;
+	padding-top: $buffer-very-tight;
 }
 
 @mixin buffer-tight-top-even {

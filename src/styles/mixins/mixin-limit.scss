@@ -38,8 +38,8 @@
 	@include limit($breakpoint-large);
 }
 
-@mixin limit-verylarge {
-	@include limit($breakpoint-verylarge);
+@mixin limit-very-large {
+	@include limit($breakpoint-very-large);
 }
 
 @mixin limit-ridiculous {
@@ -50,8 +50,8 @@
 
 // Limit width of an element based on column widths
 
-@mixin limit-content-verytight {
-	@include limit($width-content-verytight);
+@mixin limit-content-very-tight {
+	@include limit($width-content-very-tight);
 }
 
 @mixin limit-content-tight {
@@ -66,6 +66,6 @@
 	@include limit($width-content-loose);
 }
 
-@mixin limit-content-veryloose {
-	@include limit($width-content-veryloose);
+@mixin limit-content-very-loose {
+	@include limit($width-content-very-loose);
 }

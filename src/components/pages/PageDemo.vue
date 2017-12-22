@@ -1,5 +1,5 @@
 <script>
-import { build } from '@config'
+import { build, meta, styles } from '@config'
 import network from '@services/network'
 import time from '@services/time'
 
@@ -7,6 +7,14 @@ export default {
 	name: 'page-demo',
 
 	computed: {
+
+		config () {
+			return {
+				build,
+				meta,
+				styles
+			}
+		},
 
 		_classes () {
 			return {
@@ -49,19 +57,6 @@ export default {
 		</card>
 
 		<card>
-			<h2>Services</h2>
-
-			<p>
-				Time: {{ time }}
-			</p>
-
-			<p>
-				Network: {{ isOffline ? 'offline' : 'online' }}
-			</p>
-
-		</card>
-
-		<card>
 			<h2>Images</h2>
 
 			<p>
@@ -80,6 +75,26 @@ export default {
 				<spinner />
 				<ellipsis />
 			</p>
+
+		</card>
+
+		<card>
+			<h2>Services</h2>
+
+			<p>
+				Time: {{ time }}
+			</p>
+
+			<p>
+				Network: {{ isOffline ? 'offline' : 'online' }}
+			</p>
+
+		</card>
+
+		<card>
+			<h2>Config</h2>
+
+			<pre><code>{{ JSON.stringify(config, null, 2) }}</code></pre>
 
 		</card>
 
