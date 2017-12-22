@@ -1,1 +1,1 @@
-export { default as Chip } from './Chip.svg'
+export { default as Logo } from './Logo.svg'

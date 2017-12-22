@@ -32,14 +32,14 @@ export default {
 
 		<card>
 
-			<h2>Bellevue</h2>
+			<h1>Bellevue</h1>
 
 			<div class="bodytext">
 
 				<p>Thanks for using <strong>Bellevue</strong>! This is a full-featured frontend project template for modern single-page applications built on Vue.js and Webpack.</p>
 
 				<ul>
-					<li>Demo: <external-link href="https://vue.netlify.com/" target="_blank">vue.netlify.com</external-link></li>
+					<li>Demo: <external-link href="https://vue.netlify.com/" target="_blank">bellevue.netlify.com</external-link></li>
 					<li>Documentation: <external-link href="https://eiskis.gitbooks.io/bellevue/" target="_blank">eiskis.gitbooks.io/bellevue</external-link></li>
 					<li>Source and issues: <external-link href="https://github.com/Eiskis/bellevue" target="_blank">github.com/Eiskis/bellevue</external-link></li>
 				</ul>
@@ -67,7 +67,7 @@ export default {
 			<p>
 				<img src="~@assets/logo.png">
 				<bitmap src="logo.png" />
-				<svg-chip />
+				<svg-logo />
 			</p>
 
 		</card>
@@ -91,10 +91,18 @@ export default {
 .c-page-demo {
 
 	img,
-	svg,
+	svg {
+		width: 4em;
+		height: 4em;
+	}
+
+	svg {
+		color: $color-blue;
+	}
+
 	.c-spinner {
-		width: 2em;
-		height: 2em;
+		width: 1em;
+		height: 1em;
 	}
 
 }

@@ -6,7 +6,7 @@ export default {
 
 <template>
 	<card :class="classes">
-		<h2>Hello world!</h2>
+		<h1>Hello world!</h1>
 	</card>
 </template>
 
