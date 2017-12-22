@@ -1,44 +1,23 @@
 <script>
 import '@styles-global'
 
-import { build } from '@config'
-
-import network from '@services/network'
-
 export default {
 	name: 'app',
-
 	computed: {
-
-		_classes () {
-			return {
-				debug: build.isDebug ? true : false
-			}
-		},
-
-		isOffline () {
-			return !network.isOnline
-		},
-
 		routerKey () {
 			return this.$route.name
 		}
-
 	}
-
 }
 </script>
 
 <template>
 	<div :class="classes">
 
-		<p v-if="isOffline">Offline</p>
-		<p v-else>Online</p>
-
-		<ul>
-			<li><router-link :to="{ name: 'home' }">Home</router-link></li>
-			<li><router-link :to="{ name: 'settings' }">Settings</router-link></li>
-		</ul>
+		<div class="c-app-menu">
+			<router-link :to="{ name: 'home' }">Home</router-link>
+			<router-link :to="{ name: 'demo' }">Demo</router-link>
+		</div>
 
 		<fade>
 			<router-view :key="routerKey" />
@@ -48,7 +27,29 @@ export default {
 </template>
 
 <style lang="scss">
+
 .c-app {
 	@include buffer-relative;
+	@include limit-medium;
+	@include keep-center;
 }
+
+.c-app-menu {
+	@include flex;
+
+	a {
+		@include flex-item-fluid;
+		@include pad-loose;
+		text-align: center;
+		border-bottom-width: $separate-thick;
+
+		&.is-exact-active {
+			color: $default-color-link;
+			border-color: $default-color-link;
+		}
+
+	}
+
+}
+
 </style>

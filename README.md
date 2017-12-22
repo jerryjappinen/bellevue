@@ -1,4 +1,4 @@
-# pokeree-client
+# Bellevue
 
 > Oh so nice planning poker
 

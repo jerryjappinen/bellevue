@@ -1,0 +1,52 @@
+// Flex
+
+@mixin flex {
+	display: flex;
+}
+
+@mixin flex-wrap {
+	@include flex;
+	flex-wrap: wrap;
+}
+
+@mixin flex-center {
+	@include flex;
+	align-items: center;
+}
+
+@mixin flex-vertical {
+	@include flex;
+	flex-direction: column;
+}
+
+@mixin inline-flex {
+	display: inline-flex;
+}
+
+// Flex items
+
+@mixin flex-item-shrink {
+	flex-shrink: 1;
+}
+
+@mixin flex-item-grow {
+	flex-grow: 1;
+}
+
+@mixin flex-item-no-shrink {
+	flex-shrink: 0;
+}
+
+@mixin flex-item-no-grow {
+	flex-grow: 0;
+}
+
+@mixin flex-item-fluid {
+	@include flex-item-grow;
+	@include flex-item-shrink;
+}
+
+@mixin flex-item-fixed {
+	@include flex-item-no-grow;
+	@include flex-item-no-shrink;
+}

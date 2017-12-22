@@ -1,0 +1,166 @@
+@mixin radius ($rad: $radius) {
+	@include radius-top($rad);
+	@include radius-bottom($rad);
+}
+
+@mixin radius-top ($rad: $radius) {
+	@include radius-top-left($rad);
+	@include radius-top-right($rad);
+}
+
+@mixin radius-top-left ($rad: $radius) {
+	border-top-left-radius: $rad;
+}
+
+@mixin radius-top-right ($rad: $radius) {
+	border-top-right-radius: $rad;
+}
+
+@mixin radius-bottom ($rad: $radius) {
+	@include radius-bottom-left($rad);
+	@include radius-bottom-right($rad);
+}
+
+@mixin radius-bottom-left ($rad: $radius) {
+	border-bottom-left-radius: $rad;
+}
+
+@mixin radius-bottom-right ($rad: $radius) {
+	border-bottom-right-radius: $rad;
+}
+
+@mixin radius-left {
+	@include radius-top-left;
+	@include radius-bottom-left;
+}
+
+@mixin radius-right {
+	@include radius-top-right;
+	@include radius-bottom-right;
+}
+
+
+
+@mixin radius-tight {
+	@include radius($radius-tight);
+}
+
+@mixin radius-tight-top {
+	@include radius-top($radius-tight);
+}
+
+@mixin radius-tight-top-left {
+	@include radius-top-left($radius-tight);
+}
+
+@mixin radius-tight-top-right {
+	@include radius-top-right($radius-tight);
+}
+
+@mixin radius-tight-bottom {
+	@include radius-bottom($radius-tight);
+}
+
+@mixin radius-tight-bottom-left {
+	@include radius-bottom-left($radius-tight);
+}
+
+@mixin radius-tight-bottom-right {
+	@include radius-bottom-right($radius-tight);
+}
+
+@mixin radius-tight-left {
+	@include radius-tight-top-left;
+	@include radius-tight-bottom-left;
+}
+
+@mixin radius-tight-right {
+	@include radius-tight-top-right;
+	@include radius-tight-bottom-right;
+}
+
+
+
+@mixin radius-loose {
+	@include radius($radius-loose);
+}
+
+@mixin radius-loose-top {
+	@include radius-top($radius-loose);
+}
+
+@mixin radius-loose-top-left {
+	@include radius-top-left($radius-loose);
+}
+
+@mixin radius-loose-top-right {
+	@include radius-top-right($radius-loose);
+}
+
+@mixin radius-loose-bottom {
+	@include radius-bottom($radius-loose);
+}
+
+@mixin radius-loose-bottom-left {
+	@include radius-bottom-left($radius-loose);
+}
+
+@mixin radius-loose-bottom-right {
+	@include radius-bottom-right($radius-loose);
+}
+
+@mixin radius-loose-left {
+	@include radius-loose-top-left;
+	@include radius-loose-bottom-left;
+}
+
+@mixin radius-loose-right {
+	@include radius-loose-top-right;
+	@include radius-loose-bottom-right;
+}
+
+
+
+@mixin radius-round {
+	border-radius: 1000em;
+}
+
+
+
+@mixin no-radius {
+	@include radius(0);
+}
+
+@mixin no-radius-top {
+	@include radius-top(0);
+}
+
+@mixin no-radius-top-left {
+	@include radius-top-left(0);
+}
+
+@mixin no-radius-top-right {
+	@include radius-top-right(0);
+}
+
+@mixin no-radius-bottom {
+	@include radius-bottom(0);
+}
+
+@mixin no-radius-bottom-left {
+	@include radius-bottom-left(0);
+}
+
+@mixin no-radius-bottom-right {
+	@include radius-bottom-right(0);
+}
+
+@mixin no-radius-left {
+	@include no-radius-top-left;
+	@include no-radius-bottom-left;
+}
+
+@mixin no-radius-right {
+	@include no-radius-top-right;
+	@include no-radius-bottom-right;
+}

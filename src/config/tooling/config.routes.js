@@ -11,9 +11,9 @@ export default [
 	},
 
 	{
-		path: '/settings',
-		name: 'settings',
-		component: components.PageSettings
+		path: '/demo',
+		name: 'demo',
+		component: components.PageDemo
 	}
 
 ]

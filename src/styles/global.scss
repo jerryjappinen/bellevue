@@ -15,10 +15,10 @@
 @import './defaults/body';
 @import './defaults/headings';
 @import './defaults/links';
+@import './defaults/lists';
 
 // Utilities
-// @import './utilities/bodytext';
-// @import './utilities/inverse';
+@import './utilities/utility-bodytext';
 
 // Transitions
 @import './transitions/transition-fade';

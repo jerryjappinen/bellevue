@@ -1,0 +1,176 @@
+// Default pad
+@mixin pad {
+	padding: $pad-vertical $pad-horizontal;
+}
+
+
+
+@mixin pad-horizontal {
+	padding-left: $pad-horizontal;
+	padding-right: $pad-horizontal;
+}
+
+@mixin pad-vertical {
+	padding-top: $pad-vertical;
+	padding-bottom: $pad-vertical;
+}
+
+
+
+@mixin pad-even {
+	padding: min($pad-vertical, $pad-horizontal);
+}
+
+@mixin pad-even-max {
+	padding: max($pad-vertical, $pad-horizontal);
+}
+
+
+
+@mixin pad-top {
+	padding-top: $pad-vertical;
+}
+
+@mixin pad-right {
+	padding-right: $pad-horizontal;
+}
+
+@mixin pad-bottom {
+	padding-bottom: $pad-vertical;
+}
+
+@mixin pad-left {
+	padding-left: $pad-horizontal;
+}
+
+
+
+// Tight pad
+
+@mixin pad-tight {
+	padding: $pad-tight-vertical $pad-tight-horizontal;
+}
+
+
+
+@mixin pad-tight-horizontal {
+	padding-left: $pad-tight-horizontal;
+	padding-right: $pad-tight-horizontal;
+}
+
+@mixin pad-tight-vertical {
+	padding-top: $pad-tight-vertical;
+	padding-bottom: $pad-tight-vertical;
+}
+
+
+
+@mixin pad-tight-even {
+	padding: min($pad-tight-vertical, $pad-tight-horizontal);
+}
+
+@mixin pad-tight-even-max {
+	padding: max($pad-tight-vertical, $pad-tight-horizontal);
+}
+
+
+
+@mixin pad-tight-top {
+	padding-top: $pad-tight-vertical;
+}
+
+@mixin pad-tight-right {
+	padding-right: $pad-tight-horizontal;
+}
+
+@mixin pad-tight-bottom {
+	padding-bottom: $pad-tight-vertical;
+}
+
+@mixin pad-tight-left {
+	padding-left: $pad-tight-horizontal;
+}
+
+
+
+// Loose pad
+
+@mixin pad-loose {
+	@include pad-loose-horizontal;
+	@include pad-loose-vertical;
+}
+
+
+
+@mixin pad-loose-horizontal {
+	@include pad-loose-left;
+	@include pad-loose-right;
+}
+
+@mixin pad-loose-vertical {
+	@include pad-loose-top;
+	@include pad-loose-bottom;
+}
+
+
+
+@mixin pad-loose-even {
+	padding: min($pad-loose-vertical, $pad-loose-horizontal);
+}
+
+@mixin pad-loose-even-max {
+	padding: max($pad-loose-vertical, $pad-loose-horizontal);
+}
+
+
+
+@mixin pad-loose-top {
+	padding-top: $pad-loose-vertical;
+}
+
+@mixin pad-loose-right {
+	padding-right: $pad-loose-horizontal;
+}
+
+@mixin pad-loose-bottom {
+	padding-bottom: $pad-loose-vertical;
+}
+
+@mixin pad-loose-left {
+	padding-left: $pad-loose-horizontal;
+}
+
+
+
+// No pad
+
+@mixin no-pad {
+	@include no-pad-horizontal;
+	@include no-pad-vertical;
+}
+
+@mixin no-pad-horizontal {
+	@include no-pad-left;
+	@include no-pad-right;
+}
+
+@mixin no-pad-vertical {
+	@include no-pad-top;
+	@include no-pad-bottom;
+}
+
+@mixin no-pad-top {
+	padding-top: 0;
+}
+
+@mixin no-pad-right {
+	padding-right: 0;
+}
+
+@mixin no-pad-bottom {
+	padding-bottom: 0;
+}
+
+@mixin no-pad-left {
+	padding-left: 0;
+}

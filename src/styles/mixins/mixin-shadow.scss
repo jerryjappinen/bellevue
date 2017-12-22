@@ -1,0 +1,39 @@
+@mixin shadow ($opacity: $default-shadow-opacity, $color: $default-shadow-color) {
+	box-shadow: 0 2px 8px rgba($color, $opacity);
+}
+
+@mixin shadow-transparent ($color: $default-shadow-color) {
+	@include shadow(0, $color);
+}
+
+
+
+@mixin shadow-solid ($width: 1px, $color: $default-shadow-color, $opacity: 1) {
+	box-shadow: 0 0 0 $width rgba($color, $opacity);
+}
+
+
+
+@mixin shadow-tight ($opacity: $default-shadow-opacity, $color: $default-shadow-color) {
+	box-shadow: 0 1px 2px rgba($color, $opacity);
+}
+
+@mixin shadow-tight-transparent ($color: $default-shadow-color) {
+	@include shadow-tight(0, $color);
+}
+
+
+
+@mixin shadow-loose ($opacity: $default-shadow-opacity, $color: $default-shadow-color) {
+	box-shadow: 0 2px 38px rgba($color, $opacity);
+}
+
+@mixin shadow-loose-transparent ($color: $default-shadow-color) {
+	@include shadow-loose(0, $color);
+}
+
+
+
+@mixin no-shadow ($color: $default-shadow-color) {
+	@include shadow-transparent(transparent);
+}
