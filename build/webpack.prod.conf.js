@@ -25,8 +25,14 @@ const env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
   : require('../config/prod.env')
 
+// Passed to `index.html.ejs`
+const templateConfig = {
+  build: require('../src/config/config.build'),
+  meta: require('../src/config/config.meta'),
+  paths: require('../src/config/config.paths')
+}
+
 const manifestConfig = require('../src/config/config.manifest.js')
-const metaConfig = require('../src/config/config.meta.js')
 const robotsTxtConfig = require('../src/config/tooling/config.robotsTxt.js')
 const sitemapConfig = require('../src/config/tooling/config.sitemap.js')
 
@@ -83,7 +89,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         : config.build.index,
       template: 'src/index.html.ejs',
       favicon: null, // Favicon comes from static (like other app icons)
-      config: metaConfig, // Passed to `index.html.ejs`
+      config: templateConfig, // Passed to `index.html.ejs`
       inject: true,
       minify: {
         removeComments: true,

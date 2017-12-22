@@ -8,6 +8,7 @@ import { merge } from 'lodash'
 import defaultBuild from './config.build'
 import defaultManifest from './config.manifest'
 import defaultMeta from './config.meta'
+import defaultPaths from './config.paths'
 // eslint-disable-next-line import-extensions
 import defaultRouter from './config.router'
 import defaultStyles from './config.styles'
@@ -16,7 +17,8 @@ import defaultSvgo from './config.svgo'
 // Dev overrides
 import devBuild from './dev/config.dev.build'
 // import devManifest from './dev/config.dev.manifest'
-// import devMeta from './dev/config.dev.meta'
+import devMeta from './dev/config.dev.meta'
+import devPaths from './dev/config.dev.paths'
 // import devRouter from './dev/config.dev.router'
 // import devStyles from './dev/config.dev.styles'
 // import devSvgo from './dev/config.dev.svgo'
@@ -25,6 +27,7 @@ import devBuild from './dev/config.dev.build'
 let build = merge({}, defaultBuild)
 let manifest = merge({}, defaultManifest)
 let meta = merge({}, defaultMeta)
+let paths = merge({}, defaultPaths)
 let router = merge({}, defaultRouter)
 let styles = merge({}, defaultStyles)
 let svgo = merge({}, defaultSvgo)
@@ -33,7 +36,8 @@ let svgo = merge({}, defaultSvgo)
 if (process.env.NODE_ENV !== 'production') {
 	merge(build, devBuild)
 	// merge(manifest, devManifest)
-	// merge(meta, devMeta)
+	merge(meta, devMeta)
+	merge(paths, devPaths)
 	// merge(router, devRouter)
 	// merge(styles, devStyles)
 	// merge(svgo, devSvgo)
@@ -43,6 +47,7 @@ export {
 	build,
 	manifest,
 	meta,
+	paths,
 	router,
 	styles,
 	svgo

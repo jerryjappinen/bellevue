@@ -1,9 +1,9 @@
-const meta = require('../config.meta')
+const paths = require('../config.paths')
 
 // sitemap.xml (only in production)
 // https://www.npmjs.com/package/sitemap-webpack-plugin
 module.exports = {
-	base: meta.host,
+	base: paths.host,
 	paths: [
 		'/',
 		'/demo'

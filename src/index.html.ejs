@@ -5,16 +5,16 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 		<% /* Title */ %>
-		<title><%= htmlWebpackPlugin.options.title %></title>
-		<meta name="application-name" content="<%= htmlWebpackPlugin.options.title %>">
+		<title><%= htmlWebpackPlugin.options.config.meta.title %></title>
+		<meta name="application-name" content="<%= htmlWebpackPlugin.options.config.meta.title %>">
 
 		<% /* Description */ %>
-		<% if (htmlWebpackPlugin.options.config.description && htmlWebpackPlugin.options.config.description.length) { %>
-			<meta name="description" content="<%= htmlWebpackPlugin.options.config.description %>">
+		<% if (htmlWebpackPlugin.options.config.meta.description && htmlWebpackPlugin.options.config.meta.description.length) { %>
+			<meta name="description" content="<%= htmlWebpackPlugin.options.config.meta.description %>">
 		<% } %>
 
 		<% /* Mobile tags */ %>
-		<% if (htmlWebpackPlugin.options.config.mobile) { %>
+		<% if (htmlWebpackPlugin.options.config.meta.mobile) { %>
 			<meta name="apple-mobile-web-app-capable" content="yes">
 			<style type="text/css">
 				body {
@@ -27,15 +27,15 @@
 
 		<% /* iOS Safari ison */ %>
 		<% /* NOTE: `favicon.png` is a magical filename */ %>
-		<link rel="shortcut icon" href="<%= htmlWebpackPlugin.options.config.staticAssetsPath + htmlWebpackPlugin.options.config.faviconFilename %>">
-		<link rel="apple-touch-icon" href="<%= htmlWebpackPlugin.options.config.staticAssetsPath + htmlWebpackPlugin.options.config.appleIconFilename %>">
+		<link rel="shortcut icon" href="<%= htmlWebpackPlugin.options.config.paths.staticAssetsPath + htmlWebpackPlugin.options.config.paths.faviconFilename %>">
+		<link rel="apple-touch-icon" href="<%= htmlWebpackPlugin.options.config.paths.staticAssetsPath + htmlWebpackPlugin.options.config.paths.appleIconFilename %>">
 
 		<% /* Mobile tags */ %>
 		<%
 			var robotsMeta = [];
-			if (htmlWebpackPlugin.options.config.robotsMeta && htmlWebpackPlugin.options.config.robotsMeta.length) {
-				for (var i = 0; i < htmlWebpackPlugin.options.config.robotsMeta.length; i++) {
-					robotsMeta.push(('' + htmlWebpackPlugin.options.config.robotsMeta[i]).toUpperCase());
+			if (htmlWebpackPlugin.options.config.meta.robotsMeta && htmlWebpackPlugin.options.config.meta.robotsMeta.length) {
+				for (var i = 0; i < htmlWebpackPlugin.options.config.meta.robotsMeta.length; i++) {
+					robotsMeta.push(('' + htmlWebpackPlugin.options.config.meta.robotsMeta[i]).toUpperCase());
 				}
 			}
 		%>
@@ -46,16 +46,16 @@
 		<%
 			var appStoreDefinitions = [];
 			if (
-				htmlWebpackPlugin.options.config.appStore &&
-				htmlWebpackPlugin.options.config.appStore.appId &&
-				('' + htmlWebpackPlugin.options.config.appStore.appId).length
+				htmlWebpackPlugin.options.config.meta.appStore &&
+				htmlWebpackPlugin.options.config.meta.appStore.appId &&
+				('' + htmlWebpackPlugin.options.config.meta.appStore.appId).length
 			) {
-				appStoreDefinitions.push('app-id=' + htmlWebpackPlugin.options.config.appStore.appId);
-				if (htmlWebpackPlugin.options.config.appStore.affiliate && htmlWebpackPlugin.options.config.appStore.affiliate.length) {
-					appStoreDefinitions.push('affiliate-data=' + htmlWebpackPlugin.options.config.appStore.affiliate);
+				appStoreDefinitions.push('app-id=' + htmlWebpackPlugin.options.config.meta.appStore.appId);
+				if (htmlWebpackPlugin.options.config.meta.appStore.affiliate && htmlWebpackPlugin.options.config.meta.appStore.affiliate.length) {
+					appStoreDefinitions.push('affiliate-data=' + htmlWebpackPlugin.options.config.meta.appStore.affiliate);
 				}
-				if (htmlWebpackPlugin.options.config.appStore.affiliate && htmlWebpackPlugin.options.config.appStore.affiliate.length) {
-					appStoreDefinitions.push('app-argument=' + htmlWebpackPlugin.options.config.appStore.appArgument);
+				if (htmlWebpackPlugin.options.config.meta.appStore.affiliate && htmlWebpackPlugin.options.config.meta.appStore.affiliate.length) {
+					appStoreDefinitions.push('app-argument=' + htmlWebpackPlugin.options.config.meta.appStore.appArgument);
 				}
 			}
 		%>
@@ -64,21 +64,21 @@
 		<% } %>
 
 		<% /* Touch highlight settings */ %>
-		<% if (!htmlWebpackPlugin.options.config.defaultTouchHighlight) { %>
+		<% if (!htmlWebpackPlugin.options.config.meta.defaultTouchHighlight) { %>
 			<meta name="msapplication-tap-highlight" content="no">
 			<style>body { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-tap-highlight-color: transparent; }</style>
 		<% } %>
 
 		<% /* Format detection meta tags */ %>
-		<% if (htmlWebpackPlugin.options.config.formatDetection) { %>
+		<% if (htmlWebpackPlugin.options.config.meta.formatDetection) { %>
 			<%
 				var formatDetectionRuleStrings = [];
-				for (var key in htmlWebpackPlugin.options.config.formatDetection) {
+				for (var key in htmlWebpackPlugin.options.config.meta.formatDetection) {
 					if (
-						htmlWebpackPlugin.options.config.formatDetection[key] !== null &&
-						htmlWebpackPlugin.options.config.formatDetection[key] !== undefined
+						htmlWebpackPlugin.options.config.meta.formatDetection[key] !== null &&
+						htmlWebpackPlugin.options.config.meta.formatDetection[key] !== undefined
 					) {
-						formatDetectionRuleStrings.push(key + '=' + htmlWebpackPlugin.options.config.formatDetection[key]);
+						formatDetectionRuleStrings.push(key + '=' + htmlWebpackPlugin.options.config.meta.formatDetection[key]);
 					}
 				}
 			%>
@@ -86,15 +86,15 @@
 		<% } %>
 
 		<% /* Viewport definitions as meta tags */ %>
-		<% if (htmlWebpackPlugin.options.config.viewport) { %>
+		<% if (htmlWebpackPlugin.options.config.meta.viewport) { %>
 			<%
 				var viewportRuleStrings = [];
-				for (var key in htmlWebpackPlugin.options.config.viewport) {
+				for (var key in htmlWebpackPlugin.options.config.meta.viewport) {
 					if (
-						htmlWebpackPlugin.options.config.viewport[key] !== null &&
-						htmlWebpackPlugin.options.config.viewport[key] !== undefined
+						htmlWebpackPlugin.options.config.meta.viewport[key] !== null &&
+						htmlWebpackPlugin.options.config.meta.viewport[key] !== undefined
 					) {
-						viewportRuleStrings.push(key + '=' + htmlWebpackPlugin.options.config.viewport[key]);
+						viewportRuleStrings.push(key + '=' + htmlWebpackPlugin.options.config.meta.viewport[key]);
 					}
 				}
 			%>
@@ -105,16 +105,16 @@
 		<%
 			var viewportCssRuleStrings = [];
 
-			if (htmlWebpackPlugin.options.config.viewport.width) {
-				var viewportWidth = htmlWebpackPlugin.options.config.viewport.width;
+			if (htmlWebpackPlugin.options.config.meta.viewport.width) {
+				var viewportWidth = htmlWebpackPlugin.options.config.meta.viewport.width;
 				if (viewportWidth && viewportWidth !== 'device-width') {
 					viewportWidth += 'px';
 				}
 				viewportCssRuleStrings.push('width: ' + viewportWidth + ';');
 			}
 
-			if (htmlWebpackPlugin.options.config.viewport.height) {
-				var viewportHeight = htmlWebpackPlugin.options.config.viewport.height;
+			if (htmlWebpackPlugin.options.config.meta.viewport.height) {
+				var viewportHeight = htmlWebpackPlugin.options.config.meta.viewport.height;
 				if (viewportHeight && viewportHeight !== 'device-height') {
 					viewportHeight += 'px';
 				}
@@ -131,28 +131,28 @@
 
 
 		<% /* Windows: pinned site meta info (https://msdn.microsoft.com/en-us/library/dn255024(v=vs.85).aspx) */ %>
-		<meta name="msapplication-tooltip" content="<%= htmlWebpackPlugin.options.config.description %>">
-		<meta name="msapplication-TileColor" content="<%= htmlWebpackPlugin.options.config.themeColor %>" />
-		<meta name="msapplication-navbutton-color" content="<%= htmlWebpackPlugin.options.config.themeColor %>">
+		<meta name="msapplication-tooltip" content="<%= htmlWebpackPlugin.options.config.meta.description %>">
+		<meta name="msapplication-TileColor" content="<%= htmlWebpackPlugin.options.config.meta.themeColor %>" />
+		<meta name="msapplication-navbutton-color" content="<%= htmlWebpackPlugin.options.config.meta.themeColor %>">
 
 		<% /* Theme color */ %>
-		<% if (htmlWebpackPlugin.options.config.themeColor && htmlWebpackPlugin.options.config.themeColor.length) { %>
-			<meta name="theme-color" content="<%= htmlWebpackPlugin.options.config.themeColor %>">
+		<% if (htmlWebpackPlugin.options.config.meta.themeColor && htmlWebpackPlugin.options.config.meta.themeColor.length) { %>
+			<meta name="theme-color" content="<%= htmlWebpackPlugin.options.config.meta.themeColor %>">
 		<% } %>
 
 		<% /* iOS: Status bar style */ %>
-		<% if (htmlWebpackPlugin.options.config.iosStatusBarStyle && htmlWebpackPlugin.options.config.iosStatusBarStyle.length) { %>
-			<meta name="apple-mobile-web-app-status-bar-style" content="<%= htmlWebpackPlugin.options.config.iosStatusBarStyle %>">
+		<% if (htmlWebpackPlugin.options.config.meta.iosStatusBarStyle && htmlWebpackPlugin.options.config.meta.iosStatusBarStyle.length) { %>
+			<meta name="apple-mobile-web-app-status-bar-style" content="<%= htmlWebpackPlugin.options.config.meta.iosStatusBarStyle %>">
 		<% } %>
 
 		<% /* Prefetch meta tags */ %>
-		<% for (var i = 0; i < htmlWebpackPlugin.options.config.prefetch.length; i++) { %>
-			<link rel="prefetch" href="<%= htmlWebpackPlugin.options.config.prefetch[i] %>">
+		<% for (var i = 0; i < htmlWebpackPlugin.options.config.paths.prefetch.length; i++) { %>
+			<link rel="prefetch" href="<%= htmlWebpackPlugin.options.config.paths.prefetch[i] %>">
 		<% } %>
 
 		<% /* Links to static CSS files */ %>
-		<% for (var i = 0; i < htmlWebpackPlugin.options.config.styleLinks.length; i++) { %>
-			<link rel="stylesheet" type="text/css" href="<%= htmlWebpackPlugin.options.config.styleLinks[i] %>">
+		<% for (var i = 0; i < htmlWebpackPlugin.options.config.paths.styleLinks.length; i++) { %>
+			<link rel="stylesheet" type="text/css" href="<%= htmlWebpackPlugin.options.config.paths.styleLinks[i] %>">
 		<% } %>
 
 	</head>
@@ -162,8 +162,8 @@
 		<% /* Built files will be auto injected */ %>
 
 		<% /* Links to static JS files */ %>
-		<% for (var i = 0; i < htmlWebpackPlugin.options.config.scriptLinks.length; i++) { %>
-			<script type="text/javascript" src="<%= htmlWebpackPlugin.options.config.scriptLinks[i] %>"></script>
+		<% for (var i = 0; i < htmlWebpackPlugin.options.config.paths.scriptLinks.length; i++) { %>
+			<script type="text/javascript" src="<%= htmlWebpackPlugin.options.config.paths.scriptLinks[i] %>"></script>
 		<% } %>
 
 	</body>

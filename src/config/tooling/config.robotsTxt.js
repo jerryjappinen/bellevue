@@ -1,11 +1,11 @@
-const meta = require('../config.meta')
+const paths = require('../config.paths')
 
 // robots.txt (only in production)
 // https://github.com/itgalaxy/generate-robotstxt
 // http://www.robotstxt.org
 module.exports = {
-	sitemap: meta.host + 'sitemap.xml',
-	host: meta.host,
+	sitemap: paths.host + 'sitemap.xml',
+	host: paths.host,
 	policy: [
 		// {
 		// 	userAgent: '*',

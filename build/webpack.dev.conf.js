@@ -1,4 +1,5 @@
 'use strict'
+const _ = require('lodash')
 const utils = require('./utils')
 const webpack = require('webpack')
 const config = require('../config')
@@ -12,7 +13,17 @@ const portfinder = require('portfinder')
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
-const metaConfig = require('../src/config/config.meta.js')
+// Passed to `index.html.ejs`
+const templateConfig = {
+  build: require('../src/config/config.build'),
+  meta: require('../src/config/config.meta'),
+  paths: require('../src/config/config.paths')
+}
+_.merge(templateConfig, {
+  build: require('../src/config/dev/config.dev.build'),
+  meta: require('../src/config/dev/config.dev.meta'),
+  paths: require('../src/config/dev/config.dev.paths')
+})
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
@@ -52,7 +63,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       filename: 'index.html',
       template: 'src/index.html.ejs',
       favicon: null, // Favicon comes from static (like other app icons)
-      config: metaConfig, // Passed to `index.html.ejs`
+      config: templateConfig,
       inject: true
     }),
     new StylelintPlugin({
