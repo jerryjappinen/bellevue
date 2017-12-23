@@ -92,13 +92,14 @@ export default new Vue({
 			this.scrollY = this.$_getScrollY()
 		},
 
-		onResize: debounce(() => {
+		// NOTE: won't work with arrow function since `this` scope will be different
+		onResize: debounce(function () {
 			this.$_updateDimensions()
 		}, debounceDelay, {
 			leading: true
 		}),
 
-		onScroll: debounce(() => {
+		onScroll: debounce(function () {
 			this.$_updateScrollValues()
 		}, debounceDelay, {
 			leading: true
