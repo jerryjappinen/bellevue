@@ -4,51 +4,10 @@ import { merge } from 'lodash'
 // NOTE: anything under `./tooling` is not available here
 // NOTE: ESLint gives a false positive here for some reason
 
-// eslint-disable-next-line import-extensions
-import defaultBuild from './config.build'
-import defaultManifest from './config.manifest'
-import defaultMeta from './config.meta'
-import defaultPaths from './config.paths'
-// eslint-disable-next-line import-extensions
-import defaultRouter from './config.router'
-import defaultStyles from './config.styles'
-import defaultSvgo from './config.svgo'
-
-// Dev overrides
-import devBuild from './dev/config.dev.build'
-// import devManifest from './dev/config.dev.manifest'
-import devMeta from './dev/config.dev.meta'
-import devPaths from './dev/config.dev.paths'
-// import devRouter from './dev/config.dev.router'
-// import devStyles from './dev/config.dev.styles'
-// import devSvgo from './dev/config.dev.svgo'
-
-// These will be exported
-let build = merge({}, defaultBuild)
-let manifest = merge({}, defaultManifest)
-let meta = merge({}, defaultMeta)
-let paths = merge({}, defaultPaths)
-let router = merge({}, defaultRouter)
-let styles = merge({}, defaultStyles)
-let svgo = merge({}, defaultSvgo)
-
-// Process overrides in development environment
-if (process.env.NODE_ENV !== 'production') {
-	merge(build, devBuild)
-	// merge(manifest, devManifest)
-	merge(meta, devMeta)
-	merge(paths, devPaths)
-	// merge(router, devRouter)
-	// merge(styles, devStyles)
-	// merge(svgo, devSvgo)
-}
-
-export {
-	build,
-	manifest,
-	meta,
-	paths,
-	router,
-	styles,
-	svgo
-}
+export { default as build } from './config.build'
+export { default as manifest } from './config.manifest'
+export { default as meta } from './config.meta'
+export { default as paths } from './config.paths'
+export { default as router } from './config.router'
+export { default as styles } from './config.styles'
+export { default as svgo } from './config.svgo'

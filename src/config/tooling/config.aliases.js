@@ -1,3 +1,5 @@
+const isDev = (process.env.NODE_ENV !== 'production') ? true : false
+
 // Aliases usable in codebase when doing imports and resolving URLs. From project root.
 //
 // NOTE:
@@ -7,7 +9,7 @@
 module.exports = {
 
 	// The base configuration files (alias is mostly for the client)
-	'@config': 'src/config',
+	'@config': isDev ? 'src/config/index.dev.js' : 'src/config',
 	'@routes': 'src/config/tooling/config.routes',
 
 	// Locales
