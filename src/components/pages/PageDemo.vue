@@ -2,6 +2,7 @@
 import { build, meta, paths, styles } from '@config'
 import network from '@services/network'
 import time from '@services/time'
+import viewport from '@services/viewport'
 
 export default {
 	name: 'page-demo',
@@ -21,6 +22,14 @@ export default {
 			return {
 				debug: build.isDebug ? true : false
 			}
+		},
+
+		width () {
+			return viewport.width
+		},
+
+		height () {
+			return viewport.height
 		},
 
 		time () {
@@ -84,11 +93,15 @@ export default {
 			<h2>Services</h2>
 
 			<p>
+				Network: {{ isOffline ? 'offline' : 'online' }}
+			</p>
+
+			<p>
 				Time: {{ time }}
 			</p>
 
 			<p>
-				Network: {{ isOffline ? 'offline' : 'online' }}
+				Viewport: {{ width }} &times; {{ height }} px
 			</p>
 
 		</card>
