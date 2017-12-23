@@ -1,5 +1,5 @@
 <script>
-import { build, meta, styles } from '@config'
+import { build, meta, paths, styles } from '@config'
 import network from '@services/network'
 import time from '@services/time'
 
@@ -12,6 +12,7 @@ export default {
 			return {
 				build,
 				meta,
+				paths,
 				styles
 			}
 		},
@@ -60,9 +61,10 @@ export default {
 			<h2>Images</h2>
 
 			<p>
-				<img src="~@assets/logo.png">
-				<bitmap src="logo.png" />
-				<svg-logo />
+				<img src="~@assets/logo.png" alt="Foo" title="Foo">
+				<bitmap src="logo.png" title="Foo" />
+				<svg-logo title="Foo" />
+				<svg-logo title="Foo" />
 			</p>
 
 		</card>
@@ -111,13 +113,33 @@ export default {
 		height: 4em;
 	}
 
-	svg {
-		color: $color-blue;
+	svg:first-of-type {
+		color: $color-purple;
+	}
+
+	svg:not(:first-of-type) {
+		@include animation(c-page-demo-rainbow);
 	}
 
 	.c-spinner {
 		width: 1em;
 		height: 1em;
+	}
+
+}
+
+@keyframes c-page-demo-rainbow {
+
+	0% {
+		color: $color-yellow;
+	}
+
+	50% {
+		color: $color-blue;
+	}
+
+	100% {
+		color: $color-yellow;
 	}
 
 }
