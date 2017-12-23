@@ -1,3 +1,3 @@
-export default function () {
+export default () => {
 	window.document.activeElement.blur()
 }

@@ -35,7 +35,7 @@ const composeClassname = (key, value, prefix) => {
 }
 
 // Generate HTML/CSS class names based on a set of state, with prefixes and negatives added
-export default function (stateHash, prefix) {
+export default (stateHash, prefix) => {
 	const classes = []
 
 	// Treat each class
