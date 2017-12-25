@@ -4,8 +4,20 @@ import network from '@services/network'
 import time from '@services/time'
 import viewport from '@services/viewport'
 
+import createInstance from '@util/createInstance'
+import desroyInstances from '@util/destroyInstances'
+
 export default {
 	name: 'page-demo',
+
+	data () {
+		return {
+			demoObject: createInstance('DemoObject', {
+				title: 'Foo',
+				description: 'Bar'
+			})
+		}
+	},
 
 	computed: {
 
@@ -40,6 +52,10 @@ export default {
 			return !network.isOnline
 		}
 
+	},
+
+	beforeDestroy () {
+		desroyInstances(this.demoObject)
 	}
 
 }
@@ -67,7 +83,9 @@ export default {
 		</card>
 
 		<card>
-			<h2>Images</h2>
+			<h2>Components</h2>
+
+			<h3>Bitmap and SVG assets</h3>
 
 			<p>
 				<img src="~@assets/logo.png" alt="Foo" title="Foo">
@@ -76,11 +94,7 @@ export default {
 				<svg-logo title="Foo" />
 			</p>
 
-		</card>
-
-		<card>
-
-			<h2>Loading indicators</h2>
+			<h3>Loading indicators</h3>
 
 			<p>
 				<spinner />
@@ -102,6 +116,23 @@ export default {
 
 			<p>
 				Viewport: {{ width }} &times; {{ height }} px
+			</p>
+
+			<p class="bodytext">
+				<external-link href="https://eiskis.gitbooks.io/bellevue/app/services.html">Read docs</external-link>
+			</p>
+
+		</card>
+
+		<card>
+			<h2>Models</h2>
+
+			<p>
+				<code>demoObject.titleAndDescription</code>: {{ demoObject.titleAndDescription }}
+			</p>
+
+			<p class="bodytext">
+				<external-link href="https://eiskis.gitbooks.io/bellevue/app/models.html">Read docs</external-link>
 			</p>
 
 		</card>

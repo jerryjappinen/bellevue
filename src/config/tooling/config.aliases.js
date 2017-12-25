@@ -21,7 +21,7 @@ module.exports = {
 	'@svg': 'src/svg',
 
 	// Vendor code, services, utilities etc.
-	// '@models': 'src/models',
+	'@models': 'src/models',
 	'@services': 'src/services',
 	'@util': 'src/util',
 	'@vendor': 'src/vendor',
