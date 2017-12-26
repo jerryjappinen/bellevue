@@ -5,8 +5,7 @@ const paths = require('../config.paths')
 module.exports = {
 	base: paths.host,
 	paths: [
-		'/',
-		'/demo'
+		'/'
 	],
 	options: {
 		fileName: 'sitemap.xml'
