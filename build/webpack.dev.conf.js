@@ -67,11 +67,16 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       inject: true
     }),
     new StylelintPlugin({
+
+      // Normally the syntax is detected by style type,
+      // but I need to set this for .vue files
+      syntax: 'scss',
       configFile: 'src/.stylelintrc.js',
       files: [
         'src/**/*.s?(a|c)ss',
         'src/**/*.vue'
       ]
+
     }),
   ]
 })
