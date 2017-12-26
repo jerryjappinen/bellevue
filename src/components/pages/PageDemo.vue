@@ -12,6 +12,10 @@ export default {
 
 	data () {
 		return {
+
+			demoAnimationEnabled: false,
+			demoTransitionEnabled: true,
+
 			demoObject: createInstance('DemoObject', {
 				title: 'Foo',
 				description: 'Bar'
@@ -21,18 +25,18 @@ export default {
 
 	computed: {
 
+		_classes () {
+			return {
+				debug: build.isDebug ? true : false
+			}
+		},
+
 		config () {
 			return {
 				build,
 				meta,
 				paths,
 				styles
-			}
-		},
-
-		_classes () {
-			return {
-				debug: build.isDebug ? true : false
 			}
 		},
 
@@ -56,6 +60,18 @@ export default {
 
 	beforeDestroy () {
 		desroyInstances(this.demoObject)
+	},
+
+	methods: {
+
+		toggleAnimation () {
+			this.demoAnimationEnabled = !this.demoAnimationEnabled
+		},
+
+		toggleTransition () {
+			this.demoTransitionEnabled = !this.demoTransitionEnabled
+		}
+
 	}
 
 }
@@ -91,7 +107,28 @@ export default {
 				<img src="~@assets/logo.png" alt="Foo" title="Foo">
 				<bitmap src="logo.png" title="Foo" />
 				<svg-logo title="Foo" />
-				<svg-logo title="Foo" />
+				<svg-logo class="c-page-demo-colored" title="Foo" />
+				<svg-logo class="c-page-demo-rainbow" title="Foo" />
+			</p>
+
+			<h3>Animations and transitions</h3>
+
+			<p>
+
+				<animation name="pulse" :disabled="!demoAnimationEnabled">
+					<svg-logo title="Foo" />
+				</animation>
+
+				<fade>
+					<svg-logo v-if="demoTransitionEnabled" title="Foo" />
+				</fade>
+
+			</p>
+
+			<p class="bodytext">
+				Toggle:
+				<button @click="toggleAnimation">animation</button>
+				<button @click="toggleTransition">transition</button>
 			</p>
 
 			<h3>Loading indicators</h3>
@@ -157,19 +194,19 @@ export default {
 		height: 4em;
 	}
 
-	svg:first-of-type {
-		color: $color-purple;
-	}
-
-	svg:not(:first-of-type) {
-		@include animation(c-page-demo-rainbow);
-	}
-
 	.c-spinner {
 		width: 1em;
 		height: 1em;
 	}
 
+}
+
+.c-page-demo-colored {
+	color: $color-purple;
+}
+
+.c-page-demo-rainbow {
+	@include animation(c-page-demo-rainbow);
 }
 
 @keyframes c-page-demo-rainbow {

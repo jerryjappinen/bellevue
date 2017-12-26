@@ -1,7 +1,10 @@
 export { default as App } from './App'
 
+// Animations
+export { default as Animation } from './animations/Animation'
+
 // Containers
-export { default as card } from './containers/Card'
+export { default as Card } from './containers/Card'
 
 // Pages
 export { default as PageDemo } from './pages/PageDemo'
