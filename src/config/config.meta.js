@@ -3,7 +3,7 @@ module.exports = {
 
 	// Will be used in base HTML templating
 	title: 'Bellevue',
-	description: 'Planning poker for the masses.',
+	description: 'A full-featured frontend project template for modern single-page applications built on Vue.js and Webpack.',
 	themeColor: '#42b983',
 	backgroundColor: '#fafafa',
 

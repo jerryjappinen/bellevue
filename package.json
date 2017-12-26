@@ -1,7 +1,7 @@
 {
   "name": "bellevue",
   "version": "1.0.0",
-  "description": "Oh so nice planning poker",
+  "description": "A full-featured frontend project template for modern single-page applications built on Vue.js and Webpack.",
   "author": "Jerry Jäppinen <eiskis@gmail.com>",
   "private": true,
   "scripts": {
