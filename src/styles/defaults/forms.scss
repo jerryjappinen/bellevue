@@ -1,0 +1,22 @@
+button,
+input {
+	padding: 0;
+	color: inherit;
+	font-size: inherit;
+	vertical-align: baseline;
+}
+
+button {
+	@include type-link;
+	@include transition-hover-active;
+	@include transition-properties-common;
+
+	&:active {
+		transform: scale(0.95);
+	}
+
+	&:focus {
+		outline-width: 0;
+	}
+
+}
