@@ -67,7 +67,7 @@ module.exports = {
 		'no-extra-semicolons': true,
 		'no-eol-whitespace': true,
 		'no-missing-end-of-source-newline': true,
-		'no-invalid-double-slash-comments': null,
+		'no-invalid-double-slash-comments': true,
 		'declaration-block-no-duplicate-properties': true,
 		'declaration-colon-newline-after': null,
 		'function-parentheses-newline-inside': 'always-multi-line',
