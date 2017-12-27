@@ -7,7 +7,9 @@ input {
 }
 
 button {
+	background-color: transparent;
 	@include type-link;
+
 	@include transition-hover-active;
 	@include transition-properties-common;
 

@@ -101,12 +101,18 @@ export default {
 		<card>
 			<h2>Components</h2>
 
-			<h3>Bitmap and SVG assets</h3>
+			<h3>Bitmaps</h3>
 
 			<p>
 				<img src="~@assets/logo.png" alt="Foo" title="Foo">
 				<bitmap src="logo.png" title="Foo" />
+			</p>
+
+			<h3>SVG assets</h3>
+
+			<p>
 				<svg-logo title="Foo" />
+				<vector src="logo" />
 				<svg-logo class="c-page-demo-colored" title="Foo" />
 				<svg-logo class="c-page-demo-rainbow" title="Foo" />
 			</p>
@@ -116,11 +122,11 @@ export default {
 			<p>
 
 				<animation name="pulse" :disabled="!demoAnimationEnabled">
-					<svg-logo title="Foo" />
+					<span>Foo</span>
 				</animation>
 
 				<fade>
-					<svg-logo v-if="demoTransitionEnabled" title="Foo" />
+					<span v-if="demoTransitionEnabled">Bar</span>
 				</fade>
 
 			</p>
