@@ -15,6 +15,7 @@ export { default as Bitmap } from './snippets/Bitmap'
 export { default as Ellipsis } from './snippets/Ellipsis'
 export { default as ExternalLink } from './snippets/ExternalLink'
 export { default as Spinner } from './snippets/Spinner'
+export { default as Vector } from './snippets/Vector'
 
 // Transitions
 export { default as CustomTransition } from './transitions/CustomTransition'
