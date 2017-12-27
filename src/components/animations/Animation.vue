@@ -54,7 +54,11 @@ export default {
 			const vnode = this.$slots.default[0]
 
 			// Add style binding dynamically
-			if (this.isEnabled) {
+			if (this.isEnabled && vnode) {
+
+				if (!vnode.data) {
+					vnode.data = {}
+				}
 
 				if (!vnode.data.style) {
 					vnode.data.style = {}
