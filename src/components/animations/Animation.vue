@@ -1,6 +1,4 @@
 <script>
-import { includes } from 'lodash'
-
 export default {
 	name: 'animation',
 
