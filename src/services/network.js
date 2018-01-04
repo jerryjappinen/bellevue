@@ -14,12 +14,12 @@ export default new Vue({
 		}
 	},
 
-	created() {
+	created () {
 		this.updateOnlineStatus()
 		this.setListeners()
 	},
 
-	beforeDestroy() {
+	beforeDestroy () {
 		this.removeListeners()
 	},
 

@@ -1,14 +1,12 @@
 import { debounce } from 'lodash'
 import Vue from 'vue'
 
-import config from '@config'
-
 // Scroll position or dimensions are updated at most once per this amount of ms
 const debounceDelay = 10
 
 export default new Vue({
 
-	data() {
+	data () {
 		return {
 			width: 0,
 			height: 0,
@@ -70,7 +68,7 @@ export default new Vue({
 			return (window.pageYOffset || window.document.scrollTop || 0) - (window.document.clientTop || 0)
 		},
 
-		$_getWidth() {
+		$_getWidth () {
 			return window.innerWidth
 		},
 

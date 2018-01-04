@@ -2,6 +2,8 @@
 // http://eslint.org/docs/user-guide/configuring
 // http://eslint.org/docs/user-guide/rules
 
+
+
 //
 // NOTE
 //
@@ -22,6 +24,7 @@ module.exports = {
 		'vue'
 	],
 	extends: [
+		'standard',
 		'plugin:vue/recommended'
 	],
 	rules: {
@@ -49,8 +52,8 @@ module.exports = {
 			}
 		],
 
-		// FIXME: we want to use this, but it's causing issues in tests
-		'no-unused-expressions': 'off',
+		// Leftovers
+		'no-unused-expressions': 'warn',
 
 		// Number of consecutive blank lines allowed
 		// FIXME: there might be a bug with maxBOF, turning this off for now
@@ -172,8 +175,6 @@ module.exports = {
 
 		// Vue-specific
 		// https://github.com/vuejs/eslint-plugin-vue#bulb-rules
-		// 'vue/require-v-for-key': 'warn',
-		// 'vue/no-unused-vars': 'error'
 		'vue/html-indent': [
 			'error',
 			'tab',

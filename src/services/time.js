@@ -12,12 +12,12 @@ export default new Vue({
 		}
 	},
 
-	created() {
+	created () {
 		this.$_onTimerUpdate()
 		this.$_startTimer()
 	},
 
-	beforeDestroy() {
+	beforeDestroy () {
 		this.$_stopTimer()
 	},
 
