@@ -26,7 +26,7 @@ $color-discreet: $color-grey;
 
 
 
-// Font families
+// Typography
 $font-sans: 'Source Sans Pro', 'Source Sans', 'system-ui', 'San Francisco', 'Helvetica Neue', 'Helvetica', 'Segoe UI', 'Segoe WP', 'Arial', sans-serif;
 $font-serif: 'Droid Serif', 'Georgia', serif;
 $font-mono: "Roboto Mono", 'Monaco', 'Menlo', 'Segoe UI Mono', 'Consolas', courier, monospace;
@@ -47,6 +47,41 @@ $line-height-tight: 1.3;
 $line-height: 1.8;
 $line-height-loose: 2;
 $line-height-print: 1.5;
+
+// Local web fonts to generate a font-face definitions for
+//
+// NOTE: load hosted fonts via `config.paths.js` (Google Fonts etc.)
+//
+// NOTE:
+// - remember to use trailing commas with Sass nested lists to avoid gotchas
+// - Files should be under `~@fonts/` (without the file extensions)
+// - See `font-face.scss` and `mixin-font-face.scss`
+// $local-web-fonts: (
+// 	(
+// 		font-family: 'Source Sans Pro',
+// 		font-weight: 400,
+// 		font-style: normal,
+// 		filename: 'source-sans/sourcesanspro-regular-webfont',
+// 	),
+// 	(
+// 		font-family: 'Source Sans Pro',
+// 		font-weight: 400,
+// 		font-style: italic,
+// 		filename: 'source-sans/sourcesanspro-italic-webfont',
+// 	),
+// 	(
+// 		font-family: 'Source Sans Pro',
+// 		font-weight: 700,
+// 		font-style: normal,
+// 		filename: 'source-sans/sourcesanspro-bold-webfont',
+// 	),
+// 	(
+// 		font-family: 'Source Sans Pro',
+// 		font-weight: 700,
+// 		font-style: italic,
+// 		filename: 'source-sans/sourcesanspro-bolditalic-webfont',
+// 	),
+// );
 
 
 
