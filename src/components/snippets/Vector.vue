@@ -24,6 +24,12 @@ export default {
 
 	computed: {
 
+		_classes () {
+			return {
+				[kebabCase(this.src)]: true
+			}
+		},
+
 		component () {
 			return 'svg-' + kebabCase(this.src)
 		},
