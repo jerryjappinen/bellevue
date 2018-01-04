@@ -28,6 +28,7 @@ module.exports = {
 
 	// Vue application code
 	'@components': 'src/components',
+	'@directives-global': 'src/directives/global',
 	'@directives': 'src/directives',
 	'@mixins-global': 'src/mixins/global',
 	'@mixins': 'src/mixins',

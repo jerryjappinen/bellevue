@@ -6,7 +6,7 @@ import Vue from 'vue'
 // Globally registered things
 import * as components from '@components'
 import * as svgComponents from '@svg'
-import * as directives from '@directives'
+import * as directives from '@directives-global'
 import * as mixins from '@mixins-global'
 
 // Each Vue plugin that needs setup
