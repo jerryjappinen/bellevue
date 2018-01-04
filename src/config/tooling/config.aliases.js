@@ -12,12 +12,10 @@ module.exports = {
 	'@config': isDev ? 'src/config/dev/index.js' : 'src/config',
 	'@routes': 'src/config/tooling/config.routes',
 
-	// Locales
-	// '@locales': 'src/locales',
-
 	// Assets
 	'@assets': 'src/assets',
-	// '@fonts': 'src/fonts',
+	'@fonts': 'src/fonts',
+	// '@locales': 'src/locales',
 	'@svg': 'src/svg',
 
 	// Vendor code, services, utilities etc.
