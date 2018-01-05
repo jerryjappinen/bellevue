@@ -1,3 +1,5 @@
+@import './functions';
+
 // Color values
 $color-transparent: transparent;
 $color-black: #000;
@@ -29,7 +31,7 @@ $color-discreet: $color-grey;
 // Typography
 $font-sans: 'Source Sans Pro', 'Source Sans', 'system-ui', 'San Francisco', 'Helvetica Neue', 'Helvetica', 'Segoe UI', 'Segoe WP', 'Arial', sans-serif;
 $font-serif: 'Droid Serif', 'Georgia', serif;
-$font-mono: "Roboto Mono", 'Monaco', 'Menlo', 'Segoe UI Mono', 'Consolas', courier, monospace;
+$font-mono: 'Roboto Mono', 'Monaco', 'Menlo', 'Segoe UI Mono', 'Consolas', courier, monospace;
 $font-display: 'Dosis', 'Avenir', $font-sans;
 
 $font-size-small: 0.875em;
