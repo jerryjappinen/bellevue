@@ -56,8 +56,6 @@ module.exports = {
 		'no-unused-expressions': 'warn',
 
 		// Number of consecutive blank lines allowed
-		// FIXME: there might be a bug with maxBOF, turning this off for now
-		// 'no-multiple-empty-lines': 'off',
 		'no-multiple-empty-lines': [
 			'warn',
 			{
@@ -95,7 +93,7 @@ module.exports = {
 		],
 
 		// Allow balancing object notation key-value pairs
-		// 'key-spacing': ['off'],
+		'key-spacing': ['warn'],
 
 		// config.someItems['foo'] is sometimes useful
 		// It can highlight that we're referring to an item with a very specific, hardcoded name (that probably should be a variable)
@@ -120,14 +118,10 @@ module.exports = {
 			'always'
 		],
 
-		// No destructuring assignments like
-		// 		var { bar: foo } = object
-		// This should be written as
-		// 		var foo = object.bar
-		// ... So it's consistent with the 99 % of other assignments
-		// Whoever thought this is a good idea in JS didn't think about the usability
+		// Destructuring assignments
+		// Think twice about how to use them
 		// http://teeohhem.com/why-destructuring-is-a-terrible-idea-in-es6/
-		// 'no-useless-rename': 'warn',
+		'no-useless-rename': ['warn'],
 		'prefer-destructuring': [
 			'error',
 			{
@@ -140,7 +134,7 @@ module.exports = {
 		// See http://stackoverflow.com/questions/2100758/javascript-or-variable-assignment-explanation
 		'no-unneeded-ternary': ['off'],
 
-		// New is fine
+		// New Foo() is fine
 		'no-new': ['off'],
 
 
