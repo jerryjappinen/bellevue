@@ -10,6 +10,14 @@ import desroyInstances from '@util/destroyInstances'
 export default {
 	name: 'page-demo',
 
+	// https://github.com/declandewet/vue-meta
+	metaInfo () {
+		return {
+			title: 'Meta title',
+			titleTemplate: '%s - Demo (' + this.$options.name + ')'
+		}
+	},
+
 	data () {
 		return {
 
@@ -192,6 +200,7 @@ export default {
 			</div>
 
 		</card>
+
 
 	</div>
 </template>
