@@ -1,16 +1,25 @@
+// This file sets up the main Vue instance
+// Conventionally this is done in main.js, but here we set it up like any vendor library
+// You can also use this file to set up Vue in your test harness or for other similar use cases
+
+
+
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import { camelCase, kebabCase } from 'lodash'
 import Vue from 'vue'
 
-// Globally registered things
+// Helpers
+import { camelCase, kebabCase } from 'lodash'
+
+// Each Vue plugin that needs setup
+import './vue-meta'
+import router from './vue-router'
+
+// Globally registered Vue bits
 import * as components from '@components'
 import * as svgComponents from '@svg'
 import * as directives from '@directives-global'
 import * as mixins from '@mixins-global'
-
-// Each Vue plugin that needs setup
-import router from '@plugins/router'
 
 
 
@@ -46,7 +55,6 @@ const options = {
 }
 
 // Everything that's bootstrapped
-
 export {
 	Vue,
 	options
