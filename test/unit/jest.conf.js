@@ -44,7 +44,7 @@ module.exports = {
     '^.+\\.(jpg|jpeg|gif|png|mp4|mkv|avi|webm|swf|wav|mid)$': 'jest-static-stubs/$1',
 
     // NOTE: Jest can't handle this SCSS variables loader
-    '!!sass-variable-loader!@styles-constants': '<rootDir>/test/unit/stubs/scssConstants.stub.js',
+    '!!sass-to-js!@styles-shared': '<rootDir>/test/unit/stubs/scssShared.stub.js',
 
     // NOTE: Jest can't handle this SVG loader
     '^.+\\.(svg)$': '<rootDir>/test/unit/stubs/svg.stub.js'

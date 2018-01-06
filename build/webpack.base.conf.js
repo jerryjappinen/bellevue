@@ -62,6 +62,11 @@ module.exports = {
     extensions: ['.js', '.vue', '.scss', '.json'],
     alias: aliases
   },
+  resolveLoader: {
+    alias: {
+      'sass-to-js': 'sass-vars-to-js-loader?preserveKeys=false',
+    },
+  },
   module: {
     rules: [
       ...(config.dev.useEslint ? [createLintingRule()] : []),
