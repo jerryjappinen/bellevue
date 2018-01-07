@@ -1,0 +1,23 @@
+{
+	// https: //code.visualstudio.com/docs/editor/tasks
+	"version": "0.1.0",
+	"tasks": [
+
+		// // Show all problems in the project
+		// {
+		// 	"taskName": "Show all problems in project",
+		// 	"command": "eslint",
+		// 	"isShellCommand": true,
+		// 	"args": [
+		// 		"-w",
+		// 		"-p",
+		// 		".",
+		// 		"--noEmit"
+		// 	],
+		// 	"showOutput": "silent",
+		// 	"isBackground": true,
+		// 	"problemMatcher": "$eslint-stylish"
+		// }
+
+	]
+}
