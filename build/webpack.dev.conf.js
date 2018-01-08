@@ -13,17 +13,34 @@ const portfinder = require('portfinder')
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
+
+
+// Custom config files (must be merged with dev values)
+const buildConfigBase = require('../src/config/config.build.js')
+const manifestConfigBase = require('../src/config/config.manifest.js')
+const metaConfigBase = require('../src/config/config.meta.js')
+const pathsConfigBase = require('../src/config/config.paths.js')
+
+const buildConfigDev = require('../src/config/config.build.js')
+const manifestConfigDev = require('../src/config/config.manifest.js')
+const metaConfigDev = require('../src/config/config.meta.js')
+const pathsConfigDev = require('../src/config/config.paths.js')
+
+const buildConfig = _.merge({}, buildConfigBase, buildConfigDev)
+const manifestConfig = _.merge({}, manifestConfigBase, manifestConfigDev)
+const metaConfig = _.merge({}, metaConfigBase, metaConfigDev)
+const pathsConfig = _.merge({}, pathsConfigBase, pathsConfigDev)
+
+const offlineConfig = require('../src/config/tooling/config.offline.js')
+
 // Passed to `index.html.ejs`
 const templateConfig = {
-  build: require('../src/config/config.build'),
-  meta: require('../src/config/config.meta'),
-  paths: require('../src/config/config.paths')
+  build: buildConfig,
+  meta: metaConfig,
+  paths: pathsConfig
 }
-_.merge(templateConfig, {
-  build: require('../src/config/dev/config.dev.build'),
-  meta: require('../src/config/dev/config.dev.meta'),
-  paths: require('../src/config/dev/config.dev.paths')
-})
+
+
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
@@ -80,6 +97,11 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     }),
   ]
 })
+
+// Enable offline plugin
+if (buildConfig.offline) {
+  webpackConfig.plugins.push(new OfflinePlugin(offlineConfig))
+}
 
 module.exports = new Promise((resolve, reject) => {
   portfinder.basePort = process.env.PORT || config.dev.port
