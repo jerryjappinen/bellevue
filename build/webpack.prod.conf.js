@@ -15,6 +15,9 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const WebappManifest = require('webapp-manifest-plugin')
 const WebappManifestPlugin = WebappManifest.default
 
+// https://github.com/NekR/offline-plugin
+const OfflinePlugin = require('offline-plugin')
+
 // https://www.npmjs.com/package/robotstxt-webpack-plugin
 const RobotstxtPlugin = require('robotstxt-webpack-plugin').default
 
@@ -25,16 +28,26 @@ const env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
   : require('../config/prod.env')
 
-// Passed to `index.html.ejs`
-const templateConfig = {
-  build: require('../src/config/config.build'),
-  meta: require('../src/config/config.meta'),
-  paths: require('../src/config/config.paths')
-}
 
+
+// Custom config files
+const buildConfig = require('../src/config/config.build.js')
 const manifestConfig = require('../src/config/config.manifest.js')
+const metaConfig = require('../src/config/config.meta.js')
+const pathsConfig = require('../src/config/config.paths.js')
+
+const offlineConfig = require('../src/config/tooling/config.offline.js')
 const robotsTxtConfig = require('../src/config/tooling/config.robotsTxt.js')
 const sitemapConfig = require('../src/config/tooling/config.sitemap.js')
+
+// Passed to `index.html.ejs`
+const templateConfig = {
+  build: buildConfig,
+  meta: metaConfig,
+  paths: pathsConfig
+}
+
+
 
 const webpackConfig = merge(baseWebpackConfig, {
   module: {
@@ -145,6 +158,11 @@ const webpackConfig = merge(baseWebpackConfig, {
     ])
   ]
 })
+
+// Enable offline plugin
+if (buildConfig.offline) {
+  webpackConfig.plugins.push(new OfflinePlugin(offlineConfig))
+}
 
 // Generate manifest.json if set in config
 if (manifestConfig) {
