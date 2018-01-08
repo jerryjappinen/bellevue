@@ -1,9 +1,9 @@
+// We can switch paths per environment, so we won't bundle extra code to runtime package
 const isDev = (process.env.NODE_ENV !== 'production') ? true : false
 
-// Aliases usable in codebase when doing imports and resolving URLs. From project root.
+// Aliases usable in runtime codebase when doing imports and resolving URLs
 //
-// NOTE:
-// Order matters here!
+// NOTE: Order matters here!
 // - Put `@foo-bar` before `@foo`
 // - Put `@foo` before `@`
 module.exports = {

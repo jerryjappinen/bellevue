@@ -1,4 +1,3 @@
-// Get SCSS constants
+// Get SCSS constants via a special loader
 // eslint-disable-next-line import/no-webpack-loader-syntax
-import constants from '!!sass-to-js!@styles-constants'
-export default constants
+module.exports = require('!!sass-to-js!@styles-constants')
