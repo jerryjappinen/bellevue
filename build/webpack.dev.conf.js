@@ -16,22 +16,12 @@ const PORT = process.env.PORT && Number(process.env.PORT)
 
 
 // Custom config files (must be merged with dev values)
-const buildConfigBase = require('../src/config/config.build.js')
-const manifestConfigBase = require('../src/config/config.manifest.js')
-const metaConfigBase = require('../src/config/config.meta.js')
-const pathsConfigBase = require('../src/config/config.paths.js')
+const buildConfig = require('../src/config/dev/build.js')
+const metaConfig = require('../src/config/dev/meta.js')
+const pathsConfig = require('../src/config/dev/paths.js')
 
-const buildConfigDev = require('../src/config/config.build.js')
-const manifestConfigDev = require('../src/config/config.manifest.js')
-const metaConfigDev = require('../src/config/config.meta.js')
-const pathsConfigDev = require('../src/config/config.paths.js')
-
-const buildConfig = _.merge({}, buildConfigBase, buildConfigDev)
-const manifestConfig = _.merge({}, manifestConfigBase, manifestConfigDev)
-const metaConfig = _.merge({}, metaConfigBase, metaConfigDev)
-const pathsConfig = _.merge({}, pathsConfigBase, pathsConfigDev)
-
-const offlineConfig = require('../src/config/tooling/config.offline.js')
+const manifestConfig = require('../src/config/tooling/manifest.js')
+const offlineConfig = require('../src/config/tooling/offline.js')
 
 // Passed to `index.html.ejs`
 const templateConfig = {

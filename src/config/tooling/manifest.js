@@ -1,4 +1,4 @@
-const meta = require('./config.meta')
+const meta = require('../meta')
 
 // NOTE: this file will be imported during tooling before ES6 is supported
 // https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
@@ -15,6 +15,7 @@ module.exports = {
 	preferRelatedApplications: false,
 	backgroundColor: meta.backgroundColor,
 	themeColor: meta.themeColor,
+	scope: '/',
 	icons: [
 		{
 			type: 'image/png',
@@ -94,8 +95,6 @@ module.exports = {
 		// 	platform: 'play',
 		// 	id: 'com.google.samples.apps.iosched'
 		// }
-	],
-
-	scope: '/'
+	]
 
 }

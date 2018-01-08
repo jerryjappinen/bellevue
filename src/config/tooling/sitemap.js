@@ -1,4 +1,4 @@
-const paths = require('../config.paths')
+const paths = require('../paths')
 
 // sitemap.xml (only in production)
 // https://www.npmjs.com/package/sitemap-webpack-plugin

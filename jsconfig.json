@@ -14,7 +14,7 @@
         "src/assets/*"
       ],
       "@config/*": [
-        "src/config/*"
+        "src/config/dev/*"
       ],
       "@directives/*": [
         "src/directives/*"

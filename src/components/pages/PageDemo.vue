@@ -1,5 +1,9 @@
 <script>
-import { build, meta, paths, styles } from '@config'
+import buildConfig from '@config/build'
+import metaConfig from '@config/meta'
+import pathsConfig from '@config/paths'
+import stylesConfig from '@config/styles'
+
 import network from '@services/network'
 import time from '@services/time'
 import viewport from '@services/viewport'
@@ -35,16 +39,16 @@ export default {
 
 		_classes () {
 			return {
-				debug: build.isDebug ? true : false
+				debug: buildConfig.isDebug ? true : false
 			}
 		},
 
 		config () {
 			return {
-				build,
-				meta,
-				paths,
-				styles
+				buildConfig,
+				metaConfig,
+				pathsConfig,
+				stylesConfig
 			}
 		},
 

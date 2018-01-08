@@ -1,4 +1,3 @@
-// NOTE: this is NOT included in @config/index.js
 // NOTE: dependency to @components might cause webpack side effects when imported
 import * as components from '@components'
 
