@@ -2,14 +2,14 @@
 import Vue from 'vue'
 import VueAnalytics from 'vue-analytics'
 
-import { analytics } from '@config'
+import analyticsConfig from '@config/analytics'
 import routerInstance from './vue-router'
 
 // Avoid registering this without ID
 // NOTE: if you import this file, the library will still be in your bundle, increasing file size
-if (analytics.id) {
+if (analyticsConfig.id) {
 	Vue.use(VueAnalytics, {
-		...analytics,
+		...analyticsConfig,
 		router: routerInstance
 	})
 }

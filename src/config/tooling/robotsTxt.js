@@ -1,4 +1,4 @@
-const paths = require('../config.paths')
+const paths = require('../paths')
 
 // robots.txt (only in production)
 // https://github.com/itgalaxy/generate-robotstxt

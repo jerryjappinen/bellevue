@@ -9,8 +9,8 @@ const isDev = (process.env.NODE_ENV !== 'production') ? true : false
 module.exports = {
 
 	// The base configuration files (alias is mostly for the client)
-	'@config': isDev ? 'src/config/dev/index.js' : 'src/config',
-	'@routes': 'src/config/tooling/config.routes',
+	'@config': isDev ? 'src/config/dev' : 'src/config',
+	'@routes': 'src/config/tooling/routes',
 
 	// Assets
 	'@assets': 'src/assets',

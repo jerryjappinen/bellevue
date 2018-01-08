@@ -1,7 +1,7 @@
 import * as OfflinePluginRuntime from 'offline-plugin/runtime'
-import { build as buildConfig } from '@config'
-const runtime = (buildConfig.offline ? OfflinePluginRuntime : null)
+import buildConfig from '@config/build'
 
+const runtime = (buildConfig.offline ? OfflinePluginRuntime : null)
 if (runtime) {
 	runtime.install()
 }

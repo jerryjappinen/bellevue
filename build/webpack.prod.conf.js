@@ -31,14 +31,14 @@ const env = process.env.NODE_ENV === 'testing'
 
 
 // Custom config files
-const buildConfig = require('../src/config/config.build.js')
-const manifestConfig = require('../src/config/config.manifest.js')
-const metaConfig = require('../src/config/config.meta.js')
-const pathsConfig = require('../src/config/config.paths.js')
+const buildConfig = require('../src/config/build.js')
+const metaConfig = require('../src/config/meta.js')
+const pathsConfig = require('../src/config/paths.js')
 
-const offlineConfig = require('../src/config/tooling/config.offline.js')
-const robotsTxtConfig = require('../src/config/tooling/config.robotsTxt.js')
-const sitemapConfig = require('../src/config/tooling/config.sitemap.js')
+const manifestConfig = require('../src/config/tooling/manifest.js')
+const offlineConfig = require('../src/config/tooling/offline.js')
+const robotsTxtConfig = require('../src/config/tooling/robotsTxt.js')
+const sitemapConfig = require('../src/config/tooling/sitemap.js')
 
 // Passed to `index.html.ejs`
 const templateConfig = {
