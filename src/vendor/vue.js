@@ -15,6 +15,9 @@ import { camelCase, kebabCase } from 'lodash'
 import './vue-meta'
 import router from './vue-router'
 
+// NOTE: uncomment to enable `vue-analytics` (also see `config.analytics.js`)
+// import './vue-analytics'
+
 // Globally registered Vue bits
 import * as components from '@components'
 import * as svgComponents from '@svg'
