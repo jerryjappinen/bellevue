@@ -19,6 +19,9 @@
       "@directives/*": [
         "src/directives/*"
       ],
+      "@fonts/*": [
+        "src/fonts/*"
+      ],
       "@mixins/*": [
         "src/mixins/*"
       ],
@@ -28,8 +31,14 @@
       "@services/*": [
         "src/services/*"
       ],
+      "@svg/*": [
+        "src/svg/*"
+      ],
       "@util/*": [
         "src/util/*"
+      ],
+      "@vendor/*": [
+        "src/vendor/*"
       ]
     }
   }
