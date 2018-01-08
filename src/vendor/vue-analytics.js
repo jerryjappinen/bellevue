@@ -5,9 +5,13 @@ import VueAnalytics from 'vue-analytics'
 import { analytics } from '@config'
 import routerInstance from './vue-router'
 
-Vue.use(VueAnalytics, {
-	...analytics,
-	router: routerInstance
-})
+// Avoid registering this without ID
+// NOTE: if you import this file, the library will still be in your bundle, increasing file size
+if (analytics.id) {
+	Vue.use(VueAnalytics, {
+		...analytics,
+		router: routerInstance
+	})
+}
 
 export default VueAnalytics
