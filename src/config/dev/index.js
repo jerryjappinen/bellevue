@@ -2,6 +2,7 @@
 import { merge } from 'lodash'
 
 // Base configs
+import defaultAnalytics from '../config.analytics'
 import defaultBuild from '../config.build'
 import defaultManifest from '../config.manifest'
 import defaultMeta from '../config.meta'
@@ -10,6 +11,7 @@ import defaultRouter from '../config.router'
 import defaultStyles from '../config.styles'
 
 // Dev overrides
+import devAnalytics from './config.dev.analytics'
 import devBuild from './config.dev.build'
 // import devManifest from './config.dev.manifest'
 import devMeta from './config.dev.meta'
@@ -18,6 +20,7 @@ import devPaths from './config.dev.paths'
 // import devStyles from './config.dev.styles'
 
 // These will be exported
+let analytics = merge({}, defaultAnalytics, devAnalytics)
 let build = merge({}, defaultBuild, devBuild)
 let manifest = merge({}, defaultManifest /*, devManifest */)
 let meta = merge({}, defaultMeta, devMeta)
@@ -26,6 +29,7 @@ let router = merge({}, defaultRouter /*, devRouter */)
 let styles = merge({}, defaultStyles /*, devStyles */)
 
 export {
+	analytics,
 	build,
 	manifest,
 	meta,
