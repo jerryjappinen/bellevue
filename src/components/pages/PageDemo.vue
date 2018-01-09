@@ -90,7 +90,7 @@ export default {
 </script>
 
 <template>
-	<div :class="classes">
+	<page :class="classes" :limit="false">
 
 		<card>
 
@@ -206,7 +206,7 @@ export default {
 		</card>
 
 
-	</div>
+	</page>
 </template>
 
 <style lang="scss">
@@ -222,6 +222,23 @@ export default {
 	.c-spinner {
 		width: 1em;
 		height: 1em;
+	}
+
+	@include viewport-over-medium {
+		@include limit-very-large;
+		@include flex-wrap;
+
+		> .c-card {
+			@include flex-item-fixed;
+			@include border-box;
+			width: 49%;
+
+			&:nth-child(2n) {
+				margin-left: 2%;
+			}
+
+		}
+
 	}
 
 }

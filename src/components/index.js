@@ -5,6 +5,7 @@ export { default as Animation } from './animations/Animation'
 
 // Containers
 export { default as Card } from './containers/Card'
+export { default as Page } from './containers/Page'
 
 // Pages
 export { default as PageDemo } from './pages/PageDemo'

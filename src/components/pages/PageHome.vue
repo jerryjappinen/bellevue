@@ -5,9 +5,9 @@ export default {
 </script>
 
 <template>
-	<card :class="classes">
+	<page :class="classes">
 		<h1>Hello world!</h1>
-	</card>
+	</page>
 </template>
 
 <style lang="scss">

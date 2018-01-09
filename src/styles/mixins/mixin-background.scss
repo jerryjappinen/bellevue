@@ -1,0 +1,165 @@
+// Color and image
+
+// Shorthand (will add rules conditionally unlike CSS shorthand)
+@mixin background ($color, $image: null) {
+	background-color: $color;
+
+	@if $image {
+		@include background-image($image);
+	}
+
+}
+
+@mixin background-image ($image: null) {
+	@if $image {
+		background-image: url('~@assets/#{$image}');
+	}
+}
+
+
+
+// Positioning
+
+@mixin background-position ($y, $x) {
+	@include background-x($x);
+	@include background-y($y);
+}
+
+@mixin background-x ($x) {
+	background-position-x: $x;
+}
+
+@mixin background-y ($y) {
+	background-position-y: $y;
+}
+
+// Edges
+
+@mixin background-left {
+	@include background-x(0%);
+}
+
+@mixin background-horizontal-center {
+	@include background-x(50%);
+}
+
+@mixin background-right {
+	@include background-x(100%);
+}
+
+@mixin background-top {
+	@include background-y(0%);
+}
+
+@mixin background-vertical-center {
+	@include background-y(50%);
+}
+
+@mixin background-bottom {
+	@include background-y(100%);
+}
+
+
+
+// Combinations
+
+@mixin background-top-left {
+	@include background-left;
+	@include background-top;
+}
+
+@mixin background-top-center {
+	@include background-horizontal-center;
+	@include background-top;
+}
+
+@mixin background-top-right {
+	@include background-right;
+	@include background-top;
+}
+
+@mixin background-center {
+	@include background-horizontal-center;
+	@include background-vertical-center;
+}
+
+@mixin background-bottom-left {
+	@include background-left;
+	@include background-bottom;
+}
+
+@mixin background-bottom-center {
+	@include background-horizontal-center;
+	@include background-bottom;
+}
+
+@mixin background-bottom-right {
+	@include background-right;
+	@include background-bottom;
+}
+
+
+
+// Repeat
+
+@mixin background-repeat-gaps {
+	background-repeat: space;
+}
+
+@mixin background-repeat-stretch {
+	background-repeat: round;
+}
+
+@mixin background-repeat-x {
+	background-repeat: repeat-x;
+}
+
+@mixin background-repeat-y {
+	background-repeat: repeat-y;
+}
+
+@mixin no-background-repeat {
+	background-repeat: no-repeat;
+}
+
+
+
+// Sizing
+
+@mixin background-contain {
+	background-size: contain;
+	@include no-background-repeat;
+}
+
+@mixin background-cover {
+	background-size: cover;
+	@include no-background-repeat;
+}
+
+@mixin background-stretch {
+	background-size: 100% 100%;
+	@include background-top-left;
+}
+
+@mixin background-stretch-height {
+	background-size: auto 100%;
+	@include background-top;
+	@include background-repeat-x;
+}
+
+@mixin background-stretch-width {
+	background-size: 100% auto;
+	@include background-left;
+	@include background-repeat-y;
+}
+
+
+
+// NOTE: `no-background` is intentionally missing: use `-color`, `-image`, or both to explicitly clear the rules you want
+@mixin no-background-color {
+	background-color: transparent;
+}
+
+@mixin no-background-image {
+	background-image: none;
+}

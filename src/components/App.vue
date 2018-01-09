@@ -28,20 +28,22 @@ export default {
 
 <style lang="scss">
 
-.c-app {
-	@include buffer-relative;
-	@include limit-medium;
-	@include keep-center;
-}
-
 .c-app-menu {
 	@include flex;
+	background-color: $color-white;
+	border-bottom-width: 1px;
 
 	a {
 		@include flex-item-fluid;
 		@include pad-loose;
 		text-align: center;
+
+		border-color: transparent;
 		border-bottom-width: $separate-thick;
+
+		&:hover {
+			@include background($color-very-light-grey);
+		}
 
 		&.is-exact-active {
 			color: $default-color-link;
