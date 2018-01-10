@@ -9,13 +9,15 @@ input {
 button {
 	border-width: 0;
 	background-color: transparent;
+	@include cursor-pointer;
 	@include type-link;
 
 	@include transition-hover-active;
 	@include transition-properties-common;
 
+	&:hover,
 	&:active {
-		transform: scale(0.95);
+		color: $default-color-link-active;
 	}
 
 	&:focus {
