@@ -1,4 +1,7 @@
-@import '~@styles-shared';
+// Shared scss tools (no output from these)
+@import './functions';
+@import './constants';
+@import './mixins';
 
 // Keyframe animations
 @import './keyframes/keyframes-fade-in';

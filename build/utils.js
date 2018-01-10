@@ -32,7 +32,11 @@ exports.cssLoaders = function (options) {
   const scssResourcesLoaderOptions = {
     loader: 'sass-resources-loader',
     options: {
-      resources: path.resolve(__dirname, '../src/styles/shared.scss')
+      resources: [
+        path.resolve(__dirname, '../src/styles/functions.scss'),
+        path.resolve(__dirname, '../src/styles/constants.scss'),
+        path.resolve(__dirname, '../src/styles/mixins.scss')
+      ]
     }
   }
 

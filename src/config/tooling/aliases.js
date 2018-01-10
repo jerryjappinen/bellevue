@@ -32,10 +32,8 @@ module.exports = {
 	'@mixins': 'src/mixins',
 
 	// Global styles
-	// NOTE: we could split this further
 	'@styles-constants': 'src/styles/constants.scss',
-	'@styles-global': 'src/styles/global.scss',
-	'@styles-shared': 'src/styles/shared.scss'
+	'@styles-global': 'src/styles/global.scss'
 
 	// Test cases
 	// '@unit': 'unit'
