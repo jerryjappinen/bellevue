@@ -13,7 +13,7 @@ describe('ExternalLink.vue', () => {
 		})
 
 		it('as <a>', () => {
-			expect(wrapper.contains('a'))
+			expect(wrapper.contains('a')).toBeTruthy()
 		})
 
 		it('with href', () => {

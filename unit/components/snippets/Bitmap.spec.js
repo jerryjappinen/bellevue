@@ -18,7 +18,7 @@ describe('Bitmap.vue', () => {
 		})
 
 		it('as <img>', () => {
-			expect(wrapper.contains('img'))
+			expect(wrapper.contains('img')).toBeTruthy()
 		})
 
 		it('with alt', () => {

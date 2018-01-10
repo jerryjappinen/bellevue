@@ -72,17 +72,7 @@ describe('Util composeClassnames', () => {
 		])
 	})
 
-	it('should have inserted prefix', () => {
-		expect(composeClassnames({
-			foo: true,
-			bar: 'bar'
-		}, 'prefix')).toEqual([
-			'prefix-foo',
-			'prefix-bar-bar'
-		])
-	})
-
-	it('should have inserted prefix', () => {
+	it('should insert prefixes', () => {
 		expect(composeClassnames({
 			foo: true,
 			bar: 'bar'

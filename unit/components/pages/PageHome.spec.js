@@ -8,7 +8,7 @@ describe('PageHome.vue', () => {
 	const wrapper = mount(PageHome, {})
 
 	it('should render title element', () => {
-		expect(wrapper.contains('h1'))
+		expect(wrapper.contains('h1')).toBeTruthy()
 	})
 
 	it('should render correct contents', () => {
