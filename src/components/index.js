@@ -13,6 +13,7 @@ export { default as PageHome } from './pages/PageHome'
 
 // Snippets
 export { default as Bitmap } from './snippets/Bitmap'
+export { default as Dump } from './snippets/Dump'
 export { default as Ellipsis } from './snippets/Ellipsis'
 export { default as ExternalLink } from './snippets/ExternalLink'
 export { default as Icon } from './snippets/Icon'
