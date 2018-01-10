@@ -46,8 +46,8 @@ export default {
 		config () {
 			return {
 				buildConfig,
-				metaConfig,
 				pathsConfig,
+				metaConfig,
 				stylesConfig
 			}
 		},
@@ -127,6 +127,15 @@ export default {
 				<vector src="logo" />
 				<svg-logo class="c-page-demo-colored" title="Foo" />
 				<svg-logo class="c-page-demo-rainbow" title="Foo" />
+				<vector class="c-page-demo-rainbow" src="cog" />
+				<icon src="cog" />
+			</p>
+
+			<h3>Loading indicators</h3>
+
+			<p>
+				<spinner />
+				<ellipsis />
 			</p>
 
 			<h3>Animations and transitions</h3>
@@ -147,13 +156,6 @@ export default {
 				Toggle:
 				<button @click="toggleAnimation">animation</button>
 				<button @click="toggleTransition">transition</button>
-			</p>
-
-			<h3>Loading indicators</h3>
-
-			<p>
-				<spinner />
-				<ellipsis />
 			</p>
 
 		</card>
@@ -194,7 +196,7 @@ export default {
 
 		<!-- One card per config -->
 		<card v-for="(value, key) in config" :key="key">
-			<h2><code>{{ key }}</code></h2>
+			<h2><icon src="cog" /> <code>{{ key }}</code></h2>
 			<pre><code>{{ JSON.stringify(value, null, 2) }}</code></pre>
 		</card>
 
