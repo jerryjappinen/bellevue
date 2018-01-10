@@ -192,19 +192,11 @@ export default {
 
 		</card>
 
-		<card>
-			<h2>Config</h2>
-
-			<div v-for="(value, key) in config" :key="key">
-
-				<h3>{{ key }}</h3>
-
-				<pre><code>{{ JSON.stringify(value, null, 2) }}</code></pre>
-
-			</div>
-
+		<!-- One card per config -->
+		<card v-for="(value, key) in config" :key="key">
+			<h2><code>{{ key }}</code></h2>
+			<pre><code>{{ JSON.stringify(value, null, 2) }}</code></pre>
 		</card>
-
 
 	</page>
 </template>
