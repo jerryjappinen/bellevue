@@ -2,7 +2,7 @@
 
 **Bellevue** is a full-featured frontend project template for modern single-page applications built on Vue.js and Webpack.
 
-- Demo: [vue.netlify.com](https://vue.netlify.com/)
+- Demo: [bellevue.netlify.com](https://bellevue.netlify.com/demo)
 - Documentation: [eiskis.gitbooks.io/bellevue](https://eiskis.gitbooks.io/bellevue/)
 - Source and issues: [github.com/Eiskis/bellevue](https://github.com/Eiskis/bellevue)
 
