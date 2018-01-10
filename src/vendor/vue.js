@@ -14,6 +14,7 @@ import { camelCase, kebabCase } from 'lodash'
 // Each Vue plugin that needs setup
 import './vue-meta'
 import router from './vue-router'
+import vuex from './vuex'
 
 // NOTE: uncomment to enable `vue-analytics` (also see `config.analytics.js`)
 import './vue-analytics'
@@ -54,6 +55,7 @@ for (const mixinName in mixins) {
 const options = {
 	el: '#app',
 	router,
+	store: vuex,
 	template: '<app></app>'
 }
 

@@ -30,6 +30,7 @@ module.exports = {
 	'@directives': 'src/directives',
 	'@mixins-global': 'src/mixins/global',
 	'@mixins': 'src/mixins',
+	'@store': 'src/store',
 
 	// Global styles
 	'@styles-constants': 'src/styles/constants.scss',

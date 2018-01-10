@@ -46,8 +46,8 @@ export default {
 		config () {
 			return {
 				buildConfig,
-				pathsConfig,
 				metaConfig,
+				pathsConfig,
 				stylesConfig
 			}
 		},
@@ -153,9 +153,8 @@ export default {
 			</p>
 
 			<p class="bodytext">
-				Toggle:
-				<button @click="toggleAnimation">animation</button>
-				<button @click="toggleTransition">transition</button>
+				<button @click="toggleAnimation">Toggle animation</button>
+				<button @click="toggleTransition">Toggle transition</button>
 			</p>
 
 		</card>
@@ -184,9 +183,15 @@ export default {
 		<card>
 			<h2>Models</h2>
 
-			<p>
-				<code>demoObject.titleAndDescription</code>: {{ demoObject.titleAndDescription }}
-			</p>
+			<dump
+				:value="{
+					demoObject: {
+						title: demoObject.title,
+						description: demoObject.description,
+						titleAndDescription: demoObject.titleAndDescription
+					}
+				}"
+			/>
 
 			<p class="bodytext">
 				<external-link href="https://eiskis.gitbooks.io/bellevue/app/models.html">Read docs</external-link>
@@ -194,10 +199,35 @@ export default {
 
 		</card>
 
+		<card>
+			<h2>Vuex</h2>
+
+			<!-- NOTE: if you use Vuex, it's better to use mapState, mapGetters and mapActions in your components instead of referring to `$store` directly as we do here -->
+
+			<dump
+				:value="{
+					state: $store.state,
+					getters: {
+						'myModule.doubleCount': $store.getters['myModule/doubleCount']
+					}
+				}"
+			/>
+
+			<p class="bodytext">
+				<button @click="$store.dispatch('myModule/increment')">increment</button>
+				<button @click="$store.dispatch('myModule/incrementToEven')">incrementToEven</button>
+			</p>
+
+			<p class="bodytext">
+				<external-link href="https://eiskis.gitbooks.io/bellevue/app/vuex.html">Read docs</external-link>
+			</p>
+
+		</card>
+
 		<!-- One card per config -->
 		<card v-for="(value, key) in config" :key="key">
 			<h2><icon src="cog" /> <code>{{ key }}</code></h2>
-			<pre><code>{{ JSON.stringify(value, null, 2) }}</code></pre>
+			<dump :value="value" />
 		</card>
 
 	</page>
@@ -211,6 +241,12 @@ export default {
 	svg {
 		width: 4em;
 		height: 4em;
+	}
+
+	button {
+		&:not(:last-child) {
+			@include push-tight-right;
+		}
 	}
 
 	.c-spinner {
