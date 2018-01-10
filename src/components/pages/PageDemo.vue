@@ -203,6 +203,8 @@ export default {
 		<card>
 			<h2>Vuex</h2>
 
+			<!-- NOTE: if you use Vuex, it's better to use mapState, mapGetters and mapActions in your components instead of referring to `$store` directly as we do here -->
+
 			<dump
 				:value="{
 					state: $store.state,
@@ -213,8 +215,8 @@ export default {
 			/>
 
 			<p class="bodytext">
-				<button @click="$store.dispatch('myModule/increment')">increment</button>
-				<button @click="$store.dispatch('myModule/incrementToEven')">incrementToEven</button>
+				+<button @click="$store.dispatch('myModule/increment')">increment</button>
+				++<button @click="$store.dispatch('myModule/incrementToEven')">incrementToEven</button>
 			</p>
 
 			<p class="bodytext">
