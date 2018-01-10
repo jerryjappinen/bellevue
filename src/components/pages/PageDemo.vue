@@ -153,9 +153,8 @@ export default {
 			</p>
 
 			<p class="bodytext">
-				Toggle:
-				<button @click="toggleAnimation">animation</button>
-				<button @click="toggleTransition">transition</button>
+				<button @click="toggleAnimation">Toggle animation</button>
+				<button @click="toggleTransition">Toggle transition</button>
 			</p>
 
 		</card>
@@ -215,8 +214,8 @@ export default {
 			/>
 
 			<p class="bodytext">
-				+<button @click="$store.dispatch('myModule/increment')">increment</button>
-				++<button @click="$store.dispatch('myModule/incrementToEven')">incrementToEven</button>
+				<button @click="$store.dispatch('myModule/increment')">increment</button>
+				<button @click="$store.dispatch('myModule/incrementToEven')">incrementToEven</button>
 			</p>
 
 			<p class="bodytext">
@@ -242,6 +241,12 @@ export default {
 	svg {
 		width: 4em;
 		height: 4em;
+	}
+
+	button {
+		&:not(:last-child) {
+			@include push-tight-right;
+		}
 	}
 
 	.c-spinner {
