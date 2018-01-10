@@ -17,7 +17,8 @@
     "lint:styles": "npm run lint:styles:global && npm run lint:styles:vue",
     "lint:styles:global": "stylelint src/**/*.css src/**/*.scss --config 'src/.stylelintrc.js'",
     "lint:styles:vue": "stylelint 'src/**/*.vue' --config 'src/.stylelintrc.js'",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "build:report": "npm run --report"
   },
   "dependencies": {
     "lodash": "^4.17.4",
