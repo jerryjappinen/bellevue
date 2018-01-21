@@ -2,7 +2,7 @@
 import { kebabCase } from 'lodash'
 
 export default {
-	name: 'spinner',
+	name: 'icon',
 
 	props: {
 		src: {}
