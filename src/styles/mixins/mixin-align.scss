@@ -1,0 +1,15 @@
+@mixin align-left {
+	text-align: left;
+}
+
+@mixin align-right {
+	text-align: right;
+}
+
+@mixin align-center {
+	text-align: center;
+}
+
+@mixin no-align {
+	text-align: inherit;
+}
