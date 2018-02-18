@@ -8,7 +8,7 @@
 
 Bellevue is based on the official `vuejs-templates/webpack` template, but extends it with many additional tooling features such as preconfigured SCSS support, SVG sprites, more full-featured linting and centralised configuration.
 
-But while the official template is only a _Hello world_, Bellevue's goal is to set you up with a well-documented, [thought-out application structure](https://eiskis.gitbooks.io/bellevue/app/overview.html) with all the patterns you need for building a complex application including routing, state management, persistence, localisation and more (see [feature comparison](https://eiskis.gitbooks.io/bellevue/overview/comparison.html)).
+While the official template is only a _Hello world_, Bellevue's goal is to set you up with a well-documented, [thought-out application structure](https://eiskis.gitbooks.io/bellevue/app/overview.html) with all the patterns you need for building a complex application such as SVG compilation, routing, state management, persistence and more (see [feature comparison](https://eiskis.gitbooks.io/bellevue/overview/comparison.html)).
 
 ## Requirements
 
