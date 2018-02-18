@@ -1,0 +1,121 @@
+// Font styles
+@mixin type-uppercase {
+	// font-size: $font-size-uppercase;
+	font-weight: $font-weight-bold;
+	text-transform: uppercase;
+}
+
+@mixin type-small {
+	font-size: $font-size-small;
+}
+
+@mixin type-large {
+	font-size: $font-size-large;
+	// line-height: $line-height-loose;
+
+	@include viewport-over-small {
+		font-size: 1.4em;
+	}
+
+}
+
+@mixin type-display {
+
+	@if $font-display {
+		font-family: $font-display;
+	}
+
+	font-size: $font-size-display;
+	font-weight: inherit;
+
+	line-height: $line-height-tight;
+
+	// @include viewport-over-tiny {
+	// 	font-size: 1.4em;
+	// }
+
+}
+
+@mixin type-discreet {
+	color: $default-color-discreet;
+}
+
+@mixin type-strong {
+	font-weight: $font-weight-bold;
+}
+
+@mixin type-discreet-small {
+	@include type-discreet;
+	@include type-small;
+}
+
+@mixin type-warning {
+	color: $color-red;
+}
+
+
+
+// Headings
+
+@mixin type-h1 {
+	@include type-display;
+	font-weight: bold;
+	font-size: 1.6em;
+	letter-spacing: -0.015em;
+
+	@include viewport-over-tiny {
+		font-size: 1.8em;
+	}
+
+	@include viewport-over-small {
+		font-size: 2.2em;
+	}
+
+	@include viewport-over-medium {
+		font-size: 2.4em;
+	}
+
+	@include viewport-over-large {
+		font-size: 2.6em;
+	}
+
+}
+
+@mixin type-h2 {
+	font-size: 1.4em;
+}
+
+@mixin type-h3 {
+	font-size: inherit;
+	@include type-uppercase;
+
+	// @include viewport-over-tiny {
+	// 	@include type-strong;
+	// }
+
+}
+
+@mixin type-h4 {
+	@include type-discreet-small;
+	@include type-uppercase;
+	letter-spacing: 0.1em;
+}
+
+@mixin type-h5 {
+	font-size: inherit;
+	@include type-uppercase;
+	@include type-discreet;
+}
+
+@mixin type-h6 {
+	@include type-h5;
+}
+
+
+
+// Other elements
+
+@mixin type-link {
+	// font-weight: $font-weight-bold;
+	color: $default-color-link;
+}

@@ -31,7 +31,7 @@ export default {
 .c-app-menu {
 	@include flex;
 	background-color: $color-white;
-	border-bottom-width: 1px;
+	@include shadow-loose;
 
 	a {
 		@include flex-item-fluid;
