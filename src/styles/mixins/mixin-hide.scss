@@ -1,0 +1,132 @@
+
+@mixin hide {
+	display: none !important;
+}
+
+@mixin invisible {
+	visibility: hidden;
+}
+
+
+
+// Print
+
+@mixin hide-in-print {
+	@include viewport-print {
+		@include hide;
+	}
+}
+
+@mixin hide-in-not-print {
+	@include viewport-not-print {
+		@include hide;
+	}
+}
+
+
+
+// Orientation
+
+@mixin hide-in-landscape {
+	@include viewport-landscape {
+		@include hide;
+	}
+}
+
+@mixin hide-in-portrait {
+	@include viewport-portrait {
+		@include hide;
+	}
+}
+
+
+
+// Breakpoints
+
+@mixin hide-under ($breakpoint) {
+	@include viewport-under($breakpoint) {
+		@include hide;
+	}
+}
+
+@mixin hide-over ($breakpoint) {
+	@include viewport-over($breakpoint) {
+		@include hide;
+	}
+}
+
+
+
+// Breakpoints
+
+@mixin hide-under-tiny {
+	@include viewport-under-tiny {
+		@include hide;
+	}
+}
+
+@mixin hide-over-tiny {
+	@include viewport-over-tiny {
+		@include hide;
+	}
+}
+
+@mixin hide-under-small {
+	@include viewport-under-small {
+		@include hide;
+	}
+}
+
+@mixin hide-over-small {
+	@include viewport-over-small {
+		@include hide;
+	}
+}
+
+@mixin hide-under-smallish {
+	@include viewport-under-smallish {
+		@include hide;
+	}
+}
+
+@mixin hide-over-smallish {
+	@include viewport-over-smallish {
+		@include hide;
+	}
+}
+
+@mixin hide-under-medium {
+	@include viewport-under-medium {
+		@include hide;
+	}
+}
+
+@mixin hide-over-medium {
+	@include viewport-over-medium {
+		@include hide;
+	}
+}
+
+@mixin hide-under-large {
+	@include viewport-under-large {
+		@include hide;
+	}
+}
+
+@mixin hide-over-large {
+	@include viewport-over-large {
+		@include hide;
+	}
+}
+
+@mixin hide-under-very-large {
+	@include viewport-under-very-large {
+		@include hide;
+	}
+}
+
+@mixin hide-over-very-large {
+	@include viewport-over-very-large {
+		@include hide;
+	}
+}
