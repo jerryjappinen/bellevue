@@ -33,7 +33,7 @@ module.exports = {
 	'@store': 'src/store',
 
 	// Global styles
-	'@styles-constants': 'src/styles/constants.scss',
+	'@styles-variables': 'src/styles/variables.scss',
 	'@styles-global': 'src/styles/global.scss'
 
 	// Test cases

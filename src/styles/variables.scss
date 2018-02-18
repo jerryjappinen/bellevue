@@ -1,0 +1,64 @@
+// This template uses Moabit by default
+// If you want to keep using it, see what variables are loaded by default here:
+// https://github.com/Eiskis/moabit/blob/master/variables.scss
+$color-vue: #4fc08d;
+
+$color-very-very-light-grey: #fafafa;
+$color-very-light-grey: #f6f6f6;
+$color-light-grey: #eaeaea;
+$color-grey: #b0b0b0;
+$color-dark: #2c3e50;
+$color-very-dark: #101010;
+
+// Typography
+$font-sans: 'Source Sans Pro', 'Source Sans', 'system-ui', 'San Francisco', 'Helvetica Neue', 'Helvetica', 'Segoe UI', 'Segoe WP', 'Arial', sans-serif;
+$font-serif: 'Droid Serif', 'Georgia', serif;
+$font-mono: 'Roboto Mono', 'Monaco', 'Menlo', 'Segoe UI Mono', 'Consolas', courier, monospace;
+$font-display: 'Dosis', 'Avenir', $font-sans;
+
+
+
+// Local web fonts to generate a font-face definitions for
+//
+// NOTE: load hosted fonts via `config.paths.js` (Google Fonts etc.)
+//
+// NOTE:
+// - Remember to use trailing commas with Sass nested lists to avoid gotchas
+// - File paths should be defined WITHOUT file extensions
+// $local-web-fonts: (
+// 	(
+// 		font-family: 'Source Sans Pro',
+// 		font-weight: 400,
+// 		font-style: normal,
+// 		path: '~@fonts/source-sans/sourcesanspro-regular-webfont',
+// 	),
+// 	(
+// 		font-family: 'Source Sans Pro',
+// 		font-weight: 400,
+// 		font-style: italic,
+// 		path: '~@fonts/source-sans/sourcesanspro-italic-webfont',
+// 	),
+// 	(
+// 		font-family: 'Source Sans Pro',
+// 		font-weight: 700,
+// 		font-style: normal,
+// 		path: '~@fonts/source-sans/sourcesanspro-bold-webfont',
+// 	),
+// 	(
+// 		font-family: 'Source Sans Pro',
+// 		font-weight: 700,
+// 		font-style: italic,
+// 		path: '~@fonts/source-sans/sourcesanspro-bolditalic-webfont',
+// 	),
+// );
+
+// Defaults
+$default-font: $font-sans;
+$default-font-size: 18px;
+
+$default-color-background: $color-very-very-light-grey;
+$default-color-text: $color-dark;
+$default-color-link: $color-vue;
+$default-color-link-active: color-saturate($color-vue);
+$default-color-border: $color-light-grey;
+$default-shadow-color: $color-dark;

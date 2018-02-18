@@ -1,6 +1,7 @@
 // https://github.com/karify/external-svg-sprite-loader/blob/master/index.js
 // NOTE: normally SVGO wants its configuration values in a really weird format, but we will normalize it later
 module.exports = {
+	removeViewBox: false,
 	removeTitle: true,
 	convertColors: {
 		names2hex: true,

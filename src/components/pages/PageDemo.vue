@@ -110,7 +110,7 @@ export default {
 
 		</card>
 
-		<card>
+		<card class="c-page-demo-components">
 			<h2>Components</h2>
 
 			<h3>Bitmaps</h3>
@@ -237,12 +237,6 @@ export default {
 
 .c-page-demo {
 
-	img,
-	svg {
-		width: 4em;
-		height: 4em;
-	}
-
 	button {
 		&:not(:last-child) {
 			@include push-tight-right;
@@ -271,6 +265,14 @@ export default {
 
 	}
 
+}
+
+.c-page-demo-components {
+	img,
+	svg {
+		width: 4em;
+		height: 4em;
+	}
 }
 
 .c-page-demo-colored {

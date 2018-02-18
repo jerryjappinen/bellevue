@@ -1,18 +1,14 @@
 // Shared scss tools (no output from these)
-@import './functions';
-@import './constants';
-@import './mixins';
+@import './shared';
 
 // Keyframe animations
 @import './keyframes/keyframes-fade-in';
 @import './keyframes/keyframes-pulse';
 @import './keyframes/keyframes-spin';
 
-// Web fonts
-@import './font-face.scss';
-
-// Resets
-@import './normalize';
+// Baseline stuff
+@import '~moabit/font-face';
+@import '~moabit/normalize';
 
 // Defaults
 @import './defaults/body';

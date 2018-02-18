@@ -33,9 +33,7 @@ exports.cssLoaders = function (options) {
     loader: 'sass-resources-loader',
     options: {
       resources: [
-        path.resolve(__dirname, '../src/styles/functions.scss'),
-        path.resolve(__dirname, '../src/styles/constants.scss'),
-        path.resolve(__dirname, '../src/styles/mixins.scss')
+        path.resolve(__dirname, '../src/styles/shared.scss')
       ]
     }
   }
