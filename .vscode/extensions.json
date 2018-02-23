@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "wayou.vscode-todo-highlight",
+    "shinnn.stylelint",
+    "dbaeumer.vscode-eslint",
+    "EditorConfig.editorconfig",
+    "octref.vetur"
+  ]
+}
