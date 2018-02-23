@@ -1,11 +1,19 @@
 <script>
 export default {
 	name: 'external-link',
+
 	props: {
 		href: {
 			type: String
 		}
+	},
+
+	methods: {
+		onClick (event) {
+			this.$emit('click', event)
+		}
 	}
+
 }
 </script>
 
@@ -14,5 +22,6 @@ export default {
 		:class="classes"
 		:href="href"
 		target="_blank"
+		@click="onClick"
 		rel="nofollow"><slot /></a>
 </template>
