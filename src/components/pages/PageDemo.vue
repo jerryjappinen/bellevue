@@ -187,6 +187,12 @@ export default {
 				</tbody>
 			</table>
 
+			<p>
+				{{ 8.2123123 | decimal }}
+				{{ 8.2123123 | decimal(0) }}
+				{{ 8.2123123 | decimal(4) }}
+			</p>
+
 			<p class="bodytext">
 				<external-link href="https://eiskis.gitbooks.io/bellevue/app/vue.html">Read docs</external-link>
 			</p>

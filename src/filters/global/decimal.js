@@ -1,3 +1,3 @@
-export default (value) => {
-	return Number.parseFloat(value).toFixed(2)
+export default (value, length) => {
+	return Number.parseFloat(value).toFixed(length ? length : 2)
 }
