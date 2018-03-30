@@ -23,6 +23,7 @@ import './vue-analytics'
 import * as components from '@components'
 import * as svgComponents from '@svg'
 import * as directives from '@directives-global'
+import * as filters from '@filters-global'
 import * as mixins from '@mixins-global'
 
 
@@ -40,12 +41,17 @@ for (const svgName in svgComponents) {
 	Vue.component(kebabCase('svg-' + svgName), svgComponents[svgName])
 }
 
-// Register all directives on the top level
+// Register global directives on the top level
 for (const directiveName in directives) {
 	Vue.directive(camelCase(directiveName), directives[directiveName])
 }
 
-// Register some mixins on the top level
+// Register global filters on the top level
+for (const filterName in filters) {
+	Vue.filter(camelCase(filterName), filters[filterName])
+}
+
+// Register global mixins on the top level
 for (const mixinName in mixins) {
 	Vue.mixin(mixins[mixinName])
 }

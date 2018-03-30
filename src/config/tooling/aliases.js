@@ -28,6 +28,8 @@ module.exports = {
 	'@components': 'src/components',
 	'@directives-global': 'src/directives/global',
 	'@directives': 'src/directives',
+	'@filters-global': 'src/filters/global',
+	'@filters': 'src/filters',
 	'@mixins-global': 'src/mixins/global',
 	'@mixins': 'src/mixins',
 	'@store': 'src/store',

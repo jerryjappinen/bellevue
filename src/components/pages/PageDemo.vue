@@ -160,6 +160,40 @@ export default {
 		</card>
 
 		<card>
+			<h2>Filters</h2>
+
+			<table>
+				<tbody>
+					<tr>
+						<td><code v-html="'{{ 4.5 | ceil }}'" /></td>
+						<td>{{ 4.5 | ceil }}</td>
+					</tr>
+					<tr>
+						<td><code v-html="'{{ 4.5 | floor }}'" /></td>
+						<td>{{ 4.5 | floor }}</td>
+					</tr>
+					<tr>
+						<td><code v-html="'{{ 4.5 | round }}'" /></td>
+						<td>{{ 4.5 | round }}</td>
+					</tr>
+					<tr>
+						<td><code v-html="'{{ 4.52383 | decimal }}'" /></td>
+						<td>{{ 4.52383 | decimal }}</td>
+					</tr>
+					<tr>
+						<td><code v-html="'{{ 8 | decimal }}'" /></td>
+						<td>{{ 8 | decimal }}</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p class="bodytext">
+				<external-link href="https://eiskis.gitbooks.io/bellevue/app/vue.html">Read docs</external-link>
+			</p>
+
+		</card>
+
+		<card>
 			<h2>Services</h2>
 
 			<p>
