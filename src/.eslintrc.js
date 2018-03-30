@@ -190,7 +190,8 @@ module.exports = {
 		],
 		'vue/name-property-casing': ['error', 'kebab-case'],
 		'vue/require-default-prop': ['off'],
-		'vue/require-prop-types': ['off']
+		'vue/require-prop-types': ['off'],
+		'vue/attributes-order': ['off']
 
 	}
 }

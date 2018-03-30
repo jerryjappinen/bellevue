@@ -142,7 +142,7 @@ export default {
 
 			<p>
 
-				<animation name="pulse" :disabled="!demoAnimationEnabled">
+				<animation :disabled="!demoAnimationEnabled" name="pulse">
 					<span>Foo</span>
 				</animation>
 

@@ -21,7 +21,7 @@ export default {
 	<a
 		:class="classes"
 		:href="href"
+		rel="nofollow"
 		target="_blank"
-		@click="onClick"
-		rel="nofollow"><slot /></a>
+		@click="onClick"><slot /></a>
 </template>
