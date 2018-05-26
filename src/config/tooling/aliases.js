@@ -26,6 +26,7 @@ module.exports = {
 
 	// Vue application code
 	'@components': 'src/components',
+	// '@components-local': 'src/components-local',
 	'@directives-global': 'src/directives/global',
 	'@directives': 'src/directives',
 	'@filters-global': 'src/filters/global',

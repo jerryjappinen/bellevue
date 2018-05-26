@@ -10,11 +10,17 @@
       "@components/*": [
         "src/components/*"
       ],
+      // "@components-local/*": [
+      //   "src/components-local/*"
+      // ],
       "@assets/*": [
         "src/assets/*"
       ],
       "@config/*": [
         "src/config/dev/*"
+      ],
+      "@filters/*": [
+        "src/filters/*"
       ],
       "@directives/*": [
         "src/directives/*"

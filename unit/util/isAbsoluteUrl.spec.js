@@ -14,7 +14,7 @@ const testCases = {
 
 describe('Util isAbsoluteUrl', function () {
 	for (const string in testCases) {
-		it('"' + string + ' should be `' + testCases[string] + '`', function () {
+		it('`' + string + '` should be `' + testCases[string] + '`', function () {
 			expect(isAbsoluteUrl(string)).toEqual(testCases[string])
 		})
 	}

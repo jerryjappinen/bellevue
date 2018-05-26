@@ -1,5 +1,5 @@
 import { mount } from 'vue-test-utils'
-import { PageHome } from '@components'
+import { PageHome } from '@components/pages/PageHome'
 // import { Vue } from '@vendor/vue'
 
 describe('PageHome.vue', () => {

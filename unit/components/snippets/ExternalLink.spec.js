@@ -1,5 +1,5 @@
 import { mount } from 'vue-test-utils'
-import { ExternalLink } from '@components'
+import { ExternalLink } from '@components/snippets/ExternalLink'
 
 describe('ExternalLink.vue', () => {
 

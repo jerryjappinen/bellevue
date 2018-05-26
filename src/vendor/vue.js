@@ -19,9 +19,11 @@ import vuex from './vuex'
 // NOTE: uncomment to enable `vue-analytics` (also see `config.analytics.js`)
 import './vue-analytics'
 
+import requireFiles from '@util/requireFiles'
+
 // Globally registered Vue bits
-import * as components from '@components'
-import * as svgComponents from '@svg'
+// import * as components from '@components-global'
+// import * as svgComponents from '@svg'
 import * as directives from '@directives-global'
 import * as filters from '@filters-global'
 import * as mixins from '@mixins-global'
@@ -33,13 +35,20 @@ import * as mixins from '@mixins-global'
 // Config
 Vue.config.productionTip = false
 
+
+
 // Register all components on the top level
-for (const componentName in components) {
-	Vue.component(kebabCase(componentName), components[componentName])
-}
-for (const svgName in svgComponents) {
-	Vue.component(kebabCase('svg-' + svgName), svgComponents[svgName])
-}
+
+const components = requireFiles('@components', ['js', 'vue'])
+const svgComponents = requireFiles('@components', 'svg')
+
+components.keys().map((path) => {
+	return Vue.component(kebabCase(path), components(path).default)
+})
+
+svgComponents.keys().map((path) => {
+	return Vue.component(kebabCase('svg-' + path), svgComponents(path))
+})
 
 // Register global directives on the top level
 for (const directiveName in directives) {

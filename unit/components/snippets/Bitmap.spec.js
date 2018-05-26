@@ -1,5 +1,5 @@
 import { mount } from 'vue-test-utils'
-import { Bitmap } from '@components'
+import { Bitmap } from '@components/snippets/Bitmap'
 
 describe('Bitmap.vue', () => {
 
