@@ -1,3 +1,12 @@
+// From `moabit`
+// NOTE: You can simply override mixins in Sass
+@mixin type-mono {
+	font-family: $font-mono;
+	font-size: 0.85em;
+}
+
+
+
 // Font styles
 @mixin type-uppercase {
 	// font-size: $font-size-uppercase;
