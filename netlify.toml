@@ -1,5 +1,15 @@
+# Netlify config
+# See reference here:
+# https://www.netlify.com/docs/netlify-toml-reference/
+
+# The following redirect is intended for use with most SPA's that handles routing internally.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
 # Build config
 # NOTE: these will override values set in Netlify UI
 [build]
   publish = "dist"
-  command = "npm run build"
+  command = "npm run deploy"
