@@ -12,4 +12,4 @@
 # NOTE: these will override values set in Netlify UI
 [build]
   publish = "dist"
-  command = "npm run deploy"
+  command = "npm run ondeploy"
