@@ -73,59 +73,6 @@
     // Should also go through .vue files
     "vue"
 
-  ],
+  ]
 
-	// Project TODO/FIXME highlighting with plugin
-	// https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight
-	"todohighlight.isCaseSensitive": true,
-	"todohighlight.keywords": [
-		{
-			"text": "BUG",
-			"color": "white",
-			"backgroundColor": "tomato",
-			"overviewRulerColor": "tomato"
-		},
-		{
-			"text": "FIXME:",
-			"color": "hotpink",
-			"backgroundColor": "transparent",
-			"overviewRulerColor": "hotpink"
-		},
-		{
-			"text": "FIXME",
-			"color": "hotpink",
-			"backgroundColor": "transparent",
-			"overviewRulerColor": "hotpink"
-		},
-		{
-			"text": "HACK",
-			"color": "yellow",
-			"backgroundColor": "transparent",
-			"overviewRulerColor": "yellow"
-		},
-		{
-			"text": "TODO:",
-			"color": "mediumseagreen",
-			"backgroundColor": "transparent",
-			"overviewRulerColor": "mediumseagreen"
-		},
-		{
-			"text": "TODO",
-			"color": "mediumseagreen",
-			"backgroundColor": "transparent",
-			"overviewRulerColor": "mediumseagreen"
-		},
-		{
-			"text": "NOTE",
-			"color": "gainsboro",
-			"backgroundColor": "transparent",
-			"overviewRulerColor": "gainsboro"
-		},
-		{
-			"text": "REVIEW",
-			"color": "orange",
-			"backgroundColor": "transparent",
-			"overviewRulerColor": "orange"
-		}
-	]
 }
