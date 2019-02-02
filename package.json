@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
+    "dist": "npx lite-server --baseDir=dist",
     "unit": "jest --config test/unit/jest.conf.js",
     "unit:report": "jest --config test/unit/jest.conf.js --coverage",
     "unit:watch": "jest --watch --config test/unit/jest.conf.js",
@@ -110,12 +111,12 @@
     "webpack-merge": "^4.1.2"
   },
   "engines": {
-    "node": ">= 8.9.3",
-    "npm": ">= 5.5.1"
+    "node": "10.14.2",
+    "npm": "6.4.1"
   },
   "browserslist": [
     "> 1%",
     "last 2 versions",
-    "not ie <= 8"
+    "not ie <= 10"
   ]
 }
